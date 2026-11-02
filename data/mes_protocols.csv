@@ -1,0 +1,17 @@
+protocol_id,keyword,analyst_minutes,elapsed_minutes,instrument,lab_area
+TP-001,APPEAR,5,5,Visual bench,chem
+TP-002,ID_IR,20,25,FTIR-01,chem
+TP-010,ASSAY,90,240,HPLC,chem
+TP-011,IMPTOT,110,300,HPLC,chem
+TP-012,RM_ASSAY,80,220,HPLC,chem
+TP-020,DISS,140,200,DISS-01,chem
+TP-030,WATER,30,40,KF-01,chem
+TP-031,LOD,25,120,Balance + oven,chem
+TP-031,RM_LOD,25,120,Balance + oven,chem
+TP-040,HARD,20,25,Hardness tester,chem
+TP-041,AVGWT,20,25,Balance,chem
+TP-050,PH,15,20,pH meter,chem
+TP-051,OSMO,20,25,Osmometer,chem
+TP-052,FILLVOL,15,15,Balance,chem
+TP-060,TAMC,30,4320,Incubator 30-35 C,micro
+TP-061,ECOLI,30,4320,Incubator 30-35 C,micro

@@ -1,0 +1,10 @@
+plan_id,trigger,material_id,sample_type,sample_point,samples_per_trigger,analyses
+SP-IN-API,Goods receipt,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,1,APPEAR ID_IR RM_ASSAY RM_LOD
+SP-IN-EXC,Goods receipt,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,1,APPEAR ID_IR RM_LOD
+SP-IN-EXC,Goods receipt,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,1,APPEAR ID_IR RM_LOD
+SP-IN-SALT,Goods receipt,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,1,APPEAR ID_IR RM_ASSAY RM_LOD
+SP-IN-SALT,Goods receipt,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,1,APPEAR ID_IR RM_ASSAY RM_LOD
+SP-IPC-2002,Process order,P2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,3,LOD
+SP-REL-2002,Process order,P2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,1,APPEAR ID_IR ASSAY IMPTOT DISS WATER HARD AVGWT TAMC ECOLI
+SP-IPC-1001,Process order,P1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2,FILLVOL
+SP-REL-1001,Process order,P1001,Phosphate buffer pH 7.4,Line 2 - filling machine,1,APPEAR PH OSMO FILLVOL TAMC ECOLI

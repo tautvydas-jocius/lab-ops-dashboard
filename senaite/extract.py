@@ -34,10 +34,10 @@ s_rows, r_rows = [], []
 for s in samples:
     sid = s.get("getClientSampleID") or s["id"]
     stype = (s.get("getSampleTypeTitle") or "")
-    kind = "Incoming" if "raw material" in stype else "In-process" if "in-process" in stype or sid.startswith("IPC") else "Release"
+    plan = "SP-IN" if "raw material" in stype else "SP-IPC" if "in-process" in stype or sid.startswith("IPC") else "SP-REL"
     res = by_sample.get(s["uid"], [])
-    s_rows.append([sid, kind, "SENAITE", s.get("getClientReference") or "", stype, stype,
-                   s.get("getSamplePointTitle") or "", ts(s.get("getDateSampled")), ts(s.get("getDateReceived")),
+    s_rows.append([sid, plan, "SENAITE", s.get("getClientReference") or "", "", stype,
+                   s.get("getSamplePointTitle") or "", ts(s.get("getDateSampled")), ts(s.get("getDateReceived")), "",
                    ts(s.get("getDateVerified")), s["review_state"], ""])
     for a in res:
         rr = a.get("ResultsRange") or {}
@@ -48,16 +48,16 @@ for s in samples:
         lo = float(rr["min"]) if rr.get("min") not in (None, "") else None
         hi = float(rr["max"]) if rr.get("max") not in (None, "") else None
         o = (lo is not None and v < lo) or (hi is not None and v > hi)
-        r_rows.append([sid, a["getKeyword"], a.get("title"), v, a.get("Unit") or "", lo, hi, o,
-                       ts(a.get("ResultCaptureDate"))])
-    flags = [r[7] for r in r_rows if r[0] == sid]
-    s_rows[-1][11] = any(flags) if flags and s["review_state"] == "verified" else ""
+        r_rows.append([a["uid"], sid, a["getKeyword"], a.get("title"), a.get("Unit") or "", lo, hi, v, o,
+                       a["review_state"], ts(a.get("ResultCaptureDate")), ""])
+    flags = [r[8] for r in r_rows if r[1] == sid]
+    s_rows[-1][12] = any(flags) if flags and s["review_state"] == "verified" else ""
 
 for name, header, rows in [
-    ("lims_samples", ["sample_id", "kind", "source_system", "source_ref", "product_or_material", "sample_type",
-                      "sample_point", "date_sampled", "date_received", "date_verified", "status", "out_of_spec"], s_rows),
-    ("lims_results", ["sample_id", "keyword", "test", "result", "unit", "spec_min", "spec_max", "out_of_spec",
-                      "captured_ts"], r_rows)]:
+    ("lims_samples", ["sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
+                      "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec"], s_rows),
+    ("lims_analyses", ["analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result",
+                       "out_of_spec", "status", "completed_ts", "execution_id"], r_rows)]:
     with open(os.path.join(OUT, name + ".csv"), "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(header)

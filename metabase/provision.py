@@ -60,94 +60,124 @@ def bar(x, *y, stacked=False, horizontal=False):
     return s
 
 
+W = "WHERE {col} >= '2026-05-01'"  # report window; ERP warm-up purchases happen earlier
 DASHBOARDS = [
-    ("1 · Procurement", [
-        ("Spend (EUR)", "scalar", "SELECT round(sum(spend_eur)) AS spend FROM analytics.po_performance", {}, 6, 3),
-        ("Purchase price variance (EUR)", "scalar", "SELECT round(sum(ppv_eur)) AS ppv FROM analytics.po_performance", {}, 6, 3),
-        ("On-time delivery", "scalar",
-         "SELECT round(100.0 * avg(on_time::int), 1) AS otd_pct FROM analytics.po_performance WHERE received_date IS NOT NULL", {}, 6, 3),
-        ("Incoming lots rejected", "scalar",
-         "SELECT count(*) FILTER (WHERE accepted = false) AS rejected FROM procurement.receipts", {}, 6, 3),
-        ("Spend by category and month", "bar",
-         "SELECT date_trunc('month', order_date)::date AS month, category, round(sum(spend_eur)) AS spend_eur "
-         "FROM analytics.po_performance GROUP BY 1, 2 ORDER BY 1", bar(["month", "category"], "spend_eur", stacked=True), 12, 7),
-        ("PPV by supplier (EUR)", "row",
-         "SELECT supplier, round(sum(ppv_eur)) AS ppv_eur FROM analytics.po_performance GROUP BY 1 ORDER BY 2 DESC",
-         bar("supplier", "ppv_eur"), 12, 7),
-        ("Ibuprofen API unit price vs standard", "line",
-         "SELECT order_date, supplier, unit_price_eur, standard_price_eur FROM analytics.po_performance "
-         "WHERE material_id = 'M100' ORDER BY 1", bar(["order_date", "supplier"], "unit_price_eur"), 12, 7),
+    ("1 · ERP — procurement & lab stock", [
+        ("Spend (EUR)", "scalar", "SELECT round(sum(spend_eur)) FROM analytics.po_performance " + W.format(col="order_date"), {}, 6, 3),
+        ("Purchase price variance (EUR)", "scalar", "SELECT round(sum(ppv_eur)) FROM analytics.po_performance " + W.format(col="order_date"), {}, 6, 3),
+        ("On-time delivery %", "scalar",
+         "SELECT round(100.0 * avg(on_time::int), 1) FROM analytics.po_performance " + W.format(col="order_date") + " AND received_date IS NOT NULL", {}, 6, 3),
+        ("Raw-material lots rejected by QC", "scalar", "SELECT count(*) FROM erp.stock_batches WHERE status = 'Rejected'", {}, 6, 3),
+        ("Spend by material type and month", "bar",
+         "SELECT date_trunc('month', order_date)::date AS month, material_type, round(sum(spend_eur)) AS spend_eur "
+         "FROM analytics.po_performance " + W.format(col="order_date") + " GROUP BY 1, 2 ORDER BY 1",
+         bar(["month", "material_type"], "spend_eur", stacked=True), 12, 7),
+        ("Acetonitrile unit price vs standard (EUR/L)", "line",
+         "SELECT order_date, unit_price_eur AS paid, standard_price_eur AS standard FROM analytics.po_performance "
+         "WHERE material_id = 'L01' ORDER BY 1", bar("order_date", "paid", "standard"), 12, 7),
         ("Supplier scorecard", "table",
-         "SELECT supplier, category, count(*) AS po_lines, round(sum(spend_eur)) AS spend_eur, "
-         "round(sum(ppv_eur)) AS ppv_eur, round(100.0 * avg(on_time::int), 0) AS otd_pct, "
-         "round(avg(greatest(days_late, 0)), 1) AS avg_days_late, "
-         "count(*) FILTER (WHERE lot_accepted = false) AS lots_rejected "
+         "SELECT supplier, supplier_category AS category, count(*) AS po_lines, round(sum(spend_eur)) AS spend_eur, "
+         "round(sum(ppv_eur)) AS ppv_eur, round(100.0 * avg(on_time::int)) AS otd_pct, "
+         "round(avg(greatest(days_late, 0)), 1) AS avg_days_late, count(*) FILTER (WHERE batch_status = 'Rejected') AS lots_rejected "
          "FROM analytics.po_performance GROUP BY 1, 2 ORDER BY spend_eur DESC", {}, 12, 7),
+        ("Lab stock batches by status", "row",
+         "SELECT b.status, count(*) AS batches FROM erp.stock_batches b JOIN erp.materials m USING (material_id) "
+         "GROUP BY 1 ORDER BY 2 DESC", bar("status", "batches"), 12, 7),
     ]),
-    ("2 · Manufacturing (MES)", [
-        ("Batches produced", "scalar", "SELECT count(*) FROM mes.batches", {}, 6, 3),
-        ("Average yield", "scalar", "SELECT round(100 * avg(yield), 1) AS yield_pct FROM analytics.batch_kpis", {}, 6, 3),
-        ("Downtime (hours)", "scalar", "SELECT round(sum(minutes) / 60.0) FROM mes.downtime", {}, 6, 3),
-        ("Batches rejected", "scalar", "SELECT count(*) FROM mes.batches WHERE disposition = 'Rejected'", {}, 6, 3),
-        ("Batches per week by line", "bar",
-         "SELECT date_trunc('week', start_ts)::date AS week, line, count(*) AS batches FROM mes.batches GROUP BY 1, 2 ORDER BY 1",
-         bar(["week", "line"], "batches", stacked=True), 12, 7),
-        ("Downtime by reason (hours)", "row",
-         "SELECT reason, round(sum(minutes) / 60.0, 1) AS hours FROM mes.downtime GROUP BY 1 ORDER BY 2 DESC",
-         bar("reason", "hours"), 12, 7),
-        ("Line 1 downtime per month by reason", "bar",
-         "SELECT date_trunc('month', start_ts)::date AS month, reason, round(sum(minutes) / 60.0, 1) AS hours "
-         "FROM mes.downtime WHERE line = 'Line 1' GROUP BY 1, 2 ORDER BY 1",
-         bar(["month", "reason"], "hours", stacked=True), 12, 7),
-        ("Yield by product per month (%)", "line",
-         "SELECT date_trunc('month', start_ts)::date AS month, product, round(100 * avg(yield), 2) AS yield_pct "
-         "FROM analytics.batch_kpis GROUP BY 1, 2 ORDER BY 1", bar(["month", "product"], "yield_pct"), 12, 7),
-    ]),
-    ("3 · Quality control (LIMS)", [
-        ("Samples tested", "scalar", "SELECT count(*) FROM lims.samples WHERE status = 'verified'", {}, 6, 3),
+    ("2 · LIMS — samples & quality", [
+        ("Samples logged", "scalar", "SELECT count(*) FROM lims.samples", {}, 6, 3),
         ("Median release turnaround (h)", "scalar",
-         "SELECT round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric, 1) FROM analytics.sample_tat WHERE kind = 'Release'", {}, 6, 3),
-        ("Out-of-spec results", "scalar", "SELECT count(*) FROM lims.results WHERE out_of_spec", {}, 6, 3),
-        ("Open backlog", "scalar", "SELECT count(*) FROM lims.samples WHERE status <> 'verified'", {}, 6, 3),
-        ("Samples per week by kind", "bar",
-         "SELECT date_trunc('week', date_sampled)::date AS week, kind, count(*) AS samples FROM lims.samples "
-         "WHERE date_sampled >= '2026-05-01' GROUP BY 1, 2 ORDER BY 1", bar(["week", "kind"], "samples", stacked=True), 12, 7),
+         "SELECT round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric) FROM analytics.sample_tat WHERE kind = 'Release'", {}, 6, 3),
+        ("Out-of-spec results", "scalar", "SELECT count(*) FROM lims.analyses WHERE out_of_spec", {}, 6, 3),
+        ("Open samples today", "scalar", "SELECT count(*) FROM lims.samples WHERE status <> 'verified'", {}, 6, 3),
+        ("Samples logged per week, by ERP trigger", "bar",
+         "SELECT date_trunc('week', logged_ts)::date AS week, kind, count(*) AS samples FROM analytics.sample_tat "
+         + W.format(col="logged_ts") + " GROUP BY 1, 2 ORDER BY 1", bar(["week", "kind"], "samples", stacked=True), 12, 7),
         ("Median turnaround by month (h)", "line",
-         "SELECT date_trunc('month', date_received)::date AS month, kind, "
-         "round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric, 1) AS median_tat_h "
-         "FROM analytics.sample_tat WHERE tat_hours IS NOT NULL AND date_received >= '2026-05-01' GROUP BY 1, 2 ORDER BY 1",
-         bar(["month", "kind"], "median_tat_h"), 12, 7),
+         "SELECT date_trunc('month', received_ts)::date AS month, kind, "
+         "round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric) AS median_tat_h FROM analytics.sample_tat "
+         + W.format(col="received_ts") + " AND tat_hours IS NOT NULL GROUP BY 1, 2 ORDER BY 1", bar(["month", "kind"], "median_tat_h"), 12, 7),
         ("Out-of-spec rate by test (%)", "row",
-         "SELECT test, round(100.0 * avg(out_of_spec::int), 2) AS oos_pct FROM lims.results GROUP BY 1 "
-         "HAVING sum(out_of_spec::int) > 0 ORDER BY 2 DESC", bar("test", "oos_pct"), 12, 7),
-        ("Release assay results (Ibuprofen tablets)", "scatter",
-         "SELECT s.date_sampled, r.result AS assay_pct FROM lims.results r JOIN lims.samples s USING (sample_id) "
-         "WHERE r.keyword = 'ASSAY' AND s.kind = 'Release' ORDER BY 1", bar("date_sampled", "assay_pct"), 12, 7),
+         "SELECT test, round(100.0 * avg(out_of_spec::int), 2) AS oos_pct FROM lims.analyses WHERE result IS NOT NULL "
+         "GROUP BY 1 HAVING sum(out_of_spec::int) > 0 ORDER BY 2 DESC", bar("test", "oos_pct"), 12, 7),
+        ("Incoming API assay by supplier lot", "scatter",
+         "SELECT s.received_ts, a.result AS assay_pct, sp.name AS supplier FROM lims.analyses a JOIN lims.samples s USING (sample_id) "
+         "JOIN erp.stock_batches b ON b.batch_id = s.trigger_ref JOIN erp.suppliers sp ON sp.supplier_id = b.supplier_id "
+         "WHERE a.keyword = 'RM_ASSAY' AND s.material_id = 'M100' ORDER BY 1",
+         bar(["received_ts", "supplier"], "assay_pct"), 12, 7),
     ]),
-    ("4 · Supplier → batch → quality", [
-        ("Release OOS rate by API supplier (%)", "bar",
-         "SELECT api_supplier, round(100.0 * avg((disposition = 'Rejected')::int), 1) AS batch_reject_pct, "
-         "count(*) AS batches FROM analytics.batch_kpis WHERE sku = 'SKU-2002' AND api_supplier IS NOT NULL "
-         "AND disposition <> 'Pending QA' GROUP BY 1 ORDER BY 2 DESC", bar("api_supplier", "batch_reject_pct"), 12, 7),
-        ("API supplier: price vs quality", "table",
-         "SELECT b.api_supplier, count(*) AS batches, count(*) FILTER (WHERE disposition = 'Rejected') AS rejected, "
-         "round(100.0 * avg((disposition = 'Rejected')::int), 1) AS reject_pct, "
-         "(SELECT round(sum(ppv_eur)) FROM analytics.po_performance p WHERE p.supplier = b.api_supplier AND material_id = 'M100') AS api_ppv_eur "
-         "FROM analytics.batch_kpis b WHERE sku = 'SKU-2002' AND api_supplier IS NOT NULL GROUP BY 1", {}, 12, 7),
-        ("Monthly batch rejects by API supplier", "bar",
-         "SELECT date_trunc('month', start_ts)::date AS month, api_supplier, count(*) FILTER (WHERE disposition = 'Rejected') AS rejected "
-         "FROM analytics.batch_kpis WHERE sku = 'SKU-2002' AND api_supplier IS NOT NULL GROUP BY 1, 2 ORDER BY 1",
-         bar(["month", "api_supplier"], "rejected", stacked=True), 12, 7),
-        ("Rejected batches: which supplier lots went in", "table",
-         "SELECT batch_id, product, supplier, material, supplier_lot, lot_accepted FROM analytics.lot_genealogy "
-         "WHERE disposition = 'Rejected' AND material IN ('Ibuprofen API', 'Sodium chloride USP') ORDER BY batch_id", {}, 12, 7),
+    ("3 · MES — test execution", [
+        ("Test runs", "scalar", "SELECT count(*) FROM mes.executions", {}, 6, 3),
+        ("Aborted runs", "scalar", "SELECT count(*) FROM mes.executions WHERE status <> 'Completed'", {}, 6, 3),
+        ("Analyst hours", "scalar", "SELECT round(sum(analyst_minutes) / 60.0) FROM mes.executions", {}, 6, 3),
+        ("Lab stock consumed (EUR)", "scalar", "SELECT round(sum(material_cost_eur)) FROM analytics.execution_cost", {}, 6, 3),
+        ("Analyst hours per week by lab area", "bar",
+         "SELECT date_trunc('week', e.start_ts)::date AS week, p.lab_area, round(sum(e.analyst_minutes) / 60.0) AS hours "
+         "FROM mes.executions e JOIN mes.protocols p USING (keyword) " + W.format(col="e.start_ts")
+         + " GROUP BY 1, 2 ORDER BY 1", bar(["week", "lab_area"], "hours", stacked=True), 12, 7),
+        ("Runs per analyst per month", "bar",
+         "SELECT date_trunc('month', start_ts)::date AS month, analyst, count(*) AS runs FROM mes.executions "
+         + W.format(col="start_ts") + " GROUP BY 1, 2 ORDER BY 1", bar(["month", "analyst"], "runs"), 12, 7),
+        ("Aborted runs by cause", "row",
+         "SELECT status, keyword, count(*) AS runs FROM mes.executions WHERE status <> 'Completed' GROUP BY 1, 2 ORDER BY 3 DESC",
+         bar(["status", "keyword"], "runs", stacked=True), 12, 7),
+        ("Instrument hours by month", "bar",
+         "SELECT date_trunc('month', start_ts)::date AS month, regexp_replace(instrument, '-0[0-9]$', '') AS instrument, "
+         "round(sum(EXTRACT(EPOCH FROM end_ts - start_ts)) / 3600) AS hours FROM mes.executions "
+         + W.format(col="start_ts") + " AND instrument NOT LIKE 'Incubator%' GROUP BY 1, 2 ORDER BY 1",
+         bar(["month", "instrument"], "hours", stacked=True), 12, 7),
+    ]),
+    ("4 · Where the lab stalls", [
+        ("Open analyses by state, end of each working day", "area",
+         "SELECT day, state, open_analyses FROM lims.daily_wip " + W.format(col="day") + " ORDER BY 1",
+         bar(["day", "state"], "open_analyses", stacked=True), 24, 8),
+        ("Analysis-days lost by cause per month", "bar",
+         "SELECT date_trunc('month', day)::date AS month, reason, count(*) AS analysis_days FROM lims.wait_events "
+         + W.format(col="day") + " GROUP BY 1, 2 ORDER BY 1", bar(["month", "reason"], "analysis_days", stacked=True), 12, 7),
+        ("Stock-outs: analysis-days waiting per material", "row",
+         "SELECT m.name AS material, count(*) AS analysis_days FROM lims.wait_events w JOIN erp.materials m USING (material_id) "
+         "WHERE reason = 'Waiting for stock' GROUP BY 1 ORDER BY 2 DESC", bar("material", "analysis_days"), 12, 7),
+        ("Release turnaround vs open backlog, weekly", "line",
+         "WITH t AS (SELECT date_trunc('week', received_ts)::date AS week, percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours) AS tat "
+         "FROM analytics.sample_tat WHERE kind = 'Release' AND tat_hours IS NOT NULL GROUP BY 1), "
+         "b AS (SELECT date_trunc('week', day)::date AS week, avg(n) AS backlog FROM (SELECT day, sum(open_analyses) n "
+         "FROM lims.daily_wip WHERE state IN ('Waiting for analyst', 'Waiting for stock', 'Repeat after aborted run') GROUP BY 1) x GROUP BY 1) "
+         "SELECT week, round(tat::numeric) AS median_release_tat_h, round(backlog::numeric) AS queued_analyses FROM t JOIN b USING (week) "
+         "WHERE week >= '2026-05-01' ORDER BY 1",
+         dict(bar("week", "median_release_tat_h", "queued_analyses"),
+              **{"series_settings": {"queued_analyses": {"axis": "right"}}}), 12, 7),
+        ("The blocked TSA plate lot", "table",
+         "SELECT u.batch_id, u.supplier_lot, u.supplier, u.batch_status, count(*) AS runs, "
+         "count(*) FILTER (WHERE u.execution_status LIKE 'Aborted%') AS aborted, min(u.start_ts)::date AS first_use, "
+         "max(u.start_ts)::date AS last_use FROM analytics.stock_usage u WHERE u.material = 'TSA plates' "
+         "GROUP BY 1, 2, 3, 4 ORDER BY first_use", {}, 12, 7),
+    ]),
+    ("5 · Cost per test (ERP × MES × LIMS)", [
+        ("Material cost per release sample (EUR)", "scalar",
+         "SELECT round(avg(c), 2) FROM (SELECT e.sample_id, sum(material_cost_eur) c FROM analytics.execution_cost e "
+         "JOIN lims.samples s USING (sample_id) WHERE s.plan_id LIKE 'SP-REL%' GROUP BY 1) x", {}, 8, 3),
+        ("Cost of aborted runs (EUR)", "scalar",
+         "SELECT round(sum(material_cost_eur)) FROM analytics.execution_cost WHERE status <> 'Completed'", {}, 8, 3),
+        ("Expired or blocked stock written off (EUR)", "scalar",
+         "SELECT round(sum(-mv.quantity * m.standard_price_eur)) FROM erp.inventory_movements mv JOIN erp.materials m USING (material_id) "
+         "WHERE mv.movement_type = 'Expired write-off'", {}, 8, 3),
+        ("Material cost per run by test (EUR)", "row",
+         "SELECT keyword, round(avg(material_cost_eur), 2) AS eur_per_run FROM analytics.execution_cost "
+         "GROUP BY 1 HAVING avg(material_cost_eur) > 0 ORDER BY 2 DESC", bar("keyword", "eur_per_run"), 12, 7),
+        ("Monthly lab material cost by material", "bar",
+         "SELECT date_trunc('month', start_ts)::date AS month, material, round(sum(cost_eur)) AS eur FROM analytics.stock_usage "
+         + W.format(col="start_ts") + " GROUP BY 1, 2 ORDER BY 1", bar(["month", "material"], "eur", stacked=True), 12, 7),
+        ("Cost per sample by sampling plan", "table",
+         "SELECT s.plan_id, count(DISTINCT s.sample_id) AS samples, round(sum(e.material_cost_eur) / count(DISTINCT s.sample_id), 2) AS material_eur_per_sample, "
+         "round(sum(e.analyst_minutes)::numeric / count(DISTINCT s.sample_id)) AS analyst_min_per_sample "
+         "FROM lims.samples s JOIN analytics.execution_cost e USING (sample_id) GROUP BY 1 ORDER BY 3 DESC", {}, 24, 6),
     ]),
 ]
 
-existing = {d["name"]: d["id"] for d in api("GET", "/api/dashboard")}
+for d in api("GET", "/api/dashboard"):  # replace every dashboard this script owns (digit-prefixed names)
+    if d["name"][0].isdigit():
+        api("DELETE", f"/api/dashboard/{d['id']}")
 for title, cards in DASHBOARDS:
-    if title in existing:
-        api("DELETE", f"/api/dashboard/{existing[title]}")
     dash = api("POST", "/api/dashboard", {"name": title, "width": "full"})
     dashcards, row, col = [], 0, 0
     for i, (name, display, sql, viz, w, h) in enumerate(cards):

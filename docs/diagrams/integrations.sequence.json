@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "ERP \u00b7 LIMS \u00b7 MES integrations",
+    "subtitle": "One QC sample: trigger, login, protocol execution, stock consumption, usage decision",
+    "output": "integrations.html",
+    "viewBox": [
+      760,
+      900
+    ]
+  },
+  "participants": [
+    {
+      "id": "sup",
+      "type": "external",
+      "label": "Supplier",
+      "sublabel": "lot delivery"
+    },
+    {
+      "id": "erp",
+      "type": "backend",
+      "label": "ERP",
+      "sublabel": "orders + stock"
+    },
+    {
+      "id": "mes",
+      "type": "cloud",
+      "label": "MES",
+      "sublabel": "test protocols"
+    },
+    {
+      "id": "lims",
+      "type": "database",
+      "label": "LIMS",
+      "sublabel": "samples + specs"
+    },
+    {
+      "id": "lab",
+      "type": "frontend",
+      "label": "Analyst",
+      "sublabel": "QC bench"
+    },
+    {
+      "id": "dwh",
+      "type": "messagebus",
+      "label": "Warehouse",
+      "sublabel": "Postgres"
+    }
+  ],
+  "segments": [
+    {
+      "from": 170,
+      "to": 330,
+      "label": "01 / Trigger"
+    },
+    {
+      "from": 350,
+      "to": 590,
+      "label": "02 / Execution"
+    },
+    {
+      "from": 610,
+      "to": 730,
+      "label": "03 / Decision"
+    },
+    {
+      "from": 750,
+      "to": 810,
+      "label": "04 / Analytics"
+    }
+  ],
+  "messages": [
+    {
+      "from": "sup",
+      "to": "erp",
+      "y": 215,
+      "label": "goods receipt"
+    },
+    {
+      "from": "erp",
+      "to": "lims",
+      "y": 245,
+      "label": "sampling plan",
+      "variant": "emphasis",
+      "note": "receipt or process order"
+    },
+    {
+      "from": "lims",
+      "to": "lab",
+      "y": 300,
+      "label": "sample + analyses"
+    },
+    {
+      "from": "lab",
+      "to": "mes",
+      "y": 385,
+      "label": "start protocol",
+      "variant": "emphasis"
+    },
+    {
+      "from": "mes",
+      "to": "erp",
+      "y": 430,
+      "label": "lots in stock?"
+    },
+    {
+      "from": "erp",
+      "to": "mes",
+      "y": 475,
+      "label": "released lots",
+      "variant": "return"
+    },
+    {
+      "from": "mes",
+      "to": "erp",
+      "y": 520,
+      "label": "consumption",
+      "variant": "dashed"
+    },
+    {
+      "from": "mes",
+      "to": "lims",
+      "y": 565,
+      "label": "result + run id",
+      "variant": "emphasis"
+    },
+    {
+      "from": "lims",
+      "to": "erp",
+      "y": 650,
+      "label": "usage decision",
+      "variant": "security",
+      "note": "release / reject lot"
+    },
+    {
+      "from": "erp",
+      "to": "sup",
+      "y": 700,
+      "label": "return if rejected",
+      "variant": "return"
+    },
+    {
+      "from": "lims",
+      "to": "dwh",
+      "y": 785,
+      "label": "nightly extract",
+      "variant": "dashed"
+    }
+  ],
+  "activations": [
+    {
+      "participant": "lims",
+      "from": 235,
+      "to": 310,
+      "type": "database"
+    },
+    {
+      "participant": "lims",
+      "from": 555,
+      "to": 665,
+      "type": "database"
+    },
+    {
+      "participant": "mes",
+      "from": 375,
+      "to": 575,
+      "type": "cloud"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "ERP, two roles",
+      "items": [
+        "Procurement: PO, receipt, stock lot, consumption",
+        "Demand: process orders + receipts fire sampling plans"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "LIMS",
+      "items": [
+        "Sample logged with predefined analyses and specs",
+        "QA verification, usage decision back to ERP"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "MES",
+      "items": [
+        "Executes the test protocol per analysis",
+        "Consumes reagent / standard / media lots FEFO"
+      ]
+    }
+  ]
+}

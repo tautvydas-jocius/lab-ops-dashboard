@@ -1,0 +1,193 @@
+order_id,material_id,product,line,order_date,quantity,uom
+1000001,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-01,300000,tablets
+1000002,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-01,300000,tablets
+1000003,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-04,300000,tablets
+1000004,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-04,300000,tablets
+1000005,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-04,8000,bottles
+1000006,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-04,8000,bottles
+1000007,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-01,8000,bottles
+1000008,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-12,300000,tablets
+1000009,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-08,300000,tablets
+1000010,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-12,300000,tablets
+1000011,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-11,300000,tablets
+1000012,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-08,8000,bottles
+1000013,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-08,8000,bottles
+1000014,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-08,8000,bottles
+1000015,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-18,300000,tablets
+1000016,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-18,300000,tablets
+1000017,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-19,300000,tablets
+1000018,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-19,300000,tablets
+1000019,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-15,8000,bottles
+1000020,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-19,8000,bottles
+1000021,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-18,8000,bottles
+1000022,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-26,300000,tablets
+1000023,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-25,300000,tablets
+1000024,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-25,300000,tablets
+1000025,P2002,Ibuprofen 200 mg tablets,Line 1,2026-05-25,300000,tablets
+1000026,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-26,8000,bottles
+1000027,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-25,8000,bottles
+1000028,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-05-22,8000,bottles
+1000029,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-01,300000,tablets
+1000030,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-01,300000,tablets
+1000031,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-01,300000,tablets
+1000032,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-01,300000,tablets
+1000033,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-01,8000,bottles
+1000034,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-01,8000,bottles
+1000035,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-01,8000,bottles
+1000036,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-05,300000,tablets
+1000037,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-05,300000,tablets
+1000038,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-08,300000,tablets
+1000039,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-05,300000,tablets
+1000040,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-08,8000,bottles
+1000041,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-08,8000,bottles
+1000042,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-09,8000,bottles
+1000043,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-15,300000,tablets
+1000044,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-12,300000,tablets
+1000045,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-15,300000,tablets
+1000046,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-16,300000,tablets
+1000047,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-12,8000,bottles
+1000048,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-15,8000,bottles
+1000049,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-12,8000,bottles
+1000050,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-23,300000,tablets
+1000051,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-22,300000,tablets
+1000052,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-23,300000,tablets
+1000053,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-22,300000,tablets
+1000054,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-23,8000,bottles
+1000055,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-22,8000,bottles
+1000056,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-19,8000,bottles
+1000057,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-26,300000,tablets
+1000058,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-29,300000,tablets
+1000059,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-29,300000,tablets
+1000060,P2002,Ibuprofen 200 mg tablets,Line 1,2026-06-26,300000,tablets
+1000061,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-29,8000,bottles
+1000062,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-26,8000,bottles
+1000063,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-06-29,8000,bottles
+1000064,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-06,300000,tablets
+1000065,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-06,300000,tablets
+1000066,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-06,300000,tablets
+1000067,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-06,300000,tablets
+1000068,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-06,8000,bottles
+1000069,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-06,8000,bottles
+1000070,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-06,8000,bottles
+1000071,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-13,300000,tablets
+1000072,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-10,300000,tablets
+1000073,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-14,300000,tablets
+1000074,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-13,300000,tablets
+1000075,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-14,8000,bottles
+1000076,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-13,8000,bottles
+1000077,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-13,8000,bottles
+1000078,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-20,300000,tablets
+1000079,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-20,300000,tablets
+1000080,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-20,300000,tablets
+1000081,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-21,300000,tablets
+1000082,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-20,8000,bottles
+1000083,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-20,8000,bottles
+1000084,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-17,8000,bottles
+1000085,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-27,300000,tablets
+1000086,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-24,300000,tablets
+1000087,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-27,300000,tablets
+1000088,P2002,Ibuprofen 200 mg tablets,Line 1,2026-07-27,300000,tablets
+1000089,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-27,8000,bottles
+1000090,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-24,8000,bottles
+1000091,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-07-27,8000,bottles
+1000092,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-04,300000,tablets
+1000093,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-03,300000,tablets
+1000094,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-03,300000,tablets
+1000095,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-03,300000,tablets
+1000096,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-03,8000,bottles
+1000097,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-03,8000,bottles
+1000098,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-03,8000,bottles
+1000099,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-10,300000,tablets
+1000100,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-10,300000,tablets
+1000101,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-10,300000,tablets
+1000102,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-11,300000,tablets
+1000103,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-11,8000,bottles
+1000104,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-10,8000,bottles
+1000105,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-11,8000,bottles
+1000106,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-17,300000,tablets
+1000107,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-18,300000,tablets
+1000108,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-17,300000,tablets
+1000109,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-17,300000,tablets
+1000110,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-17,8000,bottles
+1000111,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-17,8000,bottles
+1000112,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-18,8000,bottles
+1000113,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-24,300000,tablets
+1000114,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-21,300000,tablets
+1000115,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-21,300000,tablets
+1000116,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-21,300000,tablets
+1000117,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-24,8000,bottles
+1000118,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-24,8000,bottles
+1000119,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-24,8000,bottles
+1000120,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-01,300000,tablets
+1000121,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-28,300000,tablets
+1000122,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-31,300000,tablets
+1000123,P2002,Ibuprofen 200 mg tablets,Line 1,2026-08-31,300000,tablets
+1000124,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-01,8000,bottles
+1000125,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-08-31,8000,bottles
+1000126,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-01,8000,bottles
+1000127,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-07,300000,tablets
+1000128,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-08,300000,tablets
+1000129,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-04,300000,tablets
+1000130,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-04,300000,tablets
+1000131,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-08,300000,tablets
+1000132,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-07,300000,tablets
+1000133,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-07,8000,bottles
+1000134,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-04,8000,bottles
+1000135,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-07,8000,bottles
+1000136,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-14,300000,tablets
+1000137,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-14,300000,tablets
+1000138,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-14,300000,tablets
+1000139,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-11,300000,tablets
+1000140,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-14,300000,tablets
+1000141,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-15,300000,tablets
+1000142,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-14,8000,bottles
+1000143,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-15,8000,bottles
+1000144,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-11,8000,bottles
+1000145,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-21,300000,tablets
+1000146,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-22,300000,tablets
+1000147,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-22,300000,tablets
+1000148,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-21,300000,tablets
+1000149,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-21,300000,tablets
+1000150,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-21,300000,tablets
+1000151,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-21,8000,bottles
+1000152,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-22,8000,bottles
+1000153,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-22,8000,bottles
+1000154,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-25,300000,tablets
+1000155,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-29,300000,tablets
+1000156,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-28,300000,tablets
+1000157,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-28,300000,tablets
+1000158,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-25,300000,tablets
+1000159,P2002,Ibuprofen 200 mg tablets,Line 1,2026-09-25,300000,tablets
+1000160,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-28,8000,bottles
+1000161,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-28,8000,bottles
+1000162,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-09-28,8000,bottles
+1000163,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-02,300000,tablets
+1000164,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-05,300000,tablets
+1000165,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-06,300000,tablets
+1000166,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-02,300000,tablets
+1000167,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-02,8000,bottles
+1000168,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-05,8000,bottles
+1000169,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-02,8000,bottles
+1000170,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-13,300000,tablets
+1000171,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-12,300000,tablets
+1000172,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-12,300000,tablets
+1000173,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-12,300000,tablets
+1000174,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-13,8000,bottles
+1000175,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-12,8000,bottles
+1000176,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-12,8000,bottles
+1000177,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-20,300000,tablets
+1000178,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-20,300000,tablets
+1000179,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-19,300000,tablets
+1000180,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-19,300000,tablets
+1000181,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-20,8000,bottles
+1000182,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-19,8000,bottles
+1000183,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-19,8000,bottles
+1000184,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-26,300000,tablets
+1000185,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-26,300000,tablets
+1000186,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-26,300000,tablets
+1000187,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-27,300000,tablets
+1000188,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-26,8000,bottles
+1000189,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-23,8000,bottles
+1000190,P1001,"Phosphate buffer pH 7.4, 500 mL",Line 2,2026-10-26,8000,bottles
+1000191,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-30,300000,tablets
+1000192,P2002,Ibuprofen 200 mg tablets,Line 1,2026-10-30,300000,tablets

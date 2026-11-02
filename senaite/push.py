@@ -39,10 +39,10 @@ KEYWORD = {"RM_ASSAY": "ASSAY", "RM_LOD": "LOD"}  # generator keyword -> SENAITE
 rows = lambda name: list(csv.DictReader(open(os.path.join(args.data, name + ".csv"))))
 samples = [s for s in rows("lims_samples") if s["sample_type"] in TYPE]
 results = defaultdict(dict)
-for r in rows("lims_results"):
+for r in rows("lims_analyses"):
     results[r["sample_id"]][KEYWORD.get(r["keyword"], r["keyword"])] = r["result"]
-last = max(datetime.fromisoformat(s["date_sampled"]) for s in samples)
-samples = [s for s in samples if datetime.fromisoformat(s["date_sampled"]) > last - timedelta(days=args.days)]
+last = max(datetime.fromisoformat(s["logged_ts"]) for s in samples)
+samples = [s for s in samples if datetime.fromisoformat(s["logged_ts"]) > last - timedelta(days=args.days)]
 
 client = find("Client", "Production - Plant 1")
 client_path = call("Client/" + client["uid"])["items"][0]["path"]
@@ -72,13 +72,13 @@ for s in samples:
                                             ["ASSAY", "LOD"] if "Sodium" in stype else ["ASSAY"])
     data = {"portal_type": "AnalysisRequest", "parent_path": client_path, "Contact": contact,
             "SampleType": ref("SampleType", stype), "SamplePoint": ref("SamplePoint", point),
-            "DateSampled": s["date_sampled"], "ClientSampleID": s["sample_id"],
-            "ClientReference": s["source_ref"], "Analyses": kws}
+            "DateSampled": s["logged_ts"], "ClientSampleID": s["sample_id"],
+            "ClientReference": s["trigger_ref"], "Analyses": kws}
     if spec:
         data["Specification"] = ref("AnalysisSpec", spec)
     sid = call("create", data)["items"][0]["uid"]
     call("update", {"uid": sid, "transition": "receive"})
-    call("update", {"uid": sid, "DateReceived": s["date_received"]})
+    call("update", {"uid": sid, "DateReceived": s["received_ts"]})
     if s["status"] == "verified":
         for kw, a in analyses_of(sid).items():
             if kw in results[s["sample_id"]]:
@@ -88,5 +88,5 @@ for s in samples:
             if a["review_state"] == "to_be_verified":
                 call("update", {"uid": a["uid"], "transition": "verify"})
     pushed += 1
-    print(f"{s['sample_id']:10s} {s['source_ref']:22s} {stype}")
+    print(f"{s['sample_id']:10s} {s["trigger_ref"]:22s} {stype}")
 print(f"pushed {pushed} of {len(samples)} samples from the last {args.days} days")

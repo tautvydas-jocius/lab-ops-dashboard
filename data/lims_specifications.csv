@@ -1,0 +1,17 @@
+keyword,test,unit,spec_min,spec_max
+APPEAR,Appearance,,1,1
+ID_IR,Identity (IR),,1,1
+ASSAY,Assay (HPLC),%,95.0,105.0
+IMPTOT,Total impurities (HPLC),%,,0.5
+DISS,Dissolution 30 min,%,80,
+WATER,Water (Karl Fischer),%,,1.5
+HARD,Hardness,N,60,120
+AVGWT,Average weight,mg,285,315
+TAMC,TAMC,cfu/g,,1000
+ECOLI,E. coli,cfu/g,0,0
+LOD,Loss on drying,%,,2.0
+PH,pH,,7.2,7.6
+OSMO,Osmolality,mOsm/kg,280,310
+FILLVOL,Fill volume,mL,495,510
+RM_ASSAY,Assay (raw material),%,98.5,101.5
+RM_LOD,Loss on drying (raw material),%,,0.5

@@ -29,7 +29,7 @@ dashboards = sorted((d for d in api("GET", "/api/dashboard", session=session) if
 
 with sync_playwright() as p:
     browser = p.chromium.launch()
-    ctx = browser.new_context(viewport={"width": 1600, "height": 1000}, device_scale_factor=2, bypass_csp=True)
+    ctx = browser.new_context(viewport={"width": 1600, "height": 2600}, device_scale_factor=2, bypass_csp=True)
     ctx.add_cookies([{"name": "metabase.SESSION", "value": session, "url": MB}])
     page = ctx.new_page()
     for d in dashboards:

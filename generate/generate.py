@@ -1,20 +1,29 @@
-"""Synthetic but coherent pharma plant data: procurement -> MES -> LIMS.
+"""Synthetic QC lab in a pharma plant: ERP -> LIMS -> MES -> ERP, simulated day by day.
 
-One seeded run produces CSVs in ../data/ that share keys across systems:
-  purchase order line -> receipt (supplier lot) -> incoming LIMS sample
-  receipt lots consumed by MES batches -> in-process + release LIMS samples
+ERP plays two roles:
+  1. Procurement and stock: purchase orders, goods receipts, stock batches, inventory movements.
+  2. Demand for testing: process orders and goods receipts trigger predefined sampling plans.
+LIMS logs a sample per sampling-plan line, with predefined analyses and specifications.
+MES executes each analysis as a test protocol (analyst, instrument, steps) and consumes lab stock
+batches (solvents, reference standards, media, vials) from ERP. Results flow back to LIMS; QA
+verifies the sample; incoming raw-material lots are released or rejected in ERP.
 
-Stories baked in so the dashboards have something to find:
-  - Supplier "Hubei Pharma Chem" raises its ibuprofen API price from August (PPV turns red)
-  - Its lots carry slightly lower assay, so tablet batches made from them fail assay more often
-  - Line 1 tablet press has recurring tooling downtime in September
-Stdlib only. Usage: python3 generate.py [--days 184] [--seed 42]
+Turnaround and backlog are not drawn from a distribution: they come out of a FIFO queue worked
+by a fixed number of analyst-minutes per day, so demand spikes and stock-outs show up as delays.
+
+Stories baked in:
+  - Acetonitrile (HPLC solvent) price rises ~35% from August: PPV on lab stock.
+  - Ibuprofen API lots from one supplier assay low from mid-July: incoming lots rejected.
+  - One TSA plate lot fails growth promotion in September: TAMC tests aborted and repeated.
+  - September volume +50% on tablets: chemistry backlog and turnaround climb.
+Stdlib only. Usage: python3 generate.py [--seed 42]
 """
 import argparse
 import csv
 import os
 import random
-from datetime import date, datetime, timedelta
+from collections import defaultdict
+from datetime import date, datetime, time, timedelta
 
 p = argparse.ArgumentParser()
 p.add_argument("--start", default="2026-05-01")
@@ -25,72 +34,107 @@ args = p.parse_args()
 rnd = random.Random(args.seed)
 START = date.fromisoformat(args.start)
 END = START + timedelta(days=args.days)
+WARMUP = START - timedelta(days=70)  # procurement runs earlier so stock exists on day one
 os.makedirs(args.out, exist_ok=True)
+at = lambda d, h, m=0: datetime.combine(d, time(h, m))
 
-# --- master data ---------------------------------------------------------------
-SUPPLIERS = [  # id, name, country, category
-    ("S01", "Hubei Pharma Chem", "CN", "API"),
-    ("S02", "IOL Chemicals", "IN", "API"),
-    ("S03", "JRS Pharma", "DE", "Excipients"),
-    ("S04", "Meggle Excipients", "DE", "Excipients"),
-    ("S05", "K+S Minerals", "DE", "Raw materials"),
-    ("S06", "Merck Life Science", "DE", "Raw materials"),
-    ("S07", "Gerresheimer", "DE", "Primary packaging"),
-    ("S08", "Constantia Flexibles", "AT", "Primary packaging"),
-    ("S09", "Smurfit Westrock", "LT", "Secondary packaging"),
-    ("S10", "VWR International", "BE", "Lab consumables"),
-    ("S11", "Agilent Technologies", "US", "Lab consumables"),
-    ("S12", "Fette Compacting", "DE", "Maintenance & spares"),
+# --- ERP master data ---------------------------------------------------------------------
+SUPPLIERS = [  # id, name, country, category, lead days, late probability
+    ("S01", "Hubei Pharma Chem", "CN", "API", 35, 0.30), ("S02", "IOL Chemicals", "IN", "API", 30, 0.10),
+    ("S03", "JRS Pharma", "DE", "Excipients", 12, 0.05), ("S04", "Meggle Excipients", "DE", "Excipients", 12, 0.05),
+    ("S05", "K+S Minerals", "DE", "Raw materials", 10, 0.05), ("S06", "Merck Life Science", "DE", "Lab chemicals", 8, 0.25),
+    ("S10", "VWR International", "BE", "Lab chemicals", 6, 0.08), ("S11", "Agilent Technologies", "US", "Lab consumables", 14, 0.08),
+    ("S13", "EDQM", "FR", "Reference standards", 21, 0.05), ("S14", "bioMérieux", "FR", "Microbiology media", 7, 0.08),
 ]
-# id, name, spend type, category, uom, standard price EUR, suppliers, typical order qty
-MATERIALS = [
-    ("M100", "Ibuprofen API", "Direct", "API", "kg", 18.50, ["S01", "S02"], 2000),
-    ("M110", "Microcrystalline cellulose", "Direct", "Excipients", "kg", 4.20, ["S03"], 1500),
-    ("M111", "Lactose monohydrate", "Direct", "Excipients", "kg", 2.90, ["S04"], 1500),
-    ("M112", "Croscarmellose sodium", "Direct", "Excipients", "kg", 11.00, ["S03"], 200),
-    ("M113", "Magnesium stearate", "Direct", "Excipients", "kg", 7.80, ["S04"], 100),
-    ("M200", "Sodium chloride USP", "Direct", "Raw materials", "kg", 1.10, ["S05"], 3000),
-    ("M201", "Disodium phosphate", "Direct", "Raw materials", "kg", 6.40, ["S06"], 400),
-    ("M202", "Potassium dihydrogen phosphate", "Direct", "Raw materials", "kg", 7.10, ["S06"], 300),
-    ("M300", "500 mL HDPE bottle", "Direct", "Primary packaging", "pcs", 0.21, ["S07"], 60000),
-    ("M301", "Alu/PVC blister foil", "Direct", "Primary packaging", "m2", 0.95, ["S08"], 20000),
-    ("M302", "Folding carton", "Direct", "Secondary packaging", "pcs", 0.06, ["S09"], 100000),
-    ("M400", "HPLC column C18", "Indirect", "Lab consumables", "pcs", 640.0, ["S11"], 4),
-    ("M401", "Lab glassware & filters", "Indirect", "Lab consumables", "lot", 380.0, ["S10"], 3),
-    ("M402", "Tablet press punches set", "Indirect", "Maintenance & spares", "set", 4200.0, ["S12"], 1),
-]
-MAT = {m[0]: m for m in MATERIALS}
+SUP = {s[0]: s for s in SUPPLIERS}
+# id: name, type, uom, std price EUR, suppliers, order qty, reorder point (lab stock), shelf life days
+MAT = {
+    "M100": ("Ibuprofen API", "Raw material", "kg", 18.50, ["S01", "S02"], 2000, None, 1095),
+    "M110": ("Microcrystalline cellulose", "Raw material", "kg", 4.20, ["S03"], 1500, None, 1095),
+    "M111": ("Lactose monohydrate", "Raw material", "kg", 2.90, ["S04"], 1500, None, 1095),
+    "M200": ("Sodium chloride USP", "Raw material", "kg", 1.10, ["S05"], 3000, None, 1825),
+    "M201": ("Disodium phosphate", "Raw material", "kg", 6.40, ["S06"], 400, None, 1095),
+    "L01": ("Acetonitrile HPLC grade", "Lab stock", "L", 28.0, ["S06", "S10"], 40, 18, 730),
+    "L02": ("Ibuprofen CRS", "Lab stock", "mg", 3.20, ["S13"], 1500, 650, 365),
+    "L03": ("Ibuprofen impurity mix CRS", "Lab stock", "mg", 9.0, ["S13"], 120, 45, 365),
+    "L04": ("HPLC vials 2 mL", "Lab stock", "pcs", 0.35, ["S11"], 3000, 900, 1825),
+    "L05": ("Karl Fischer reagent", "Lab stock", "L", 95.0, ["S06"], 4, 1.2, 365),
+    "L06": ("pH buffer set", "Lab stock", "L", 40.0, ["S10"], 3, 0.8, 365),
+    "L07": ("TSA plates", "Lab stock", "pcs", 1.10, ["S14"], 400, 160, 90),
+    "L08": ("MacConkey broth", "Lab stock", "L", 60.0, ["S14"], 4, 1.2, 180),
+    "L09": ("Potassium phosphate (reagent)", "Lab stock", "kg", 45.0, ["S10"], 3, 1.0, 1095),
+    "L10": ("Osmolality standard", "Lab stock", "pcs", 6.0, ["S10"], 60, 20, 365),
+    "P2002": ("Ibuprofen 200 mg tablets", "Product", "tablets", None, [], None, None, None),
+    "P1001": ("Phosphate buffer pH 7.4, 500 mL", "Product", "bottles", None, [], None, None, None),
+}
 BUYERS = ["A. Petraitis", "R. Kazlauskaite", "J. Novak"]
 
-# SKU -> line, batch size, bill of materials (material, kg or pcs per batch), tests
-TESTS = {  # keyword: (title, unit, min, max) ; None = no limit on that side
+# --- LIMS: analyses and specifications ----------------------------------------------------
+TESTS = {  # keyword: (title, unit, min, max)
     "APPEAR": ("Appearance", "", 1, 1), "ID_IR": ("Identity (IR)", "", 1, 1),
-    "ASSAY": ("Assay", "%", 95.0, 105.0), "IMPTOT": ("Total impurities", "%", None, 0.5),
-    "DISS": ("Dissolution 30 min", "%", 80, None), "WATER": ("Water (KF)", "%", None, 1.5),
+    "ASSAY": ("Assay (HPLC)", "%", 95.0, 105.0), "IMPTOT": ("Total impurities (HPLC)", "%", None, 0.5),
+    "DISS": ("Dissolution 30 min", "%", 80, None), "WATER": ("Water (Karl Fischer)", "%", None, 1.5),
     "HARD": ("Hardness", "N", 60, 120), "AVGWT": ("Average weight", "mg", 285, 315),
     "TAMC": ("TAMC", "cfu/g", None, 1000), "ECOLI": ("E. coli", "cfu/g", 0, 0),
     "LOD": ("Loss on drying", "%", None, 2.0), "PH": ("pH", "", 7.2, 7.6),
     "OSMO": ("Osmolality", "mOsm/kg", 280, 310), "FILLVOL": ("Fill volume", "mL", 495, 510),
-    "RM_ASSAY": ("Assay (raw material)", "%", 98.5, 101.5), "RM_LOD": ("Loss on drying (RM)", "%", None, 0.5),
+    "RM_ASSAY": ("Assay (raw material)", "%", 98.5, 101.5), "RM_LOD": ("Loss on drying (raw material)", "%", None, 0.5),
 }
-SKUS = {
-    "SKU-2002": dict(name="Ibuprofen 200 mg tablets", line="Line 1", size=300000, uom="tablets",
-                     bom=[("M100", 60), ("M110", 18), ("M111", 9), ("M112", 2.4), ("M113", 0.6),
-                          ("M301", 2600), ("M302", 15000)],
-                     release=["APPEAR", "ID_IR", "ASSAY", "IMPTOT", "DISS", "WATER", "HARD", "AVGWT", "TAMC", "ECOLI"],
-                     ipc=("Line 1 - fluid-bed dryer outlet", ["LOD"], 3), per_week=4,
-                     sample_type="Ibuprofen 200 mg tablets", point="Line 1 - tablet press discharge"),
-    "SKU-1001": dict(name="Phosphate buffer pH 7.4, 500 mL", line="Line 2", size=8000, uom="bottles",
-                     bom=[("M200", 36), ("M201", 9.6), ("M202", 1.1), ("M300", 8100)],
-                     release=["APPEAR", "PH", "OSMO", "FILLVOL", "TAMC", "ECOLI"],
-                     ipc=("Line 2 - filling machine", ["FILLVOL"], 2), per_week=3,
-                     sample_type="Phosphate buffer pH 7.4", point="Line 2 - filling machine"),
+# --- MES: test protocols with analyst minutes, elapsed minutes, instrument, stock consumed per run
+PROTOCOLS = {
+    "APPEAR": ("TP-001", 5, 5, "Visual bench", "chem", []),
+    "ID_IR": ("TP-002", 20, 25, "FTIR-01", "chem", []),
+    "ASSAY": ("TP-010", 90, 240, "HPLC", "chem", [("L01", 0.40), ("L02", 25), ("L04", 6)]),
+    "IMPTOT": ("TP-011", 110, 300, "HPLC", "chem", [("L01", 0.60), ("L03", 5), ("L04", 8)]),
+    "RM_ASSAY": ("TP-012", 80, 220, "HPLC", "chem", [("L01", 0.30), ("L02", 25), ("L04", 4)]),
+    "DISS": ("TP-020", 140, 200, "DISS-01", "chem", [("L09", 0.05), ("L04", 6)]),
+    "WATER": ("TP-030", 30, 40, "KF-01", "chem", [("L05", 0.06)]),
+    "LOD": ("TP-031", 25, 120, "Balance + oven", "chem", []),
+    "RM_LOD": ("TP-031", 25, 120, "Balance + oven", "chem", []),
+    "HARD": ("TP-040", 20, 25, "Hardness tester", "chem", []),
+    "AVGWT": ("TP-041", 20, 25, "Balance", "chem", []),
+    "PH": ("TP-050", 15, 20, "pH meter", "chem", [("L06", 0.03)]),
+    "OSMO": ("TP-051", 20, 25, "Osmometer", "chem", [("L10", 1)]),
+    "FILLVOL": ("TP-052", 15, 15, "Balance", "chem", []),
+    "TAMC": ("TP-060", 30, 4320, "Incubator 30-35 C", "micro", [("L07", 4)]),
+    "ECOLI": ("TP-061", 30, 4320, "Incubator 30-35 C", "micro", [("L08", 0.1), ("L07", 2)]),
 }
-RM_TESTED = {"M100", "M110", "M111", "M200", "M201", "M202"}  # incoming inspection in LIMS
+ANALYSTS = {"chem": ["R. Petrauskas", "L. Vaitkute", "M. Stankus"], "micro": ["E. Grigas"]}
+MINUTES_PER_DAY = {"chem": 330, "micro": 240}  # productive bench minutes per analyst
 
+RELEASE_2002 = ["APPEAR", "ID_IR", "ASSAY", "IMPTOT", "DISS", "WATER", "HARD", "AVGWT", "TAMC", "ECOLI"]
+RELEASE_1001 = ["APPEAR", "PH", "OSMO", "FILLVOL", "TAMC", "ECOLI"]
+# ERP sampling plans: id, trigger, material, sample type, sample point, samples per trigger, analyses
+PLANS = [
+    ("SP-IN-API", "Goods receipt", "M100", "Ibuprofen API (raw material)", "RM warehouse - sampling booth", 1,
+     ["APPEAR", "ID_IR", "RM_ASSAY", "RM_LOD"]),
+    ("SP-IN-EXC", "Goods receipt", "M110", "Microcrystalline cellulose (raw material)", "RM warehouse - sampling booth", 1,
+     ["APPEAR", "ID_IR", "RM_LOD"]),
+    ("SP-IN-EXC", "Goods receipt", "M111", "Lactose monohydrate (raw material)", "RM warehouse - sampling booth", 1,
+     ["APPEAR", "ID_IR", "RM_LOD"]),
+    ("SP-IN-SALT", "Goods receipt", "M200", "Sodium chloride USP (raw material)", "RM warehouse - sampling booth", 1,
+     ["APPEAR", "ID_IR", "RM_ASSAY", "RM_LOD"]),
+    ("SP-IN-SALT", "Goods receipt", "M201", "Disodium phosphate (raw material)", "RM warehouse - sampling booth", 1,
+     ["APPEAR", "ID_IR", "RM_ASSAY", "RM_LOD"]),
+    ("SP-IPC-2002", "Process order", "P2002", "Ibuprofen 200 mg tablets (in-process)", "Line 1 - fluid-bed dryer outlet", 3, ["LOD"]),
+    ("SP-REL-2002", "Process order", "P2002", "Ibuprofen 200 mg tablets", "Line 1 - tablet press discharge", 1, RELEASE_2002),
+    ("SP-IPC-1001", "Process order", "P1001", "Phosphate buffer pH 7.4 (in-process)", "Line 2 - filling machine", 2, ["FILLVOL"]),
+    ("SP-REL-1001", "Process order", "P1001", "Phosphate buffer pH 7.4", "Line 2 - filling machine", 1, RELEASE_1001),
+]
+PLANS_BY_MAT = defaultdict(list)
+for pl in PLANS:
+    PLANS_BY_MAT[pl[2]].append(pl)
 
-def ts(d, h0=6, h1=18):
-    return datetime(d.year, d.month, d.day, rnd.randint(h0, h1 - 1), rnd.randint(0, 59))
+# --- state ----------------------------------------------------------------------------------
+pos, receipts, batches, movements, orders = [], [], {}, [], []
+samples, analyses, executions, consumption = {}, {}, [], []
+open_po = defaultdict(float)  # material -> qty on order
+due = defaultdict(list)       # date -> receipts arriving
+queue = []                    # analysis ids waiting for an analyst
+po_no, gr_no, mv_no, s_no, a_no, e_no = 4500010000, 0, 0, 0, 0, 0
+BAD_TSA = None                # the TSA lot that fails growth promotion
+gp_failures = defaultdict(int)
+waits, daily_wip = [], []
 
 
 def workday(d):
@@ -99,188 +143,298 @@ def workday(d):
     return d
 
 
+def price(mid, sid, d):
+    std = MAT[mid][3]
+    drift = rnd.gauss(0, 0.025)
+    if mid == "L01" and d >= date(2026, 8, 1):
+        drift += 0.35  # acetonitrile shortage
+    if sid == "S02":
+        drift += 0.04
+    return round(std * (1 + drift), 2 if std >= 1 else 3)
+
+
+def raise_po(mid, d, sid=None):
+    global po_no
+    name, mtype, uom, std, sups, qty, rop, shelf = MAT[mid]
+    sid = sid or (("S01" if rnd.random() < 0.65 else "S02") if mid == "M100" else rnd.choice(sups))
+    _, sname, country, _, lead, late_p = SUP[sid]
+    po_no += 1
+    q = round(qty * rnd.uniform(0.9, 1.2), 0 if uom in ("pcs", "mg", "kg") else 1)
+    promised = workday(d + timedelta(days=lead))
+    late = rnd.random() < late_p
+    arrive = workday(promised + timedelta(days=rnd.randint(2, 10)) if late else promised - timedelta(days=rnd.randint(0, 2)))
+    up = price(mid, sid, d)
+    pos.append([po_no, 10, sid, mid, mtype, d, promised, q, uom, up, std, round((up - std) * q, 2), rnd.choice(BUYERS)])
+    open_po[mid] += q
+    due[arrive].append((po_no, sid, mid, q))
+
+
+def move(batch_id, mid, kind, qty, ts, ref):
+    global mv_no
+    mv_no += 1
+    movements.append([f"MV{mv_no:06d}", batch_id, mid, kind, round(qty, 4), ts, ref])
+
+
+def log_sample(plan, trigger_ref, logged, received):
+    global s_no, a_no
+    plan_id, trigger, mid, stype, point, _, kws = plan
+    s_no += 1
+    prefix = {"Goods receipt": "RM", "Process order": "IPC" if "IPC" in plan_id else "REL"}[trigger]
+    sid = f"{prefix}-{s_no:05d}"
+    samples[sid] = dict(sample_id=sid, plan_id=plan_id, trigger=trigger, trigger_ref=trigger_ref, material_id=mid,
+                        sample_type=stype, sample_point=point, logged_ts=logged, received_ts=received,
+                        completed_ts=None, verified_ts=None, status="received", out_of_spec=None, analyses=[])
+    for kw in kws:
+        a_no += 1
+        aid = f"A{a_no:06d}"
+        t, unit, lo, hi = TESTS[kw]
+        analyses[aid] = dict(analysis_id=aid, sample_id=sid, keyword=kw, test=t, unit=unit, spec_min=lo, spec_max=hi,
+                             result=None, out_of_spec=None, status="unassigned", completed_ts=None, attempts=0)
+        samples[sid]["analyses"].append(aid)
+        queue.append(aid)
+    return sid
+
+
+def value(kw, sample):
+    t = TESTS[kw]
+    if t[2] == 1 and t[3] == 1:
+        return 1 if rnd.random() > 0.003 else 0
+    if kw == "ECOLI":
+        return 0
+    bias = 0.0
+    if kw == "RM_ASSAY" and sample["material_id"] == "M100":
+        b = batches.get(sample["trigger_ref"])
+        if b and b["supplier_id"] == "S01" and b["received"] >= date(2026, 7, 15):
+            bias = -1.6
+    centre, spread = {"ASSAY": (99.8, 1.6), "IMPTOT": (0.2, 0.09), "DISS": (91, 4), "WATER": (0.9, 0.2),
+                      "HARD": (88, 10), "AVGWT": (300, 5), "TAMC": (60, 70), "LOD": (1.2, 0.3), "PH": (7.4, 0.06),
+                      "OSMO": (295, 5), "FILLVOL": (503, 2.6), "RM_ASSAY": (99.9, 0.55), "RM_LOD": (0.2, 0.1)}[kw]
+    v = max(0.0, rnd.gauss(centre + bias, spread))
+    return round(v, 0 if kw in ("TAMC", "DISS", "HARD", "OSMO") else 2)
+
+
+def available(mid, d):
+    return sorted((b for b in batches.values() if b["material_id"] == mid and b["status"] == "Released"
+                   and b["on_hand"] > 1e-9 and b["expiry"] > d), key=lambda b: b["expiry"])
+
+
+def missing_stock(recipe, d):
+    """First material the run cannot be supplied with, or None."""
+    return next((m for m, q in recipe if sum(b["on_hand"] for b in available(m, d)) < q), None)
+
+
+def consume(recipe, d, ts, exec_id):
+    used = []
+    for mid, q in recipe:
+        for b in available(mid, d):
+            take = min(q, b["on_hand"])
+            b["on_hand"] -= take
+            q -= take
+            consumption.append([exec_id, b["batch_id"], mid, round(take, 4), MAT[mid][2]])
+            move(b["batch_id"], mid, "Consumption", -take, ts, exec_id)
+            used.append(b["batch_id"])
+            if q <= 1e-9:
+                break
+    return used
+
+
+# --- process order schedule -------------------------------------------------------------------
+o_no = 1000000
+d = START
+while d < END:
+    for mid, per_week, line, size in (("P2002", 4, "Line 1", 300000), ("P1001", 3, "Line 2", 8000)):
+        n = per_week + (2 if mid == "P2002" and date(2026, 9, 1) <= d < date(2026, 10, 1) else 0)
+        for _ in range(n):
+            day = workday(d + timedelta(days=rnd.randint(0, 4)))
+            if day < END:
+                o_no += 1
+                orders.append([o_no, mid, MAT[mid][0], line, day, size, MAT[mid][2]])
+    d += timedelta(days=7)
+orders_by_day = defaultdict(list)
+for o in orders:
+    orders_by_day[o[4]].append(o)
+
+# --- day-by-day simulation --------------------------------------------------------------------
+d = WARMUP
+while d < END:
+    # 1. procurement: raw materials on a rough cadence, lab stock by reorder point (Mondays)
+    if d.weekday() == 0:
+        for mid, m in MAT.items():
+            if m[1] == "Raw material" and rnd.random() < 0.5:
+                raise_po(mid, d)
+            elif m[1] == "Lab stock":
+                stock = sum(b["on_hand"] for b in batches.values() if b["material_id"] == mid and b["status"] == "Released")
+                if stock + open_po[mid] < m[6] * (1.6 if d >= date(2026, 9, 1) else 1.0) or (d == WARMUP):
+                    raise_po(mid, d)
+    # 2. goods receipts -> stock batches (raw materials quarantined and sampled)
+    for po, sid, mid, q in due.pop(d, []):
+        gr_no += 1
+        bid = f"{mid}-{d:%y%m%d}-{gr_no:03d}"
+        gr = f"GR{gr_no:05d}"
+        quarantined = MAT[mid][1] == "Raw material" and d >= START
+        if mid == "L07" and BAD_TSA is None and d >= date(2026, 9, 1):
+            BAD_TSA = bid
+        batches[bid] = dict(batch_id=bid, material_id=mid, supplier_id=sid, receipt_id=gr, received=d,
+                            expiry=d + timedelta(days=MAT[mid][7]), qty=q, on_hand=q,
+                            status="Quarantine" if quarantined else "Released", supplier_lot=f"{sid}-L{rnd.randint(10000, 99999)}")
+        receipts.append([gr, po, sid, mid, d, q, bid])
+        open_po[mid] -= q
+        move(bid, mid, "Goods receipt", q, at(d, 9), gr)
+        if quarantined:
+            for plan in PLANS_BY_MAT[mid]:
+                log_sample(plan, bid, at(d, 9, 30), at(d, 11))
+    if d >= START and d.weekday() < 5:
+        # 3. process orders trigger in-process and release sampling plans
+        for o in orders_by_day.get(d, []):
+            for plan in PLANS_BY_MAT[o[1]]:
+                for i in range(plan[5]):
+                    if "IPC" in plan[0]:
+                        t = at(d, 8) + timedelta(hours=(i + 1) * 3)
+                        log_sample(plan, str(o[0]), at(d, 7), t)
+                    else:
+                        log_sample(plan, str(o[0]), at(d, 7), at(workday(d + timedelta(days=1)), 8, 30))
+        # 4. lab work: FIFO queue, analysts' minutes, stock must be available
+        clock = {a: at(d, 8) for grp in ANALYSTS.values() for a in grp}
+        budget = {a: MINUTES_PER_DAY[g] for g, grp in ANALYSTS.items() for a in grp}
+        queue.sort(key=lambda aid: samples[analyses[aid]["sample_id"]]["received_ts"])
+        waiting = []
+        for aid in queue:
+            a = analyses[aid]
+            s = samples[a["sample_id"]]
+            if s["received_ts"] > at(d, 15):
+                waiting.append(aid)
+                continue
+            proto, mins, elapsed, instr, grp, recipe = PROTOCOLS[a["keyword"]]
+            who = max(ANALYSTS[grp], key=lambda x: budget[x])
+            short = missing_stock(recipe, d)
+            if short or budget[who] < mins:
+                a["blocked"] = ("Waiting for stock", short) if short else ("Waiting for analyst", None)
+                waits.append([d, aid, a["sample_id"], a["keyword"], a["blocked"][0], short or ""])
+                waiting.append(aid)
+                continue
+            start = max(clock[who], s["received_ts"])
+            e_no += 1
+            eid = f"EX{e_no:06d}"
+            used = consume(recipe, d, start, eid)
+            a["attempts"] += 1
+            status = "Completed"
+            if a["keyword"] in ("TAMC", "ECOLI") and BAD_TSA in used and rnd.random() < 0.6:
+                status = "Aborted - growth promotion failure"
+                gp_failures[BAD_TSA] += 1
+                if gp_failures[BAD_TSA] == 4:  # lab investigates and blocks the media lot in ERP
+                    batches[BAD_TSA]["status"] = "Blocked"
+                    move(BAD_TSA, "L07", "Blocked - investigation", 0, end_of_day := at(d, 17), "deviation DEV-2026-041")
+            elif instr == "HPLC" and rnd.random() < 0.03:
+                status = "Aborted - system suitability failure"
+            end = start + timedelta(minutes=elapsed)
+            executions.append([eid, aid, a["sample_id"], a["keyword"], proto, who, instr + ("-0" + str(rnd.randint(1, 2)) if instr == "HPLC" else ""),
+                               start, end, mins, status, a["attempts"]])
+            clock[who] = start + timedelta(minutes=mins)
+            budget[who] -= mins
+            if status != "Completed":
+                a["blocked"] = ("Repeat after aborted run", None)
+                waits.append([d, aid, a["sample_id"], a["keyword"], "Repeat after aborted run", ""])
+                waiting.append(aid)
+                continue
+            a["blocked"] = None
+            v = value(a["keyword"], s)
+            lo, hi = a["spec_min"], a["spec_max"]
+            a.update(result=v, out_of_spec=(lo is not None and v < lo) or (hi is not None and v > hi),
+                     status="to_be_verified", completed_ts=end, execution_id=eid)
+        queue[:] = waiting
+        # 5. QA verification of samples whose analyses are all complete
+        for s in samples.values():
+            if s["status"] != "received":
+                continue
+            done = [analyses[x] for x in s["analyses"]]
+            if all(x["completed_ts"] and x["completed_ts"] < at(d, 13) for x in done):
+                s["completed_ts"] = max(x["completed_ts"] for x in done)
+                s["verified_ts"] = max(at(d, 14, rnd.randint(0, 59)), s["completed_ts"] + timedelta(minutes=30))
+                s["status"] = "verified"
+                s["out_of_spec"] = any(x["out_of_spec"] for x in done)
+                for x in done:
+                    x["status"] = "verified"
+                if s["trigger"] == "Goods receipt":  # ERP usage decision on the quarantined lot
+                    b = batches[s["trigger_ref"]]
+                    b["status"] = "Rejected" if s["out_of_spec"] else "Released"
+                    if s["out_of_spec"]:
+                        move(b["batch_id"], b["material_id"], "Returned to supplier", -b["on_hand"], s["verified_ts"], s["sample_id"])
+                        b["on_hand"] = 0
+        # 6. end-of-day snapshot: where every open analysis is sitting
+        eod = at(d, 18)
+        wip = defaultdict(int)
+        for smp in samples.values():
+            if smp["status"] != "received" or smp["received_ts"] > eod:
+                continue
+            all_done = all(analyses[i]["completed_ts"] and analyses[i]["completed_ts"] <= eod for i in smp["analyses"])
+            for x in (analyses[i] for i in smp["analyses"]):
+                if x["completed_ts"] is None:
+                    state = (x.get("blocked") or ("Waiting for analyst", None))[0]
+                elif x["completed_ts"] > eod:
+                    state = "In test / incubation"
+                elif all_done:
+                    state = "Awaiting QA review"
+                else:
+                    state = "Done, waiting on other tests"
+                wip[state] += 1
+        for state, n in wip.items():
+            daily_wip.append([d, state, n])
+    # 7. expiry write-offs
+    for b in batches.values():
+        if b["status"] == "Released" and b["expiry"] == d and b["on_hand"] > 0:
+            move(b["batch_id"], b["material_id"], "Expired write-off", -b["on_hand"], at(d, 23), "")
+            b["on_hand"], b["status"] = 0, "Expired"
+    d += timedelta(days=1)
+
+
+# --- write CSVs -----------------------------------------------------------------------------
+def fmt(c):
+    if isinstance(c, datetime):
+        return c.strftime("%Y-%m-%d %H:%M")
+    return "" if c is None else c
+
+
 def write(name, header, rows):
     with open(os.path.join(args.out, name + ".csv"), "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(header)
-        w.writerows([[c.strftime("%Y-%m-%d %H:%M") if isinstance(c, datetime) else c for c in r] for r in rows])
-    print(f"{name:18s} {len(rows):6d} rows")
+        w.writerows([[fmt(c) for c in r] for r in rows])
+    print(f"{name:24s} {len(rows):6d} rows")
 
 
-# --- procurement: POs + receipts -------------------------------------------------
-po_lines, receipts = [], []
-lots = {m: [] for m in MAT}  # material -> list of receipt dicts (inventory)
-po_no = 4500010000
-
-
-def unit_price(mid, sid, d):
-    std = MAT[mid][5]
-    drift = rnd.gauss(0, 0.025)
-    if sid == "S01" and d >= date(2026, 8, 1):
-        drift += 0.11  # the August price increase
-    if sid == "S02":
-        drift += 0.04  # dearer but cleaner alternative source
-    return round(std * (1 + drift), 4 if std < 1 else 2)
-
-
-d = START - timedelta(days=75)  # stock built before the window so early batches have lots
-while d < END:
-    for mid, name, stype, cat, uom, std, sups, qty in MATERIALS:
-        weekly = 0.55 if stype == "Direct" else 0.12
-        if rnd.random() > weekly:
-            continue
-        sid = rnd.choice(sups) if mid != "M100" else ("S01" if rnd.random() < 0.65 else "S02")
-        po_no += 1
-        order_d = workday(d + timedelta(days=rnd.randint(0, 4)))
-        lead = {"CN": 35, "IN": 30, "US": 21}.get(SUPPLIERS[int(sid[1:]) - 1][2], 12)
-        promised = order_d + timedelta(days=lead)
-        late = rnd.random() < (0.30 if sid in ("S01", "S08") else 0.08)
-        received = workday(promised + timedelta(days=rnd.randint(2, 12) if late else rnd.randint(-3, 0)))
-        q = round(qty * rnd.uniform(0.8, 1.3), 0 if uom in ("pcs", "set", "lot") else 1)
-        price = unit_price(mid, sid, order_d)
-        po_lines.append([po_no, 10, sid, mid, stype, cat, order_d, promised, q, uom, price, std,
-                         round((price - std) * q, 2), rnd.choice(BUYERS)])
-        if received < END:
-            q_rec = q if rnd.random() > 0.07 else round(q * rnd.uniform(0.85, 0.98), 1)
-            rec = dict(receipt_id=f"GR{len(receipts) + 1:05d}", po=po_no, sid=sid, mid=mid,
-                       date=received, qty=q_rec, lot=f"{sid}-{received:%y%m}-{rnd.randint(100, 999)}")
-            receipts.append(rec)
-            lots[mid].append(rec)
-    d += timedelta(days=7)
-
-write("po_lines", ["po_number", "po_line", "supplier_id", "material_id", "spend_type", "category",
-                   "order_date", "promised_date", "quantity", "uom", "unit_price_eur",
-                   "standard_price_eur", "ppv_eur", "buyer"], po_lines)
-write("suppliers", ["supplier_id", "name", "country", "category"], SUPPLIERS)
-write("materials", ["material_id", "name", "spend_type", "category", "uom", "standard_price_eur"],
-      [m[:6] for m in MATERIALS])
-
-# --- LIMS helpers ------------------------------------------------------------------
-samples, results = [], []
-
-
-def value(kw, bias=0.0):
-    """Mostly in spec, occasionally out; bias shifts assay-type results."""
-    t = TESTS[kw]
-    if t[2] == 1 and t[3] == 1:
-        return 1 if rnd.random() > 0.004 else 0
-    if kw == "ECOLI":
-        return 0
-    lo, hi = t[2], t[3]
-    centre = {"ASSAY": 99.8, "IMPTOT": 0.2, "DISS": 91, "WATER": 0.9, "HARD": 88, "AVGWT": 300,
-              "TAMC": 60, "LOD": 1.2, "PH": 7.4, "OSMO": 295, "FILLVOL": 503,
-              "RM_ASSAY": 99.9, "RM_LOD": 0.2}[kw] + bias
-    spread = {"ASSAY": 1.6, "IMPTOT": 0.09, "DISS": 4, "WATER": 0.2, "HARD": 10, "AVGWT": 5,
-              "TAMC": 70, "LOD": 0.33, "PH": 0.06, "OSMO": 5, "FILLVOL": 2.6,
-              "RM_ASSAY": 0.55, "RM_LOD": 0.1}[kw]
-    v = max(0.0, rnd.gauss(centre, spread))
-    return round(v, 0 if kw in ("TAMC", "DISS", "HARD", "OSMO") else 2)
-
-
-def oos(kw, v):
-    _, _, lo, hi = TESTS[kw]
-    return (lo is not None and v < lo) or (hi is not None and v > hi)
-
-
-def add_sample(sid, source, ref, sku_or_mat, stype, point, sampled, kws, bias=0.0, kind="Release"):
-    received = sampled + timedelta(minutes=rnd.randint(20, 240))
-    hours = rnd.gauss(46 if kind == "Release" else 5, 14 if kind == "Release" else 2)
-    if kind == "Incoming":
-        hours = rnd.gauss(30, 10)
-    done = received + timedelta(hours=max(1.5, hours))
-    if done > datetime.combine(END, datetime.min.time()):
-        status, done_s, ver = "sample_received", "", ""
-    else:
-        status = "verified"
-        ver = done + timedelta(hours=max(0.5, rnd.gauss(6, 4)))
-        done_s = ver
-    any_oos = False
-    for kw in kws:
-        v = value(kw, bias if kw in ("ASSAY", "RM_ASSAY") else 0.0)
-        o = oos(kw, v)
-        any_oos |= o
-        if status == "verified":
-            t, unit, lo, hi = TESTS[kw]
-            results.append([sid, kw, t, v, unit, lo, hi, o, done - timedelta(minutes=rnd.randint(0, 600))])
-    samples.append([sid, kind, source, ref, sku_or_mat, stype, point, sampled, received, done_s, status,
-                    any_oos if status == "verified" else ""])
-
-
-s_no = 0
-for r in receipts:
-    if r["mid"] in RM_TESTED:
-        s_no += 1
-        bias = -1.0 if r["sid"] == "S01" and r["date"] >= date(2026, 7, 15) else 0.0
-        kws = ["APPEAR", "ID_IR", "RM_ASSAY", "RM_LOD"]
-        add_sample(f"RM-{s_no:05d}", "Procurement", r["lot"], r["mid"], MAT[r["mid"]][1] + " (raw material)",
-                   "RM warehouse - sampling booth", ts(r["date"]), kws, bias, kind="Incoming")
-        r["lims_sample"] = f"RM-{s_no:05d}"
-        r["accepted"] = not samples[-1][11] if samples[-1][11] != "" else ""
-
-write("receipts", ["receipt_id", "po_number", "supplier_id", "material_id", "received_date",
-                   "quantity", "supplier_lot", "lims_sample_id", "accepted"],
-      [[r["receipt_id"], r["po"], r["sid"], r["mid"], r["date"], r["qty"], r["lot"],
-        r.get("lims_sample", ""), r.get("accepted", "")] for r in receipts])
-
-# --- MES: batches, consumption, downtime --------------------------------------------
-batches, consumption, downtime = [], [], []
-DOWN = ["Changeover", "Tooling (punches)", "Material shortage", "Cleaning", "Electrical fault", "Awaiting QA"]
-b_seq = {k: 0 for k in SKUS}
-d = START
-while d < END:
-    for sku, s in SKUS.items():
-        for _ in range(s["per_week"]):
-            day = workday(d + timedelta(days=rnd.randint(0, 4)))
-            if day >= END:
-                continue
-            b_seq[sku] += 1
-            bid = f"{'B' if sku == 'SKU-2002' else 'PB'}{day:%y%m}-{b_seq[sku]:03d}"
-            start = ts(day, 6, 10)
-            # consume the oldest accepted lot received before the batch started
-            api_sup, used = None, []
-            for mid, per in s["bom"]:
-                ok = [l for l in lots[mid] if l["date"] <= day and l.get("accepted", True) is not False]
-                if not ok:
-                    continue
-                lot = ok[-1] if rnd.random() < 0.7 else rnd.choice(ok[-3:])
-                used.append([bid, mid, lot["lot"], lot["receipt_id"], round(per * rnd.uniform(0.98, 1.03), 2)])
-                if mid == "M100":
-                    api_sup = lot["sid"]
-            consumption += used
-            run_h = rnd.gauss(14 if sku == "SKU-2002" else 9, 1.5)
-            dt_rows = []
-            for _ in range(rnd.choice([0, 1, 1, 2, 3])):
-                reason = rnd.choice(DOWN)
-                if s["line"] == "Line 1" and date(2026, 9, 1) <= day < date(2026, 10, 1) and rnd.random() < 0.6:
-                    reason = "Tooling (punches)"
-                mins = int(rnd.expovariate(1 / (95 if reason.startswith("Tooling") else 40))) + 10
-                dt_rows.append([bid, s["line"], start + timedelta(hours=rnd.uniform(1, run_h)), mins, reason])
-            downtime += dt_rows
-            end = start + timedelta(hours=run_h, minutes=sum(r[3] for r in dt_rows))
-            yld = min(0.995, rnd.gauss(0.965, 0.015))
-            good = int(s["size"] * yld)
-            # release sample from the finished batch, IPC samples during the run
-            bias = -3.2 if api_sup == "S01" and day >= date(2026, 7, 20) else 0.0
-            ipc_point, ipc_tests, n_ipc = s["ipc"]
-            for i in range(n_ipc):
-                s_no += 1
-                add_sample(f"IPC-{s_no:05d}", "MES", bid, sku, s["sample_type"] + " (in-process)", ipc_point,
-                           start + timedelta(hours=run_h * (i + 1) / (n_ipc + 1)), ipc_tests, kind="In-process")
-            s_no += 1
-            add_sample(f"REL-{s_no:05d}", "MES", bid, sku, s["sample_type"], s["point"],
-                       end + timedelta(minutes=30), s["release"], bias, kind="Release")
-            rel = samples[-1]
-            disposition = ("Pending QA" if rel[10] != "verified" else "Rejected" if rel[11] else "Released")
-            batches.append([bid, sku, s["name"], s["line"], start, end, round(run_h, 2), s["size"], good,
-                            s["size"] - good, s["uom"], api_sup or "", disposition])
-    d += timedelta(days=7)
-
-write("mes_batches", ["batch_id", "sku", "product", "line", "start_ts", "end_ts", "planned_run_hours",
-                      "planned_qty", "good_qty", "scrap_qty", "uom", "api_supplier_id", "disposition"], batches)
-write("mes_consumption", ["batch_id", "material_id", "supplier_lot", "receipt_id", "quantity"], consumption)
-write("mes_downtime", ["batch_id", "line", "start_ts", "minutes", "reason"], downtime)
-write("lims_samples", ["sample_id", "kind", "source_system", "source_ref", "product_or_material", "sample_type",
-                       "sample_point", "date_sampled", "date_received", "date_verified", "status", "out_of_spec"],
-      samples)
-write("lims_results", ["sample_id", "keyword", "test", "result", "unit", "spec_min", "spec_max",
-                       "out_of_spec", "captured_ts"], results)
+for old in os.listdir(args.out):
+    if old.endswith(".csv"):
+        os.remove(os.path.join(args.out, old))
+write("erp_suppliers", ["supplier_id", "name", "country", "category", "lead_time_days"], [s[:5] for s in SUPPLIERS])
+write("erp_materials", ["material_id", "name", "material_type", "uom", "standard_price_eur", "reorder_point", "shelf_life_days"],
+      [[k, m[0], m[1], m[2], m[3], m[6], m[7]] for k, m in MAT.items()])
+write("erp_purchase_orders", ["po_number", "po_line", "supplier_id", "material_id", "material_type", "order_date",
+                              "promised_date", "quantity", "uom", "unit_price_eur", "standard_price_eur", "ppv_eur", "buyer"], pos)
+write("erp_goods_receipts", ["receipt_id", "po_number", "supplier_id", "material_id", "received_date", "quantity", "batch_id"], receipts)
+write("erp_stock_batches", ["batch_id", "material_id", "supplier_id", "receipt_id", "supplier_lot", "received_date",
+                            "expiry_date", "quantity_received", "quantity_on_hand", "status"],
+      [[b["batch_id"], b["material_id"], b["supplier_id"], b["receipt_id"], b["supplier_lot"], b["received"], b["expiry"],
+        b["qty"], round(b["on_hand"], 4), b["status"]] for b in batches.values()])
+write("erp_inventory_movements", ["movement_id", "batch_id", "material_id", "movement_type", "quantity", "posted_ts", "reference"], movements)
+write("erp_process_orders", ["order_id", "material_id", "product", "line", "order_date", "quantity", "uom"], orders)
+write("erp_sampling_plans", ["plan_id", "trigger", "material_id", "sample_type", "sample_point", "samples_per_trigger", "analyses"],
+      [list(pl[:6]) + [" ".join(pl[6])] for pl in PLANS])
+write("lims_specifications", ["keyword", "test", "unit", "spec_min", "spec_max"], [[k, *v] for k, v in TESTS.items()])
+write("lims_samples", ["sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
+                       "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec"],
+      [[s[k] for k in ("sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
+                       "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec")] for s in samples.values()])
+write("lims_analyses", ["analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result", "out_of_spec",
+                        "status", "completed_ts", "execution_id"],
+      [[a.get(k) for k in ("analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result",
+                           "out_of_spec", "status", "completed_ts", "execution_id")] for a in analyses.values()])
+write("mes_protocols", ["protocol_id", "keyword", "analyst_minutes", "elapsed_minutes", "instrument", "lab_area"],
+      sorted({(v[0], k, v[1], v[2], v[3], v[4]) for k, v in PROTOCOLS.items()}))
+write("mes_protocol_materials", ["keyword", "material_id", "quantity_per_run"],
+      [[k, m, q] for k, v in PROTOCOLS.items() for m, q in v[5]])
+write("mes_executions", ["execution_id", "analysis_id", "sample_id", "keyword", "protocol_id", "analyst", "instrument",
+                         "start_ts", "end_ts", "analyst_minutes", "status", "attempt"], executions)
+write("mes_consumption", ["execution_id", "batch_id", "material_id", "quantity", "uom"], consumption)
+write("lims_wait_events", ["day", "analysis_id", "sample_id", "keyword", "reason", "material_id"], waits)
+write("lims_daily_wip", ["day", "state", "open_analyses"], daily_wip)
+print("bad TSA lot:", BAD_TSA)
