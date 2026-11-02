@@ -2,13 +2,13 @@
 
 Open-source analytics for a pharmaceutical QC laboratory, joining **ERP**, **LIMS** and **MES** data in one Postgres warehouse, with [Metabase](https://www.metabase.com/) dashboards on top and a live connector for [SENAITE LIMS](https://www.senaite.com/).
 
-The data comes from a day-by-day simulation of how a QC lab actually runs:
+The data comes from a day-by-day simulation of how a QC laboratory works with its systems:
 
-- **ERP, role 1: demand.** Goods receipts and process orders fire predefined **sampling plans**.
-- **LIMS** logs a sample for each plan line, with **predefined analyses and specifications**.
-- **MES** executes each analysis as a **test protocol**. Analyst time comes from a fixed daily capacity, and every run **consumes lab stock lots** (solvents, reference standards, media, vials) from ERP.
-- **LIMS, QA review:** the result goes back to LIMS and QA verifies the sample. For an incoming lot, the **usage decision** (release or reject) is posted back to ERP.
-- **ERP, role 2: procurement and stock.** Purchase orders, receipts, stock lots, consumption postings, expiry write-offs, and reorder-point purchasing.
+- **ERP planning:** a released process order fires predefined **sampling plans**.
+- **LIMS (SENAITE):** QC logs the samples with **predefined analyses and specifications**, then pushes each analysis to MES as a **work order**.
+- **MES:** executes the **test protocol** using analyst time and an instrument. It **consumes lab stock lots** (solvents, reference standards, media, vials) from ERP inventory, oldest expiry first, and returns the result to LIMS.
+- **LIMS, QC review:** QC verifies the sample in LIMS and the batch disposition goes back to ERP.
+- **ERP procurement:** keeps lab stock topped up by reorder point (POs, goods receipts, stock lots). QC never talks to procurement; it only sees whether stock is available.
 
 Turnaround and backlog are not random numbers. They come out of a first-in-first-out queue worked by real analyst capacity, so demand spikes, stock-outs and failed runs show up as delays.
 
@@ -46,9 +46,9 @@ Lab stock consumed by each MES run, valued at ERP standard price and rolled up p
 
 The generator (`--seed 42`) plants a few events for the dashboards to surface:
 
-1. **Price rise:** acetonitrile, the HPLC solvent, rises about 35% in price from August. This shows up as purchase price variance (PPV) on lab stock.
-2. **Rejected API lots:** ibuprofen API lots from one supplier assay low from mid-July and are rejected at incoming inspection, then returned.
-3. **Bad media lot:** one TSA plate lot fails growth promotion in September. The TAMC and E. coli runs that used it are aborted and repeated. After four failures the lot is blocked in ERP, the lab runs short of plates, and release turnaround climbs.
+1. **Price rise:** acetonitrile, the HPLC solvent, rises about 35% in price from August. Procurement pays more, which shows up as purchase price variance (PPV) on lab stock.
+2. **Bad media lot:** one TSA plate lot fails growth promotion in September. The TAMC and E. coli runs that used it are aborted and repeated in MES. After four failures the lot is blocked in ERP inventory, plates run short until the next delivery, and release turnaround climbs.
+3. **Late reagent deliveries:** the Karl Fischer reagent supplier delivers late a quarter of the time, so water tests wait for stock.
 4. **Volume spike:** tablet volume is up 50% in September, so chemistry analysts become the bottleneck.
 
 ## Data model
@@ -57,7 +57,7 @@ The generator (`--seed 42`) plants a few events for the dashboards to surface:
 |---|---|
 | `erp` | `suppliers`, `materials`, `purchase_orders`, `goods_receipts`, `stock_batches`, `inventory_movements`, `process_orders`, `sampling_plans` |
 | `lims` | `specifications`, `samples`, `analyses`, `daily_wip`, `wait_events` |
-| `mes` | `protocols`, `protocol_materials`, `executions`, `consumption` |
+| `mes` | `protocols`, `protocol_materials`, `executions` (with the LIMS work-order time), `consumption` |
 | `analytics` | `po_performance`, `sample_tat`, `execution_cost`, `stock_usage` (lot → run → sample genealogy) |
 
 ## Run it

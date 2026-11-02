@@ -1,9 +1,4 @@
 material_id,name,material_type,uom,standard_price_eur,reorder_point,shelf_life_days
-M100,Ibuprofen API,Raw material,kg,18.5,,1095
-M110,Microcrystalline cellulose,Raw material,kg,4.2,,1095
-M111,Lactose monohydrate,Raw material,kg,2.9,,1095
-M200,Sodium chloride USP,Raw material,kg,1.1,,1825
-M201,Disodium phosphate,Raw material,kg,6.4,,1095
 L01,Acetonitrile HPLC grade,Lab stock,L,28.0,18,730
 L02,Ibuprofen CRS,Lab stock,mg,3.2,650,365
 L03,Ibuprofen impurity mix CRS,Lab stock,mg,9.0,45,365

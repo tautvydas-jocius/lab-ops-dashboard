@@ -13,5 +13,3 @@ LOD,Loss on drying,%,,2.0
 PH,pH,,7.2,7.6
 OSMO,Osmolality,mOsm/kg,280,310
 FILLVOL,Fill volume,mL,495,510
-RM_ASSAY,Assay (raw material),%,98.5,101.5
-RM_LOD,Loss on drying (raw material),%,,0.5

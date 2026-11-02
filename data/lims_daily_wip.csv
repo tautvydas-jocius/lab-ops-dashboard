@@ -1,39 +1,36 @@
 day,state,open_analyses
 2026-05-01,Awaiting QA review,5
 2026-05-01,Waiting for analyst,2
-2026-05-04,"Done, waiting on other tests",23
+2026-05-04,"Done, waiting on other tests",20
 2026-05-04,In test / incubation,6
-2026-05-04,Waiting for analyst,17
-2026-05-05,"Done, waiting on other tests",36
+2026-05-04,Waiting for analyst,10
+2026-05-05,"Done, waiting on other tests",42
 2026-05-05,In test / incubation,14
-2026-05-05,Waiting for analyst,8
+2026-05-05,Waiting for analyst,2
 2026-05-06,"Done, waiting on other tests",44
 2026-05-06,In test / incubation,14
 2026-05-07,"Done, waiting on other tests",24
 2026-05-07,In test / incubation,8
-2026-05-07,Awaiting QA review,4
 2026-05-08,Awaiting QA review,5
 2026-05-08,Waiting for analyst,1
 2026-05-11,"Done, waiting on other tests",20
 2026-05-11,In test / incubation,8
-2026-05-11,Awaiting QA review,6
+2026-05-11,Awaiting QA review,2
 2026-05-11,Waiting for analyst,1
 2026-05-12,"Done, waiting on other tests",28
 2026-05-12,In test / incubation,10
-2026-05-12,Awaiting QA review,8
+2026-05-12,Awaiting QA review,4
 2026-05-12,Waiting for analyst,2
-2026-05-13,"Done, waiting on other tests",47
+2026-05-13,"Done, waiting on other tests",44
 2026-05-13,In test / incubation,14
-2026-05-13,Waiting for analyst,1
 2026-05-14,"Done, waiting on other tests",24
 2026-05-14,In test / incubation,6
-2026-05-14,Awaiting QA review,3
 2026-05-15,"Done, waiting on other tests",16
 2026-05-15,In test / incubation,4
 2026-05-15,Awaiting QA review,1
 2026-05-18,"Done, waiting on other tests",4
 2026-05-18,In test / incubation,2
-2026-05-18,Awaiting QA review,11
+2026-05-18,Awaiting QA review,5
 2026-05-18,Waiting for analyst,2
 2026-05-19,"Done, waiting on other tests",24
 2026-05-19,In test / incubation,8
@@ -43,52 +40,49 @@ day,state,open_analyses
 2026-05-20,Waiting for analyst,1
 2026-05-21,"Done, waiting on other tests",40
 2026-05-21,In test / incubation,12
-2026-05-21,Awaiting QA review,4
 2026-05-22,"Done, waiting on other tests",20
 2026-05-22,In test / incubation,6
 2026-05-22,Awaiting QA review,1
 2026-05-25,"Done, waiting on other tests",4
 2026-05-25,In test / incubation,2
-2026-05-25,Awaiting QA review,14
+2026-05-25,Awaiting QA review,7
 2026-05-25,Waiting for analyst,3
-2026-05-26,"Done, waiting on other tests",24
+2026-05-26,"Done, waiting on other tests",23
 2026-05-26,In test / incubation,10
-2026-05-26,Waiting for analyst,17
-2026-05-27,"Done, waiting on other tests",45
+2026-05-26,Waiting for analyst,14
+2026-05-27,"Done, waiting on other tests",43
 2026-05-27,In test / incubation,14
-2026-05-27,Awaiting QA review,6
-2026-05-27,Waiting for analyst,3
+2026-05-27,Waiting for analyst,1
 2026-05-28,"Done, waiting on other tests",40
 2026-05-28,In test / incubation,12
 2026-05-29,"Done, waiting on other tests",12
 2026-05-29,In test / incubation,4
-2026-06-01,Awaiting QA review,18
+2026-06-01,Awaiting QA review,11
 2026-06-01,Waiting for analyst,4
 2026-06-02,"Done, waiting on other tests",26
 2026-06-02,Waiting for stock,14
 2026-06-02,Waiting for analyst,18
-2026-06-03,"Done, waiting on other tests",46
+2026-06-03,"Done, waiting on other tests",43
 2026-06-03,Waiting for stock,14
-2026-06-03,Waiting for analyst,2
+2026-06-03,Waiting for analyst,1
 2026-06-04,"Done, waiting on other tests",44
 2026-06-04,Waiting for stock,14
 2026-06-05,"Done, waiting on other tests",44
 2026-06-05,Waiting for stock,14
 2026-06-05,Awaiting QA review,6
 2026-06-05,Waiting for analyst,3
-2026-06-08,"Done, waiting on other tests",64
+2026-06-08,"Done, waiting on other tests",62
 2026-06-08,In test / incubation,8
-2026-06-08,Waiting for analyst,30
-2026-06-09,"Done, waiting on other tests",80
+2026-06-08,Waiting for analyst,24
+2026-06-08,Awaiting QA review,1
+2026-06-09,"Done, waiting on other tests",78
 2026-06-09,In test / incubation,16
-2026-06-09,Waiting for analyst,16
-2026-06-09,Awaiting QA review,6
+2026-06-09,Waiting for analyst,18
 2026-06-10,"Done, waiting on other tests",88
 2026-06-10,In test / incubation,24
 2026-06-10,Waiting for analyst,4
 2026-06-11,"Done, waiting on other tests",56
 2026-06-11,In test / incubation,20
-2026-06-11,Awaiting QA review,4
 2026-06-12,"Done, waiting on other tests",36
 2026-06-12,In test / incubation,12
 2026-06-12,Awaiting QA review,4
@@ -97,57 +91,57 @@ day,state,open_analyses
 2026-06-15,In test / incubation,6
 2026-06-15,Awaiting QA review,5
 2026-06-15,Waiting for analyst,2
-2026-06-16,"Done, waiting on other tests",36
-2026-06-16,In test / incubation,12
-2026-06-16,Waiting for analyst,3
-2026-06-17,"Done, waiting on other tests",43
-2026-06-17,In test / incubation,14
-2026-06-17,Waiting for stock,1
-2026-06-18,"Done, waiting on other tests",27
-2026-06-18,In test / incubation,8
-2026-06-18,Waiting for stock,1
-2026-06-19,"Done, waiting on other tests",7
-2026-06-19,Waiting for stock,1
-2026-06-19,In test / incubation,2
+2026-06-16,"Done, waiting on other tests",35
+2026-06-16,In test / incubation,9
+2026-06-16,Waiting for stock,4
+2026-06-16,Awaiting QA review,2
+2026-06-16,Waiting for analyst,1
+2026-06-17,"Done, waiting on other tests",42
+2026-06-17,In test / incubation,10
+2026-06-17,Waiting for stock,6
+2026-06-18,"Done, waiting on other tests",26
+2026-06-18,In test / incubation,4
+2026-06-18,Waiting for stock,6
+2026-06-19,"Done, waiting on other tests",29
+2026-06-19,Waiting for stock,6
+2026-06-19,In test / incubation,1
 2026-06-19,Awaiting QA review,1
-2026-06-22,"Done, waiting on other tests",13
-2026-06-22,Waiting for stock,1
-2026-06-22,In test / incubation,2
-2026-06-22,Awaiting QA review,17
+2026-06-22,"Done, waiting on other tests",34
+2026-06-22,In test / incubation,6
+2026-06-22,Waiting for stock,2
+2026-06-22,Awaiting QA review,5
 2026-06-22,Waiting for analyst,2
-2026-06-23,"Done, waiting on other tests",31
-2026-06-23,Waiting for stock,3
-2026-06-23,In test / incubation,8
+2026-06-23,"Done, waiting on other tests",52
+2026-06-23,In test / incubation,12
+2026-06-23,Waiting for stock,4
 2026-06-23,Awaiting QA review,6
 2026-06-23,Waiting for analyst,2
-2026-06-24,"Done, waiting on other tests",49
-2026-06-24,Waiting for stock,5
-2026-06-24,In test / incubation,14
-2026-06-24,Awaiting QA review,4
-2026-06-25,"Done, waiting on other tests",45
-2026-06-25,Waiting for stock,5
+2026-06-24,"Done, waiting on other tests",70
+2026-06-24,In test / incubation,18
+2026-06-24,Waiting for stock,6
+2026-06-25,"Done, waiting on other tests",54
+2026-06-25,Waiting for stock,6
 2026-06-25,In test / incubation,12
-2026-06-25,Awaiting QA review,3
-2026-06-26,"Done, waiting on other tests",45
-2026-06-26,Waiting for stock,5
+2026-06-26,"Done, waiting on other tests",54
+2026-06-26,Waiting for stock,6
 2026-06-26,In test / incubation,6
 2026-06-26,Awaiting QA review,5
 2026-06-26,Waiting for analyst,2
-2026-06-29,Awaiting QA review,50
-2026-06-29,"Done, waiting on other tests",13
-2026-06-29,Waiting for analyst,20
+2026-06-29,Awaiting QA review,53
+2026-06-29,"Done, waiting on other tests",23
+2026-06-29,Repeat after aborted run,1
+2026-06-29,Waiting for analyst,15
 2026-06-29,In test / incubation,6
-2026-06-30,"Done, waiting on other tests",32
+2026-06-30,Awaiting QA review,16
+2026-06-30,"Done, waiting on other tests",29
 2026-06-30,In test / incubation,14
-2026-06-30,Awaiting QA review,6
-2026-06-30,Waiting for analyst,16
-2026-07-01,"Done, waiting on other tests",50
+2026-06-30,Waiting for analyst,15
+2026-07-01,"Done, waiting on other tests",43
 2026-07-01,In test / incubation,14
-2026-07-01,Waiting for analyst,2
-2026-07-02,"Done, waiting on other tests",27
+2026-07-01,Waiting for analyst,1
+2026-07-02,"Done, waiting on other tests",24
 2026-07-02,In test / incubation,8
-2026-07-02,Repeat after aborted run,1
-2026-07-06,Awaiting QA review,29
+2026-07-06,Awaiting QA review,11
 2026-07-06,Waiting for analyst,4
 2026-07-07,"Done, waiting on other tests",26
 2026-07-07,In test / incubation,8
@@ -165,12 +159,11 @@ day,state,open_analyses
 2026-07-13,In test / incubation,2
 2026-07-13,Awaiting QA review,6
 2026-07-13,Waiting for analyst,2
-2026-07-14,"Done, waiting on other tests",30
+2026-07-14,"Done, waiting on other tests",29
 2026-07-14,In test / incubation,10
-2026-07-14,Waiting for analyst,11
+2026-07-14,Waiting for analyst,8
 2026-07-15,"Done, waiting on other tests",44
 2026-07-15,In test / incubation,14
-2026-07-15,Awaiting QA review,3
 2026-07-16,"Done, waiting on other tests",36
 2026-07-16,In test / incubation,12
 2026-07-17,"Done, waiting on other tests",12
@@ -178,262 +171,251 @@ day,state,open_analyses
 2026-07-17,Awaiting QA review,1
 2026-07-20,"Done, waiting on other tests",4
 2026-07-20,In test / incubation,2
-2026-07-20,Awaiting QA review,11
+2026-07-20,Awaiting QA review,8
 2026-07-20,Waiting for analyst,3
-2026-07-21,"Done, waiting on other tests",25
+2026-07-21,"Done, waiting on other tests",24
 2026-07-21,In test / incubation,10
-2026-07-21,Waiting for analyst,20
-2026-07-22,"Done, waiting on other tests",45
-2026-07-22,In test / incubation,14
-2026-07-22,Awaiting QA review,7
-2026-07-22,Waiting for analyst,3
+2026-07-21,Waiting for analyst,17
+2026-07-22,"Done, waiting on other tests",43
+2026-07-22,In test / incubation,13
+2026-07-22,Waiting for analyst,1
+2026-07-22,Waiting for stock,1
 2026-07-23,"Done, waiting on other tests",40
-2026-07-23,In test / incubation,12
+2026-07-23,In test / incubation,11
+2026-07-23,Waiting for stock,1
 2026-07-24,"Done, waiting on other tests",12
-2026-07-24,In test / incubation,4
+2026-07-24,In test / incubation,3
+2026-07-24,Waiting for stock,1
 2026-07-24,Awaiting QA review,3
 2026-07-24,Waiting for analyst,1
-2026-07-27,"Done, waiting on other tests",12
-2026-07-27,In test / incubation,4
-2026-07-27,Awaiting QA review,15
+2026-07-27,"Done, waiting on other tests",21
+2026-07-27,In test / incubation,5
+2026-07-27,Awaiting QA review,8
 2026-07-27,Waiting for analyst,3
-2026-07-28,"Done, waiting on other tests",32
-2026-07-28,In test / incubation,12
+2026-07-28,"Done, waiting on other tests",41
+2026-07-28,In test / incubation,13
 2026-07-28,Waiting for analyst,14
-2026-07-29,"Done, waiting on other tests",44
-2026-07-29,In test / incubation,14
+2026-07-29,"Done, waiting on other tests",53
+2026-07-29,In test / incubation,15
 2026-07-30,"Done, waiting on other tests",32
 2026-07-30,In test / incubation,10
-2026-07-30,Awaiting QA review,4
 2026-07-31,"Done, waiting on other tests",4
 2026-07-31,In test / incubation,2
-2026-08-03,Awaiting QA review,13
+2026-08-03,Awaiting QA review,9
 2026-08-03,Waiting for analyst,3
-2026-08-04,"Done, waiting on other tests",22
+2026-08-04,"Done, waiting on other tests",25
 2026-08-04,In test / incubation,8
-2026-08-04,Waiting for analyst,25
-2026-08-05,"Done, waiting on other tests",44
+2026-08-04,Waiting for stock,2
+2026-08-04,Waiting for analyst,16
+2026-08-05,"Done, waiting on other tests",41
 2026-08-05,In test / incubation,14
-2026-08-05,Awaiting QA review,7
-2026-08-05,Waiting for analyst,3
-2026-08-05,Waiting for stock,1
-2026-08-06,"Done, waiting on other tests",43
+2026-08-05,Waiting for stock,3
+2026-08-06,"Done, waiting on other tests",41
 2026-08-06,In test / incubation,14
-2026-08-06,Waiting for stock,1
-2026-08-07,"Done, waiting on other tests",15
+2026-08-06,Waiting for stock,3
+2026-08-07,"Done, waiting on other tests",33
+2026-08-07,Waiting for stock,3
 2026-08-07,In test / incubation,6
-2026-08-07,Waiting for stock,1
-2026-08-10,"Done, waiting on other tests",9
-2026-08-10,Waiting for stock,1
-2026-08-10,Awaiting QA review,10
+2026-08-10,"Done, waiting on other tests",27
+2026-08-10,Waiting for stock,3
+2026-08-10,Awaiting QA review,7
 2026-08-10,Waiting for analyst,3
-2026-08-11,"Done, waiting on other tests",35
-2026-08-11,Waiting for stock,4
+2026-08-11,"Done, waiting on other tests",51
+2026-08-11,Waiting for stock,6
 2026-08-11,In test / incubation,8
-2026-08-11,Waiting for analyst,14
-2026-08-12,"Done, waiting on other tests",49
-2026-08-12,Waiting for stock,5
+2026-08-11,Waiting for analyst,8
+2026-08-12,"Done, waiting on other tests",67
+2026-08-12,Waiting for stock,7
 2026-08-12,In test / incubation,14
-2026-08-13,"Done, waiting on other tests",49
-2026-08-13,Waiting for stock,5
+2026-08-13,"Done, waiting on other tests",67
+2026-08-13,Waiting for stock,7
 2026-08-13,In test / incubation,14
-2026-08-14,"Done, waiting on other tests",51
-2026-08-14,Waiting for stock,5
+2026-08-14,"Done, waiting on other tests",69
+2026-08-14,Waiting for stock,7
 2026-08-14,In test / incubation,6
-2026-08-17,Awaiting QA review,62
+2026-08-17,Awaiting QA review,78
 2026-08-17,Waiting for analyst,3
-2026-08-18,"Done, waiting on other tests",21
+2026-08-18,"Done, waiting on other tests",20
 2026-08-18,In test / incubation,8
-2026-08-18,Waiting for analyst,22
-2026-08-19,"Done, waiting on other tests",41
+2026-08-18,Waiting for analyst,19
+2026-08-19,"Done, waiting on other tests",43
 2026-08-19,In test / incubation,14
-2026-08-19,Awaiting QA review,7
-2026-08-19,Waiting for analyst,3
+2026-08-19,Awaiting QA review,1
+2026-08-19,Waiting for analyst,1
 2026-08-20,"Done, waiting on other tests",44
 2026-08-20,In test / incubation,14
 2026-08-21,"Done, waiting on other tests",16
 2026-08-21,In test / incubation,6
 2026-08-21,Awaiting QA review,6
 2026-08-21,Waiting for analyst,3
-2026-08-24,"Done, waiting on other tests",19
+2026-08-24,"Done, waiting on other tests",18
 2026-08-24,In test / incubation,6
-2026-08-24,Waiting for analyst,17
-2026-08-25,"Done, waiting on other tests",37
-2026-08-25,In test / incubation,13
-2026-08-25,Awaiting QA review,1
-2026-08-25,Waiting for analyst,7
-2026-08-25,Waiting for stock,1
+2026-08-24,Waiting for analyst,14
+2026-08-24,Awaiting QA review,1
+2026-08-25,"Done, waiting on other tests",40
+2026-08-25,In test / incubation,14
+2026-08-25,Waiting for analyst,4
 2026-08-26,"Done, waiting on other tests",44
-2026-08-26,In test / incubation,13
-2026-08-26,Waiting for stock,1
+2026-08-26,In test / incubation,14
 2026-08-27,"Done, waiting on other tests",20
-2026-08-27,In test / incubation,7
-2026-08-27,Waiting for stock,1
-2026-08-28,"Done, waiting on other tests",5
-2026-08-28,Waiting for stock,1
+2026-08-27,In test / incubation,8
 2026-08-28,Awaiting QA review,2
 2026-08-28,Waiting for analyst,1
-2026-08-31,"Done, waiting on other tests",13
-2026-08-31,In test / incubation,3
-2026-08-31,Awaiting QA review,12
+2026-08-31,"Done, waiting on other tests",8
+2026-08-31,In test / incubation,2
+2026-08-31,Awaiting QA review,5
 2026-08-31,Waiting for analyst,2
-2026-09-01,"Done, waiting on other tests",34
-2026-09-01,In test / incubation,9
-2026-09-01,Waiting for analyst,10
-2026-09-02,"Done, waiting on other tests",49
-2026-09-02,In test / incubation,15
+2026-09-01,"Done, waiting on other tests",28
+2026-09-01,In test / incubation,8
+2026-09-01,Waiting for analyst,7
+2026-09-02,"Done, waiting on other tests",44
+2026-09-02,In test / incubation,14
 2026-09-03,"Done, waiting on other tests",36
 2026-09-03,In test / incubation,12
 2026-09-04,"Done, waiting on other tests",16
 2026-09-04,In test / incubation,6
 2026-09-04,Awaiting QA review,5
 2026-09-04,Waiting for analyst,2
-2026-09-07,"Done, waiting on other tests",22
+2026-09-07,"Done, waiting on other tests",20
 2026-09-07,In test / incubation,6
-2026-09-07,Waiting for analyst,15
-2026-09-08,"Done, waiting on other tests",38
+2026-09-07,Waiting for analyst,10
+2026-09-08,"Done, waiting on other tests",42
 2026-09-08,In test / incubation,14
-2026-09-08,Waiting for analyst,12
-2026-09-09,"Done, waiting on other tests",58
+2026-09-08,Waiting for analyst,7
+2026-09-08,Awaiting QA review,1
+2026-09-09,"Done, waiting on other tests",57
 2026-09-09,In test / incubation,18
-2026-09-09,Waiting for analyst,6
+2026-09-09,Waiting for analyst,3
 2026-09-10,"Done, waiting on other tests",40
 2026-09-10,In test / incubation,12
-2026-09-10,Awaiting QA review,4
 2026-09-11,"Done, waiting on other tests",16
 2026-09-11,In test / incubation,4
 2026-09-11,Awaiting QA review,3
 2026-09-11,Waiting for analyst,1
-2026-09-14,"Done, waiting on other tests",11
-2026-09-14,Waiting for stock,1
+2026-09-14,"Done, waiting on other tests",12
 2026-09-14,In test / incubation,4
-2026-09-14,Awaiting QA review,13
+2026-09-14,Awaiting QA review,9
 2026-09-14,Waiting for analyst,4
 2026-09-15,"Done, waiting on other tests",35
-2026-09-15,Waiting for stock,5
 2026-09-15,In test / incubation,12
-2026-09-15,Waiting for analyst,15
-2026-09-16,"Done, waiting on other tests",53
-2026-09-16,Waiting for stock,6
+2026-09-15,Repeat after aborted run,1
+2026-09-15,Waiting for analyst,17
+2026-09-15,Waiting for stock,2
+2026-09-16,"Done, waiting on other tests",54
 2026-09-16,In test / incubation,18
-2026-09-16,Awaiting QA review,1
-2026-09-16,Waiting for analyst,1
-2026-09-17,"Done, waiting on other tests",55
-2026-09-17,Waiting for stock,6
+2026-09-16,Waiting for stock,4
+2026-09-16,Awaiting QA review,3
+2026-09-16,Waiting for analyst,2
+2026-09-17,"Done, waiting on other tests",44
+2026-09-17,Waiting for stock,4
 2026-09-17,In test / incubation,14
-2026-09-17,Repeat after aborted run,1
-2026-09-18,"Done, waiting on other tests",60
-2026-09-18,Waiting for stock,6
+2026-09-18,"Done, waiting on other tests",42
+2026-09-18,Waiting for stock,4
 2026-09-18,In test / incubation,6
-2026-09-21,"Done, waiting on other tests",54
-2026-09-21,Waiting for stock,6
-2026-09-21,Awaiting QA review,16
+2026-09-21,"Done, waiting on other tests",36
+2026-09-21,Waiting for stock,4
+2026-09-21,Awaiting QA review,9
 2026-09-21,Waiting for analyst,4
-2026-09-22,"Done, waiting on other tests",79
-2026-09-22,Waiting for stock,10
+2026-09-22,"Done, waiting on other tests",59
+2026-09-22,Waiting for stock,8
 2026-09-22,In test / incubation,8
-2026-09-22,Waiting for analyst,23
-2026-09-23,"Done, waiting on other tests",97
-2026-09-23,Waiting for stock,12
+2026-09-22,Repeat after aborted run,1
+2026-09-22,Waiting for analyst,20
+2026-09-23,"Done, waiting on other tests",81
+2026-09-23,Waiting for stock,10
 2026-09-23,In test / incubation,16
-2026-09-23,Awaiting QA review,9
-2026-09-23,Waiting for analyst,13
-2026-09-24,"Done, waiting on other tests",107
-2026-09-24,Waiting for stock,13
+2026-09-23,Awaiting QA review,4
+2026-09-23,Waiting for analyst,11
+2026-09-24,"Done, waiting on other tests",90
+2026-09-24,Waiting for stock,10
 2026-09-24,In test / incubation,18
-2026-09-25,"Done, waiting on other tests",115
-2026-09-25,Waiting for stock,13
+2026-09-25,"Done, waiting on other tests",98
+2026-09-25,Waiting for stock,10
 2026-09-25,In test / incubation,10
 2026-09-25,Awaiting QA review,6
 2026-09-25,Waiting for analyst,3
-2026-09-28,Awaiting QA review,80
-2026-09-28,"Done, waiting on other tests",35
-2026-09-28,Repeat after aborted run,3
-2026-09-28,Waiting for analyst,47
-2026-09-28,In test / incubation,4
-2026-09-29,Awaiting QA review,30
-2026-09-29,"Done, waiting on other tests",23
-2026-09-29,Repeat after aborted run,3
-2026-09-29,Waiting for analyst,57
-2026-09-29,In test / incubation,7
-2026-09-29,Waiting for stock,7
-2026-09-30,Awaiting QA review,12
-2026-09-30,"Done, waiting on other tests",30
-2026-09-30,In test / incubation,7
-2026-09-30,Waiting for analyst,47
-2026-09-30,Waiting for stock,11
-2026-10-01,"Done, waiting on other tests",27
-2026-10-01,In test / incubation,3
-2026-10-01,Waiting for stock,11
-2026-10-01,Waiting for analyst,24
-2026-10-02,"Done, waiting on other tests",38
-2026-10-02,Waiting for stock,11
-2026-10-02,Waiting for analyst,13
-2026-10-05,"Done, waiting on other tests",61
-2026-10-05,Waiting for stock,19
-2026-10-05,Waiting for analyst,15
-2026-10-06,"Done, waiting on other tests",74
-2026-10-06,Waiting for stock,23
-2026-10-06,Awaiting QA review,6
-2026-10-06,Waiting for analyst,6
-2026-10-07,"Done, waiting on other tests",80
-2026-10-07,Waiting for stock,26
-2026-10-08,"Done, waiting on other tests",80
-2026-10-08,Waiting for stock,26
-2026-10-09,"Done, waiting on other tests",80
-2026-10-09,Waiting for stock,26
-2026-10-12,"Done, waiting on other tests",80
-2026-10-12,In test / incubation,8
-2026-10-12,Waiting for analyst,20
-2026-10-12,Waiting for stock,1
-2026-10-12,Awaiting QA review,12
-2026-10-13,"Done, waiting on other tests",105
-2026-10-13,In test / incubation,16
-2026-10-13,Waiting for analyst,28
-2026-10-13,Waiting for stock,4
-2026-10-14,"Done, waiting on other tests",120
-2026-10-14,In test / incubation,24
-2026-10-14,Waiting for stock,5
-2026-10-14,Waiting for analyst,15
-2026-10-15,"Done, waiting on other tests",96
-2026-10-15,In test / incubation,24
-2026-10-15,Waiting for stock,5
-2026-10-15,Waiting for analyst,7
-2026-10-16,"Done, waiting on other tests",68
-2026-10-16,In test / incubation,23
-2026-10-16,Waiting for stock,5
-2026-10-19,"Done, waiting on other tests",45
-2026-10-19,Waiting for stock,5
-2026-10-19,Awaiting QA review,10
-2026-10-19,Waiting for analyst,2
-2026-10-20,"Done, waiting on other tests",67
-2026-10-20,Waiting for stock,7
-2026-10-20,In test / incubation,8
-2026-10-20,Awaiting QA review,8
-2026-10-20,Waiting for analyst,3
-2026-10-21,"Done, waiting on other tests",85
-2026-10-21,Waiting for stock,9
-2026-10-21,In test / incubation,14
-2026-10-22,"Done, waiting on other tests",85
-2026-10-22,Waiting for stock,9
-2026-10-22,In test / incubation,14
-2026-10-23,"Done, waiting on other tests",81
-2026-10-23,Waiting for stock,9
-2026-10-23,In test / incubation,6
+2026-09-28,Awaiting QA review,90
+2026-09-28,"Done, waiting on other tests",9
+2026-09-28,Waiting for analyst,40
+2026-09-28,In test / incubation,6
+2026-09-29,Awaiting QA review,11
+2026-09-29,"Done, waiting on other tests",21
+2026-09-29,In test / incubation,14
+2026-09-29,Waiting for analyst,47
+2026-09-30,"Done, waiting on other tests",40
+2026-09-30,In test / incubation,18
+2026-09-30,Awaiting QA review,4
+2026-09-30,Waiting for analyst,23
+2026-10-01,"Done, waiting on other tests",33
+2026-10-01,In test / incubation,12
+2026-10-01,Awaiting QA review,3
+2026-10-01,Waiting for analyst,3
+2026-10-02,"Done, waiting on other tests",12
+2026-10-02,In test / incubation,4
+2026-10-02,Awaiting QA review,6
+2026-10-02,Waiting for analyst,2
+2026-10-05,"Done, waiting on other tests",21
+2026-10-05,In test / incubation,4
+2026-10-05,Repeat after aborted run,4
+2026-10-05,Waiting for analyst,8
+2026-10-06,"Done, waiting on other tests",36
+2026-10-06,In test / incubation,4
+2026-10-06,Waiting for stock,8
+2026-10-06,Awaiting QA review,2
+2026-10-06,Waiting for analyst,1
+2026-10-07,"Done, waiting on other tests",44
+2026-10-07,In test / incubation,4
+2026-10-07,Waiting for stock,10
+2026-10-08,"Done, waiting on other tests",38
+2026-10-08,Waiting for stock,10
+2026-10-09,"Done, waiting on other tests",38
+2026-10-09,Waiting for stock,10
+2026-10-12,"Done, waiting on other tests",38
+2026-10-12,Waiting for stock,10
+2026-10-12,Awaiting QA review,8
+2026-10-12,Waiting for analyst,3
+2026-10-13,"Done, waiting on other tests",58
+2026-10-13,Waiting for stock,20
+2026-10-13,Waiting for analyst,17
+2026-10-14,"Done, waiting on other tests",81
+2026-10-14,Waiting for stock,24
+2026-10-14,Awaiting QA review,1
+2026-10-14,Waiting for analyst,1
+2026-10-15,"Done, waiting on other tests",82
+2026-10-15,Waiting for stock,24
+2026-10-16,"Done, waiting on other tests",82
+2026-10-16,Waiting for stock,24
+2026-10-19,"Done, waiting on other tests",82
+2026-10-19,In test / incubation,8
+2026-10-19,Waiting for analyst,18
+2026-10-19,Awaiting QA review,6
+2026-10-20,"Done, waiting on other tests",103
+2026-10-20,In test / incubation,16
+2026-10-20,Waiting for analyst,27
+2026-10-21,"Done, waiting on other tests",124
+2026-10-21,In test / incubation,24
+2026-10-21,Waiting for analyst,15
+2026-10-21,Waiting for stock,1
+2026-10-22,"Done, waiting on other tests",95
+2026-10-22,In test / incubation,24
+2026-10-22,Waiting for analyst,6
+2026-10-22,Waiting for stock,1
+2026-10-23,"Done, waiting on other tests",63
+2026-10-23,In test / incubation,22
+2026-10-23,Waiting for stock,1
 2026-10-23,Awaiting QA review,1
-2026-10-26,Awaiting QA review,90
-2026-10-26,Waiting for analyst,27
+2026-10-26,Awaiting QA review,18
+2026-10-26,"Done, waiting on other tests",4
 2026-10-26,In test / incubation,2
-2026-10-27,"Done, waiting on other tests",19
+2026-10-26,Waiting for analyst,3
+2026-10-27,"Done, waiting on other tests",24
 2026-10-27,In test / incubation,10
-2026-10-27,Waiting for analyst,22
-2026-10-28,"Done, waiting on other tests",37
+2026-10-27,Waiting for analyst,17
+2026-10-28,"Done, waiting on other tests",43
 2026-10-28,In test / incubation,14
-2026-10-28,Waiting for analyst,11
-2026-10-28,Awaiting QA review,3
+2026-10-28,Waiting for analyst,1
 2026-10-29,"Done, waiting on other tests",40
 2026-10-29,In test / incubation,12
-2026-10-29,Awaiting QA review,4
 2026-10-30,"Done, waiting on other tests",12
 2026-10-30,In test / incubation,4
 2026-10-30,Awaiting QA review,4

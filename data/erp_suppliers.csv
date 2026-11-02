@@ -1,9 +1,4 @@
 supplier_id,name,country,category,lead_time_days
-S01,Hubei Pharma Chem,CN,API,35
-S02,IOL Chemicals,IN,API,30
-S03,JRS Pharma,DE,Excipients,12
-S04,Meggle Excipients,DE,Excipients,12
-S05,K+S Minerals,DE,Raw materials,10
 S06,Merck Life Science,DE,Lab chemicals,8
 S10,VWR International,BE,Lab chemicals,6
 S11,Agilent Technologies,US,Lab consumables,14

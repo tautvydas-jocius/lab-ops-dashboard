@@ -38,7 +38,8 @@ CREATE TABLE mes.protocols (protocol_id text, keyword text PRIMARY KEY, analyst_
   instrument text, lab_area text);
 CREATE TABLE mes.protocol_materials (keyword text, material_id text, quantity_per_run numeric);
 CREATE TABLE mes.executions (execution_id text PRIMARY KEY, analysis_id text REFERENCES lims.analyses,
-  sample_id text, keyword text, protocol_id text, analyst text, instrument text, start_ts timestamp, end_ts timestamp,
+  sample_id text, keyword text, protocol_id text, work_order_ts timestamp, analyst text, instrument text,
+  start_ts timestamp, end_ts timestamp,
   analyst_minutes int, status text, attempt int);
 CREATE TABLE mes.consumption (execution_id text REFERENCES mes.executions, batch_id text REFERENCES erp.stock_batches,
   material_id text, quantity numeric, uom text);
@@ -58,7 +59,7 @@ LEFT JOIN erp.stock_batches b ON b.batch_id = g.batch_id;
 -- Samples with turnaround, the ERP trigger and the product/material
 CREATE VIEW analytics.sample_tat AS
 SELECT s.*, m.name AS material, m.material_type,
-       CASE WHEN s.plan_id LIKE 'SP-REL%' THEN 'Release' WHEN s.plan_id LIKE 'SP-IPC%' THEN 'In-process' ELSE 'Incoming' END AS kind,
+       CASE WHEN s.plan_id LIKE 'SP-REL%' THEN 'Release' ELSE 'In-process' END AS kind,
        EXTRACT(EPOCH FROM s.verified_ts - s.received_ts) / 3600 AS tat_hours
 FROM lims.samples s JOIN erp.materials m USING (material_id);
 

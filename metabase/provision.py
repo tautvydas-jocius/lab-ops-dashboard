@@ -67,18 +67,18 @@ DASHBOARDS = [
         ("Purchase price variance (EUR)", "scalar", "SELECT round(sum(ppv_eur)) FROM analytics.po_performance " + W.format(col="order_date"), {}, 6, 3),
         ("On-time delivery %", "scalar",
          "SELECT round(100.0 * avg(on_time::int), 1) FROM analytics.po_performance " + W.format(col="order_date") + " AND received_date IS NOT NULL", {}, 6, 3),
-        ("Raw-material lots rejected by QC", "scalar", "SELECT count(*) FROM erp.stock_batches WHERE status = 'Rejected'", {}, 6, 3),
-        ("Spend by material type and month", "bar",
-         "SELECT date_trunc('month', order_date)::date AS month, material_type, round(sum(spend_eur)) AS spend_eur "
+        ("Stock lots blocked or expired", "scalar", "SELECT count(*) FROM erp.stock_batches WHERE status IN ('Blocked', 'Expired')", {}, 6, 3),
+        ("Lab stock spend by supplier category and month", "bar",
+         "SELECT date_trunc('month', order_date)::date AS month, supplier_category, round(sum(spend_eur)) AS spend_eur "
          "FROM analytics.po_performance " + W.format(col="order_date") + " GROUP BY 1, 2 ORDER BY 1",
-         bar(["month", "material_type"], "spend_eur", stacked=True), 12, 7),
+         bar(["month", "supplier_category"], "spend_eur", stacked=True), 12, 7),
         ("Acetonitrile unit price vs standard (EUR/L)", "line",
          "SELECT order_date, unit_price_eur AS paid, standard_price_eur AS standard FROM analytics.po_performance "
          "WHERE material_id = 'L01' ORDER BY 1", bar("order_date", "paid", "standard"), 12, 7),
         ("Supplier scorecard", "table",
          "SELECT supplier, supplier_category AS category, count(*) AS po_lines, round(sum(spend_eur)) AS spend_eur, "
          "round(sum(ppv_eur)) AS ppv_eur, round(100.0 * avg(on_time::int)) AS otd_pct, "
-         "round(avg(greatest(days_late, 0)), 1) AS avg_days_late, count(*) FILTER (WHERE batch_status = 'Rejected') AS lots_rejected "
+         "round(avg(greatest(days_late, 0)), 1) AS avg_days_late "
          "FROM analytics.po_performance GROUP BY 1, 2 ORDER BY spend_eur DESC", {}, 12, 7),
         ("Lab stock batches by status", "row",
          "SELECT b.status, count(*) AS batches FROM erp.stock_batches b JOIN erp.materials m USING (material_id) "
@@ -90,9 +90,9 @@ DASHBOARDS = [
          "SELECT round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric) FROM analytics.sample_tat WHERE kind = 'Release'", {}, 6, 3),
         ("Out-of-spec results", "scalar", "SELECT count(*) FROM lims.analyses WHERE out_of_spec", {}, 6, 3),
         ("Open samples today", "scalar", "SELECT count(*) FROM lims.samples WHERE status <> 'verified'", {}, 6, 3),
-        ("Samples logged per week, by ERP trigger", "bar",
-         "SELECT date_trunc('week', logged_ts)::date AS week, kind, count(*) AS samples FROM analytics.sample_tat "
-         + W.format(col="logged_ts") + " GROUP BY 1, 2 ORDER BY 1", bar(["week", "kind"], "samples", stacked=True), 12, 7),
+        ("Samples logged per week, by ERP sampling plan", "bar",
+         "SELECT date_trunc('week', logged_ts)::date AS week, plan_id, count(*) AS samples FROM lims.samples "
+         + W.format(col="logged_ts") + " GROUP BY 1, 2 ORDER BY 1", bar(["week", "plan_id"], "samples", stacked=True), 12, 7),
         ("Median turnaround by month (h)", "line",
          "SELECT date_trunc('month', received_ts)::date AS month, kind, "
          "round(percentile_cont(0.5) WITHIN GROUP (ORDER BY tat_hours)::numeric) AS median_tat_h FROM analytics.sample_tat "
@@ -100,16 +100,17 @@ DASHBOARDS = [
         ("Out-of-spec rate by test (%)", "row",
          "SELECT test, round(100.0 * avg(out_of_spec::int), 2) AS oos_pct FROM lims.analyses WHERE result IS NOT NULL "
          "GROUP BY 1 HAVING sum(out_of_spec::int) > 0 ORDER BY 2 DESC", bar("test", "oos_pct"), 12, 7),
-        ("Incoming API assay by supplier lot", "scatter",
-         "SELECT s.received_ts, a.result AS assay_pct, sp.name AS supplier FROM lims.analyses a JOIN lims.samples s USING (sample_id) "
-         "JOIN erp.stock_batches b ON b.batch_id = s.trigger_ref JOIN erp.suppliers sp ON sp.supplier_id = b.supplier_id "
-         "WHERE a.keyword = 'RM_ASSAY' AND s.material_id = 'M100' ORDER BY 1",
-         bar(["received_ts", "supplier"], "assay_pct"), 12, 7),
+        ("Release assay results, tablets (%)", "scatter",
+         "SELECT s.received_ts, a.result AS assay_pct FROM lims.analyses a JOIN lims.samples s USING (sample_id) "
+         "WHERE a.keyword = 'ASSAY' AND s.plan_id = 'SP-REL-2002' AND a.result IS NOT NULL ORDER BY 1",
+         bar("received_ts", "assay_pct"), 12, 7),
     ]),
     ("3 · MES — test execution", [
         ("Test runs", "scalar", "SELECT count(*) FROM mes.executions", {}, 6, 3),
         ("Aborted runs", "scalar", "SELECT count(*) FROM mes.executions WHERE status <> 'Completed'", {}, 6, 3),
-        ("Analyst hours", "scalar", "SELECT round(sum(analyst_minutes) / 60.0) FROM mes.executions", {}, 6, 3),
+        ("Median LIMS work order → run start (h)", "scalar",
+         "SELECT round(percentile_cont(0.5) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM start_ts - work_order_ts) / 3600)::numeric, 1) "
+         "FROM mes.executions WHERE attempt = 1", {}, 6, 3),
         ("Lab stock consumed (EUR)", "scalar", "SELECT round(sum(material_cost_eur)) FROM analytics.execution_cost", {}, 6, 3),
         ("Analyst hours per week by lab area", "bar",
          "SELECT date_trunc('week', e.start_ts)::date AS week, p.lab_area, round(sum(e.analyst_minutes) / 60.0) AS hours "
