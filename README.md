@@ -1,16 +1,15 @@
 # Lab Ops Analytics
 
-Open-source analytics for a pharmaceutical QC laboratory, joining **ERP**, **LIMS** and **MES** data in one Postgres warehouse, with [Metabase](https://www.metabase.com/) dashboards on top and a live connector for [SENAITE LIMS](https://www.senaite.com/).
+Open-source analytics for a pharmaceutical **QC laboratory**: how many samples get through, how long each one takes to test and confirm, and how each analyst and reviewer is doing. It joins ERP, LIMS ([SENAITE](https://www.senaite.com/)) and MES data in Postgres, with [Metabase](https://www.metabase.com/) dashboards on top.
 
-The data comes from a day-by-day simulation of how a QC laboratory works with its systems:
+The data comes from a day-by-day simulation of the lab:
 
 - **ERP planning:** a released process order fires predefined **sampling plans**.
 - **LIMS (SENAITE):** QC logs the samples with **predefined analyses and specifications**, then pushes each analysis to MES as a **work order**.
-- **MES:** executes the **test protocol** using analyst time and an instrument. It **consumes lab stock lots** (solvents, reference standards, media, vials) from ERP inventory, oldest expiry first, and returns the result to LIMS.
-- **LIMS, QC review:** QC verifies the sample in LIMS and the batch disposition goes back to ERP.
-- **ERP procurement:** keeps lab stock topped up by reorder point (POs, goods receipts, stock lots). QC never talks to procurement; it only sees whether stock is available.
+- **MES:** an analyst executes the **test protocol**. Each person has a pace against the protocol standard, an error rate, absences and a daily capacity. The run consumes lab stock lots from ERP inventory, and the result goes back to LIMS.
+- **QC review:** reviewers **confirm** samples in LIMS within their daily review time, oldest first. The batch disposition then goes to ERP.
 
-Turnaround and backlog are not random numbers. They come out of a first-in-first-out queue worked by real analyst capacity, so demand spikes, stock-outs and failed runs show up as delays.
+Throughput, cycle time and time-to-confirm are not random numbers. They come out of queues worked by real people with real capacity, so vacations, a new hire, stock-outs and failed runs all show up.
 
 ## Integrations
 
@@ -18,47 +17,45 @@ Turnaround and backlog are not random numbers. They come out of a first-in-first
 
 ## Dashboards
 
-### 1 · ERP: procurement & lab stock
-![ERP dashboard](docs/renders/1-erp-procurement-lab-stock.png)
+### 1 · Sample throughput
+Samples received vs confirmed per week, cycle time by month, and open work by state at the end of every working day.
+![Throughput dashboard](docs/renders/1-sample-throughput.png)
 
-### 2 · LIMS: samples & quality
-![LIMS dashboard](docs/renders/2-lims-samples-quality.png)
+### 2 · Every sample: time to test and confirm
+Each sample's time split into four stages: queued for an analyst or stock, in test (bench work, instrument runs, micro incubation), waiting for review, and review. Includes the last 25 release samples bar by bar, a histogram of time-to-confirm, and a sample log showing who tested, who confirmed and how long it took.
+![Per-sample dashboard](docs/renders/2-every-sample-time-to-test-and-confirm.png)
 
-### 3 · MES: test execution
-![MES dashboard](docs/renders/3-mes-test-execution.png)
+### 3 · Analysts
+Runs, utilisation of available bench time, speed against the protocol standard, first-time-right rate and analyst errors, all per person.
+![Analyst dashboard](docs/renders/3-analysts.png)
 
-### 4 · Where the lab stalls
-Each evening the simulation records where every open analysis is sitting:
-- waiting for an analyst
-- waiting for stock
-- repeating an aborted run
-- in test or incubation
-- done but waiting on the rest of its sample
-- awaiting QA review
+### 4 · QC reviewers: confirming samples
+Samples confirmed per reviewer, time to confirm per week, and review minutes for in-spec vs out-of-spec samples.
+![Reviewer dashboard](docs/renders/4-qc-reviewers-confirming-samples.png)
 
-![Stall dashboard](docs/renders/4-where-the-lab-stalls.png)
-
-### 5 · Cost per test (ERP × MES × LIMS)
-Lab stock consumed by each MES run, valued at ERP standard price and rolled up per test, per sampling plan and per sample.
-![Cost dashboard](docs/renders/5-cost-per-test-erp-mes-lims.png)
+### 5 · Where the lab stalls
+Analysis-days lost by cause, analyst capacity vs demand per week, stock-outs, and aborted runs by cause and analyst.
+![Stall dashboard](docs/renders/5-where-the-lab-stalls.png)
 
 ## Stories in the data
 
-The generator (`--seed 42`) plants a few events for the dashboards to surface:
+The simulation (`--seed 42`) plants these events:
 
-1. **Price rise:** acetonitrile, the HPLC solvent, rises about 35% in price from August. Procurement pays more, which shows up as purchase price variance (PPV) on lab stock.
-2. **Bad media lot:** one TSA plate lot fails growth promotion in September. The TAMC and E. coli runs that used it are aborted and repeated in MES. After four failures the lot is blocked in ERP inventory, plates run short until the next delivery, and release turnaround climbs.
-3. **Late reagent deliveries:** the Karl Fischer reagent supplier delivers late a quarter of the time, so water tests wait for stock.
-4. **Volume spike:** tablet volume is up 50% in September, so chemistry analysts become the bottleneck.
+1. **Summer vacations:** two chemists take holidays (L. Vaitkute in July, R. Petrauskas in August). Capacity drops below demand and the analyst queue builds.
+2. **New hire:** M. Stankus starts on 17 August at about 75% of standard pace with a higher error rate, then converges over ten weeks. You can see it in the speed and first-time-right charts.
+3. **Reviewer absence:** when one of the two reviewers is away in late July and August, time-to-confirm doubles from about one day to two.
+4. **Bad media lot:** a TSA plate lot fails growth promotion in September. Micro runs are aborted, the lot is blocked, plates run short and release samples wait.
+5. **Volume spike:** tablet volume is up 50% in September.
 
 ## Data model
 
 | Schema | Tables |
 |---|---|
-| `erp` | `suppliers`, `materials`, `purchase_orders`, `goods_receipts`, `stock_batches`, `inventory_movements`, `process_orders`, `sampling_plans` |
-| `lims` | `specifications`, `samples`, `analyses`, `daily_wip`, `wait_events` |
-| `mes` | `protocols`, `protocol_materials`, `executions` (with the LIMS work-order time), `consumption` |
-| `analytics` | `po_performance`, `sample_tat`, `execution_cost`, `stock_usage` (lot → run → sample genealogy) |
+| `erp` | `process_orders`, `sampling_plans`, `materials`, `stock_batches`, `inventory_movements` |
+| `lims` | `specifications`, `samples` (with review start, reviewer, review minutes, queued and in-test hours), `analyses`, `daily_wip`, `wait_events` |
+| `mes` | `protocols`, `protocol_materials`, `executions` (work-order time, analyst, standard vs actual minutes), `consumption` |
+| `qc` | `people`, `person_days` (available vs booked minutes per person per day) |
+| `analytics` | `sample_cycle` (every sample's stage breakdown), `analyst_runs` (efficiency per run) |
 
 ## Run it
 

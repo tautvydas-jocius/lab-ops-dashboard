@@ -37,8 +37,8 @@ for s in samples:
     plan = "SP-IN" if "raw material" in stype else "SP-IPC" if "in-process" in stype or sid.startswith("IPC") else "SP-REL"
     res = by_sample.get(s["uid"], [])
     s_rows.append([sid, plan, "SENAITE", s.get("getClientReference") or "", "", stype,
-                   s.get("getSamplePointTitle") or "", ts(s.get("getDateSampled")), ts(s.get("getDateReceived")), "",
-                   ts(s.get("getDateVerified")), s["review_state"], ""])
+                   s.get("getSamplePointTitle") or "", ts(s.get("getDateSampled")), ts(s.get("getDateReceived")), "", "",
+                   ts(s.get("getDateVerified")), "", "", s["review_state"], "", "", ""])
     for a in res:
         rr = a.get("ResultsRange") or {}
         try:
@@ -51,11 +51,12 @@ for s in samples:
         r_rows.append([a["uid"], sid, a["getKeyword"], a.get("title"), a.get("Unit") or "", lo, hi, v, o,
                        a["review_state"], ts(a.get("ResultCaptureDate")), ""])
     flags = [r[8] for r in r_rows if r[1] == sid]
-    s_rows[-1][12] = any(flags) if flags and s["review_state"] == "verified" else ""
+    s_rows[-1][15] = any(flags) if flags and s["review_state"] == "verified" else ""
 
 for name, header, rows in [
     ("lims_samples", ["sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
-                      "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec"], s_rows),
+                      "logged_ts", "received_ts", "results_complete_ts", "review_start_ts", "verified_ts", "reviewer",
+                      "review_minutes", "status", "out_of_spec", "queued_hours", "in_test_hours"], s_rows),
     ("lims_analyses", ["analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result",
                        "out_of_spec", "status", "completed_ts", "execution_id"], r_rows)]:
     with open(os.path.join(OUT, name + ".csv"), "w", newline="") as f:

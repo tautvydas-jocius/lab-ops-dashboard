@@ -527,12 +527,12 @@
         <div class="pulse-dot"></div>
         <h1>ERP · LIMS · MES integrations</h1>
       </div>
-      <p class="subtitle">QC works in SENAITE, MES executes the analysis, procurement only refills stock</p>
+      <p class="subtitle">QC logs and confirms in SENAITE; MES executes each analysis and consumes stock</p>
     </div>
 
     <!-- Main Diagram -->
     <div class="diagram-container">
-      <svg viewBox="0 0 860 980" role="img" aria-label="ERP · LIMS · MES integrations — QC works in SENAITE, MES executes the analysis, procurement only refills stock (sequence diagram)">
+      <svg viewBox="0 0 760 900" role="img" aria-label="ERP · LIMS · MES integrations — QC logs and confirms in SENAITE; MES executes each analysis and consumes stock (sequence diagram)">
         <!-- Definitions -->
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -556,28 +556,21 @@
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Time Segments -->
-        <rect x="48" y="170" width="764" height="95" rx="10" class="c-lane" stroke-width="1"/>
+        <rect x="48" y="170" width="664" height="95" rx="10" class="c-lane" stroke-width="1"/>
         <text x="62" y="188" class="t-dim" font-size="9" font-weight="600">01 / Sample login</text>
 
-        <rect x="48" y="285" width="764" height="280" rx="10" class="c-lane" stroke-width="1"/>
+        <rect x="48" y="285" width="664" height="280" rx="10" class="c-lane" stroke-width="1"/>
         <text x="62" y="303" class="t-dim" font-size="9" font-weight="600">02 / Analysis execution</text>
 
-        <rect x="48" y="585" width="764" height="85" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="62" y="603" class="t-dim" font-size="9" font-weight="600">03 / QC review</text>
-
-        <rect x="48" y="690" width="764" height="110" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="62" y="708" class="t-dim" font-size="9" font-weight="600">04 / Replenishment (no QC)</text>
-
-        <rect x="48" y="820" width="764" height="70" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="62" y="838" class="t-dim" font-size="9" font-weight="600">05 / Analytics</text>
+        <rect x="48" y="585" width="664" height="205" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="62" y="603" class="t-dim" font-size="9" font-weight="600">03 / Review + confirm</text>
 
         <!-- Lifelines -->
-        <path d="M 62 142 L 62 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 170 142 L 170 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 278 142 L 278 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 386 142 L 386 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 494 142 L 494 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 602 142 L 602 915" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 62 142 L 62 835" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 170 142 L 170 835" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 278 142 L 278 835" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 386 142 L 386 835" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 494 142 L 494 835" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
 
         <!-- Messages -->
         <path d="M 69 225 L 163 225" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
@@ -585,50 +578,51 @@
         <text x="116" y="215" class="t-backend" font-size="9" text-anchor="middle">sampling plan</text>
         <text x="81" y="243" class="t-dim" font-size="7">process order released</text>
 
-        <path d="M 177 345 L 271 345" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <rect x="192" y="325" width="64" height="16" rx="3" class="c-mask"/>
-        <text x="224" y="335" class="t-backend" font-size="9" text-anchor="middle">work order</text>
+        <path d="M 177 345 L 379 345" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <rect x="246" y="325" width="64" height="16" rx="3" class="c-mask"/>
+        <text x="278" y="335" class="t-backend" font-size="9" text-anchor="middle">work order</text>
 
-        <path d="M 285 390 L 379 390" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <rect x="294.8" y="370" width="74.4" height="16" rx="3" class="c-mask"/>
-        <text x="332" y="380" class="t-backend" font-size="9" text-anchor="middle">reserve lots</text>
+        <path d="M 393 390 L 487 390" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <rect x="402.8" y="370" width="74.4" height="16" rx="3" class="c-mask"/>
+        <text x="440" y="380" class="t-backend" font-size="9" text-anchor="middle">reserve lots</text>
 
-        <path d="M 379 435 L 285 435" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-        <rect x="292.2" y="415" width="79.60000000000001" height="16" rx="3" class="c-mask"/>
-        <text x="332" y="425" class="t-muted" font-size="9" text-anchor="middle">released lots</text>
+        <path d="M 487 435 L 393 435" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <rect x="400.2" y="415" width="79.60000000000001" height="16" rx="3" class="c-mask"/>
+        <text x="440" y="425" class="t-muted" font-size="9" text-anchor="middle">released lots</text>
 
-        <path d="M 285 480 L 379 480" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <rect x="297.4" y="460" width="69.2" height="16" rx="3" class="c-mask"/>
-        <text x="332" y="470" class="t-messagebus" font-size="9" text-anchor="middle">consumption</text>
+        <path d="M 393 480 L 487 480" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <rect x="405.4" y="460" width="69.2" height="16" rx="3" class="c-mask"/>
+        <text x="440" y="470" class="t-messagebus" font-size="9" text-anchor="middle">consumption</text>
 
-        <path d="M 271 535 L 177 535" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <rect x="179" y="515" width="90" height="16" rx="3" class="c-mask"/>
-        <text x="224" y="525" class="t-backend" font-size="9" text-anchor="middle">result + run id</text>
+        <path d="M 379 535 L 177 535" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <rect x="233" y="515" width="90" height="16" rx="3" class="c-mask"/>
+        <text x="278" y="525" class="t-backend" font-size="9" text-anchor="middle">result + run id</text>
 
-        <path d="M 163 640 L 69 640" class="a-security" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
-        <rect x="73.6" y="620" width="84.8" height="16" rx="3" class="c-mask"/>
-        <text x="116" y="630" class="t-security" font-size="9" text-anchor="middle">QC disposition</text>
-        <text x="81" y="658" class="t-dim" font-size="7">batch released / rejected</text>
+        <path d="M 177 640 L 271 640" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <rect x="186.8" y="620" width="74.4" height="16" rx="3" class="c-mask"/>
+        <text x="224" y="630" class="t-backend" font-size="9" text-anchor="middle">review queue</text>
 
-        <path d="M 393 745 L 487 745" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <rect x="384.6" y="725" width="110.8" height="16" rx="3" class="c-mask"/>
-        <text x="440" y="735" class="t-backend" font-size="9" text-anchor="middle">below reorder point</text>
+        <path d="M 271 690 L 177 690" class="a-security" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
+        <rect x="199.8" y="670" width="48.4" height="16" rx="3" class="c-mask"/>
+        <text x="224" y="680" class="t-security" font-size="9" text-anchor="middle">confirm</text>
+        <text x="189" y="708" class="t-dim" font-size="7">verified in LIMS</text>
 
-        <path d="M 487 785 L 393 785" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-        <rect x="400.2" y="765" width="79.60000000000001" height="16" rx="3" class="c-mask"/>
-        <text x="440" y="775" class="t-muted" font-size="9" text-anchor="middle">goods receipt</text>
-
-        <path d="M 177 870 L 595 870" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <rect x="341" y="850" width="90" height="16" rx="3" class="c-mask"/>
-        <text x="386" y="860" class="t-messagebus" font-size="9" text-anchor="middle">nightly extract</text>
+        <path d="M 163 760 L 69 760" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <rect x="73.6" y="740" width="84.8" height="16" rx="3" class="c-mask"/>
+        <text x="116" y="750" class="t-backend" font-size="9" text-anchor="middle">QC disposition</text>
+        <text x="81" y="778" class="t-dim" font-size="7">batch released / rejected</text>
 
         <!-- Activations -->
         <rect x="165" y="215" width="10" height="47" rx="3" class="c-mask"/>
         <rect x="165" y="215" width="10" height="47" rx="3" class="c-database" stroke-width="1"/>
-        <rect x="273" y="335" width="10" height="210" rx="3" class="c-mask"/>
-        <rect x="273" y="335" width="10" height="210" rx="3" class="c-cloud" stroke-width="1"/>
-        <rect x="165" y="525" width="10" height="120" rx="3" class="c-mask"/>
-        <rect x="165" y="525" width="10" height="120" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="381" y="335" width="10" height="210" rx="3" class="c-mask"/>
+        <rect x="381" y="335" width="10" height="210" rx="3" class="c-cloud" stroke-width="1"/>
+        <rect x="165" y="525" width="10" height="23" rx="3" class="c-mask"/>
+        <rect x="165" y="525" width="10" height="23" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="165" y="630" width="10" height="140" rx="3" class="c-mask"/>
+        <rect x="165" y="630" width="10" height="140" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="273" y="630" width="10" height="70" rx="3" class="c-mask"/>
+        <rect x="273" y="630" width="10" height="70" rx="3" class="c-security" stroke-width="1"/>
 
         <!-- Participants -->
         <rect x="19" y="72" width="86" height="54" rx="6" class="c-mask"/>
@@ -639,38 +633,33 @@
         <rect x="127" y="72" width="86" height="54" rx="6" class="c-mask"/>
         <rect x="127" y="72" width="86" height="54" rx="6" class="c-database" stroke-width="1.5"/>
         <text x="170" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">LIMS</text>
-        <text x="170" y="111" class="t-muted" font-size="7" text-anchor="middle">SENAITE · QC</text>
+        <text x="170" y="111" class="t-muted" font-size="7" text-anchor="middle">SENAITE</text>
 
         <rect x="235" y="72" width="86" height="54" rx="6" class="c-mask"/>
-        <rect x="235" y="72" width="86" height="54" rx="6" class="c-cloud" stroke-width="1.5"/>
-        <text x="278" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MES</text>
-        <text x="278" y="111" class="t-muted" font-size="7" text-anchor="middle">test execution</text>
+        <rect x="235" y="72" width="86" height="54" rx="6" class="c-security" stroke-width="1.5"/>
+        <text x="278" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">QC reviewer</text>
+        <text x="278" y="111" class="t-muted" font-size="7" text-anchor="middle">confirms results</text>
 
         <rect x="343" y="72" width="86" height="54" rx="6" class="c-mask"/>
-        <rect x="343" y="72" width="86" height="54" rx="6" class="c-backend" stroke-width="1.5"/>
-        <text x="386" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ERP inventory</text>
-        <text x="386" y="111" class="t-muted" font-size="7" text-anchor="middle">stock lots</text>
+        <rect x="343" y="72" width="86" height="54" rx="6" class="c-cloud" stroke-width="1.5"/>
+        <text x="386" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MES</text>
+        <text x="386" y="111" class="t-muted" font-size="7" text-anchor="middle">analyst runs test</text>
 
         <rect x="451" y="72" width="86" height="54" rx="6" class="c-mask"/>
-        <rect x="451" y="72" width="86" height="54" rx="6" class="c-external" stroke-width="1.5"/>
-        <text x="494" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Procurement</text>
-        <text x="494" y="111" class="t-muted" font-size="7" text-anchor="middle">POs + suppliers</text>
-
-        <rect x="559" y="72" width="86" height="54" rx="6" class="c-mask"/>
-        <rect x="559" y="72" width="86" height="54" rx="6" class="c-messagebus" stroke-width="1.5"/>
-        <text x="602" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Warehouse</text>
-        <text x="602" y="111" class="t-muted" font-size="7" text-anchor="middle">Postgres</text>
+        <rect x="451" y="72" width="86" height="54" rx="6" class="c-backend" stroke-width="1.5"/>
+        <text x="494" y="94" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ERP inventory</text>
+        <text x="494" y="111" class="t-muted" font-size="7" text-anchor="middle">lab stock lots</text>
 
         <!-- Legend -->
-        <text x="150" y="906" class="t-primary" font-size="10" font-weight="600">Legend</text>
-        <path d="M 150 926 L 184 926" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <text x="193" y="929" class="t-muted" font-size="8">request</text>
-        <path d="M 270 926 L 304 926" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-        <text x="313" y="929" class="t-muted" font-size="8">return</text>
-        <path d="M 385 926 L 419 926" class="a-security" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
-        <text x="428" y="929" class="t-muted" font-size="8">security</text>
-        <path d="M 530 926 L 564 926" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <text x="573" y="929" class="t-muted" font-size="8">async trace</text>
+        <text x="150" y="826" class="t-primary" font-size="10" font-weight="600">Legend</text>
+        <path d="M 150 846 L 184 846" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <text x="193" y="849" class="t-muted" font-size="8">request</text>
+        <path d="M 270 846 L 304 846" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <text x="313" y="849" class="t-muted" font-size="8">return</text>
+        <path d="M 385 846 L 419 846" class="a-security" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
+        <text x="428" y="849" class="t-muted" font-size="8">security</text>
+        <path d="M 530 846 L 564 846" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <text x="573" y="849" class="t-muted" font-size="8">async trace</text>
       </svg>
     </div>
 

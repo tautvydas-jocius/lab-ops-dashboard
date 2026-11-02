@@ -3,11 +3,11 @@
   "diagram_type": "sequence",
   "meta": {
     "title": "ERP \u00b7 LIMS \u00b7 MES integrations",
-    "subtitle": "QC works in SENAITE, MES executes the analysis, procurement only refills stock",
+    "subtitle": "QC logs and confirms in SENAITE; MES executes each analysis and consumes stock",
     "output": "integrations.html",
     "viewBox": [
-      860,
-      980
+      760,
+      900
     ]
   },
   "participants": [
@@ -21,31 +21,25 @@
       "id": "lims",
       "type": "database",
       "label": "LIMS",
-      "sublabel": "SENAITE \u00b7 QC"
+      "sublabel": "SENAITE"
+    },
+    {
+      "id": "rev",
+      "type": "security",
+      "label": "QC reviewer",
+      "sublabel": "confirms results"
     },
     {
       "id": "mes",
       "type": "cloud",
       "label": "MES",
-      "sublabel": "test execution"
+      "sublabel": "analyst runs test"
     },
     {
       "id": "inv",
       "type": "backend",
       "label": "ERP inventory",
-      "sublabel": "stock lots"
-    },
-    {
-      "id": "proc",
-      "type": "external",
-      "label": "Procurement",
-      "sublabel": "POs + suppliers"
-    },
-    {
-      "id": "dwh",
-      "type": "messagebus",
-      "label": "Warehouse",
-      "sublabel": "Postgres"
+      "sublabel": "lab stock lots"
     }
   ],
   "segments": [
@@ -61,18 +55,8 @@
     },
     {
       "from": 585,
-      "to": 670,
-      "label": "03 / QC review"
-    },
-    {
-      "from": 690,
-      "to": 800,
-      "label": "04 / Replenishment (no QC)"
-    },
-    {
-      "from": 820,
-      "to": 890,
-      "label": "05 / Analytics"
+      "to": 790,
+      "label": "03 / Review + confirm"
     }
   ],
   "messages": [
@@ -120,31 +104,25 @@
     },
     {
       "from": "lims",
-      "to": "plan",
+      "to": "rev",
       "y": 640,
-      "label": "QC disposition",
+      "label": "review queue"
+    },
+    {
+      "from": "rev",
+      "to": "lims",
+      "y": 690,
+      "label": "confirm",
       "variant": "security",
-      "note": "batch released / rejected"
-    },
-    {
-      "from": "inv",
-      "to": "proc",
-      "y": 745,
-      "label": "below reorder point"
-    },
-    {
-      "from": "proc",
-      "to": "inv",
-      "y": 785,
-      "label": "goods receipt",
-      "variant": "return"
+      "note": "verified in LIMS"
     },
     {
       "from": "lims",
-      "to": "dwh",
-      "y": 870,
-      "label": "nightly extract",
-      "variant": "dashed"
+      "to": "plan",
+      "y": 760,
+      "label": "QC disposition",
+      "variant": "emphasis",
+      "note": "batch released / rejected"
     }
   ],
   "activations": [
@@ -163,8 +141,20 @@
     {
       "participant": "lims",
       "from": 525,
-      "to": 645,
+      "to": 548,
       "type": "database"
+    },
+    {
+      "participant": "lims",
+      "from": 630,
+      "to": 770,
+      "type": "database"
+    },
+    {
+      "participant": "rev",
+      "from": 630,
+      "to": 700,
+      "type": "security"
     }
   ],
   "cards": []

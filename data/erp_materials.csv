@@ -1,13 +1,13 @@
-material_id,name,material_type,uom,standard_price_eur,reorder_point,shelf_life_days
-L01,Acetonitrile HPLC grade,Lab stock,L,28.0,18,730
-L02,Ibuprofen CRS,Lab stock,mg,3.2,650,365
-L03,Ibuprofen impurity mix CRS,Lab stock,mg,9.0,45,365
-L04,HPLC vials 2 mL,Lab stock,pcs,0.35,900,1825
-L05,Karl Fischer reagent,Lab stock,L,95.0,1.2,365
-L06,pH buffer set,Lab stock,L,40.0,0.8,365
-L07,TSA plates,Lab stock,pcs,1.1,160,90
-L08,MacConkey broth,Lab stock,L,60.0,1.2,180
-L09,Potassium phosphate (reagent),Lab stock,kg,45.0,1.0,1095
-L10,Osmolality standard,Lab stock,pcs,6.0,20,365
-P2002,Ibuprofen 200 mg tablets,Product,tablets,,,
-P1001,"Phosphate buffer pH 7.4, 500 mL",Product,bottles,,,
+material_id,name,material_type,uom,shelf_life_days
+L01,Acetonitrile HPLC grade,Lab stock,L,730
+L02,Ibuprofen CRS,Lab stock,mg,365
+L03,Ibuprofen impurity mix CRS,Lab stock,mg,365
+L04,HPLC vials 2 mL,Lab stock,pcs,1825
+L05,Karl Fischer reagent,Lab stock,L,365
+L06,pH buffer set,Lab stock,L,365
+L07,TSA plates,Lab stock,pcs,90
+L08,MacConkey broth,Lab stock,L,180
+L09,Potassium phosphate (reagent),Lab stock,kg,1095
+L10,Osmolality standard,Lab stock,pcs,365
+P2002,Ibuprofen 200 mg tablets,Product,tablets,
+P1001,"Phosphate buffer pH 7.4, 500 mL",Product,bottles,

@@ -90,8 +90,34 @@ PROTOCOLS = {
     "TAMC": ("TP-060", 30, 4320, "Incubator 30-35 C", "micro", [("L07", 4)]),
     "ECOLI": ("TP-061", 30, 4320, "Incubator 30-35 C", "micro", [("L08", 0.1), ("L07", 2)]),
 }
-ANALYSTS = {"chem": ["R. Petrauskas", "L. Vaitkute", "M. Stankus"], "micro": ["E. Grigas"]}
-MINUTES_PER_DAY = {"chem": 330, "micro": 240}  # productive bench minutes per analyst
+# QC people. speed = actual / standard bench minutes; error = chance a run is aborted by analyst error.
+# Absences and the August new hire are what make throughput move.
+PEOPLE = {
+    "R. Petrauskas": dict(role="Analyst", area="chem", speed=0.90, error=0.008, start=None, off=[(date(2026, 8, 3), date(2026, 8, 14))]),
+    "L. Vaitkute": dict(role="Analyst", area="chem", speed=1.00, error=0.012, start=None, off=[(date(2026, 7, 13), date(2026, 7, 31))]),
+    "M. Stankus": dict(role="Analyst", area="chem", speed=1.35, error=0.05, start=date(2026, 8, 17), off=[]),
+    "E. Grigas": dict(role="Analyst", area="micro", speed=1.00, error=0.0, start=None, off=[(date(2026, 6, 29), date(2026, 7, 3))]),
+    "K. Mockus": dict(role="Reviewer", start=None, off=[(date(2026, 7, 20), date(2026, 7, 31))]),
+    "D. Zukaite": dict(role="Reviewer", start=None, off=[(date(2026, 8, 10), date(2026, 8, 21))]),
+}
+ANALYSTS = {"chem": [n for n, p in PEOPLE.items() if p.get("area") == "chem"],
+            "micro": [n for n, p in PEOPLE.items() if p.get("area") == "micro"]}
+REVIEWERS = [n for n, p in PEOPLE.items() if p["role"] == "Reviewer"]
+MINUTES_PER_DAY = {"chem": 400, "micro": 300, "review": 120}  # productive minutes per person per day
+
+
+def present(name, d):
+    p = PEOPLE[name]
+    return d.weekday() < 5 and (p["start"] is None or d >= p["start"]) and not any(a <= d <= b for a, b in p["off"])
+
+
+def speed(name, d):
+    """New hires start slow and converge on their long-run pace over ~10 weeks."""
+    p = PEOPLE[name]
+    if p["start"] is None:
+        return p["speed"]
+    weeks = (d - p["start"]).days / 7
+    return 1.05 + (p["speed"] - 1.05) * max(0.0, 1 - weeks / 10)
 
 RELEASE_2002 = ["APPEAR", "ID_IR", "ASSAY", "IMPTOT", "DISS", "WATER", "HARD", "AVGWT", "TAMC", "ECOLI"]
 RELEASE_1001 = ["APPEAR", "PH", "OSMO", "FILLVOL", "TAMC", "ECOLI"]
@@ -115,7 +141,8 @@ queue = []                    # analysis ids waiting for an analyst
 po_no, gr_no, mv_no, s_no, a_no, e_no = 4500010000, 0, 0, 0, 0, 0
 BAD_TSA = None                # the TSA lot that fails growth promotion
 gp_failures = defaultdict(int)
-waits, daily_wip = [], []
+waits, daily_wip, person_days, review_queue = [], [], [], []
+runs_by_sample = defaultdict(list)  # sample -> [(start, end)] of every MES run, for in-test vs queued time
 
 
 def workday(d):
@@ -162,7 +189,8 @@ def log_sample(plan, trigger_ref, logged, received):
     sid = f"{prefix}-{s_no:05d}"
     samples[sid] = dict(sample_id=sid, plan_id=plan_id, trigger=trigger, trigger_ref=trigger_ref, material_id=mid,
                         sample_type=stype, sample_point=point, logged_ts=logged, received_ts=received,
-                        completed_ts=None, verified_ts=None, status="received", out_of_spec=None, analyses=[])
+                        completed_ts=None, review_start_ts=None, verified_ts=None, reviewer=None, review_minutes=None,
+                        status="received", out_of_spec=None, analyses=[])
     for kw in kws:
         a_no += 1
         aid = f"A{a_no:06d}"
@@ -264,7 +292,8 @@ while d < END:
                         log_sample(plan, str(o[0]), at(d, 7), at(workday(d + timedelta(days=1)), 8, 30))
         # 4. lab work: FIFO queue, analysts' minutes, stock must be available
         clock = {a: at(d, 8) for grp in ANALYSTS.values() for a in grp}
-        budget = {a: MINUTES_PER_DAY[g] for g, grp in ANALYSTS.items() for a in grp}
+        budget = {a: MINUTES_PER_DAY[g] if present(a, d) else 0 for g, grp in ANALYSTS.items() for a in grp}
+        capacity = dict(budget)
         queue.sort(key=lambda aid: samples[analyses[aid]["sample_id"]]["received_ts"])
         waiting = []
         for aid in queue:
@@ -275,8 +304,9 @@ while d < END:
                 continue
             proto, mins, elapsed, instr, grp, recipe = PROTOCOLS[a["keyword"]]
             who = max(ANALYSTS[grp], key=lambda x: budget[x])
+            actual = max(3, round(mins * speed(who, d) * rnd.gauss(1, 0.08)))
             short = missing_stock(recipe, d)
-            if short or budget[who] < mins:
+            if short or budget[who] < actual:
                 a["blocked"] = ("Waiting for stock", short) if short else ("Waiting for analyst", None)
                 waits.append([d, aid, a["sample_id"], a["keyword"], a["blocked"][0], short or ""])
                 waiting.append(aid)
@@ -293,13 +323,16 @@ while d < END:
                 if gp_failures[BAD_TSA] == 4:  # lab investigates and blocks the media lot in ERP
                     batches[BAD_TSA]["status"] = "Blocked"
                     move(BAD_TSA, "L07", "Blocked - investigation", 0, end_of_day := at(d, 17), "deviation DEV-2026-041")
-            elif instr == "HPLC" and rnd.random() < 0.03:
+            elif instr == "HPLC" and rnd.random() < 0.02:
                 status = "Aborted - system suitability failure"
+            elif rnd.random() < PEOPLE[who]["error"] * (1 + 2 * max(0.0, speed(who, d) - 1.05) / 0.3):
+                status = "Aborted - analyst error"
             end = start + timedelta(minutes=elapsed)
             executions.append([eid, aid, a["sample_id"], a["keyword"], proto, s["received_ts"], who, instr + ("-0" + str(rnd.randint(1, 2)) if instr == "HPLC" else ""),
-                               start, end, mins, status, a["attempts"]])
-            clock[who] = start + timedelta(minutes=mins)
-            budget[who] -= mins
+                               start, end, mins, actual, status, a["attempts"]])
+            runs_by_sample[a["sample_id"]].append((start, end))
+            clock[who] = start + timedelta(minutes=actual)
+            budget[who] -= actual
             if status != "Completed":
                 a["blocked"] = ("Repeat after aborted run", None)
                 waits.append([d, aid, a["sample_id"], a["keyword"], "Repeat after aborted run", ""])
@@ -311,18 +344,48 @@ while d < END:
             a.update(result=v, out_of_spec=(lo is not None and v < lo) or (hi is not None and v > hi),
                      status="to_be_verified", completed_ts=end, execution_id=eid)
         queue[:] = waiting
-        # 5. QA verification of samples whose analyses are all complete
-        for s in samples.values():
-            if s["status"] != "received":
+        # 5. results complete -> QC review queue in LIMS; reviewers verify FIFO within their daily minutes
+        for smp in samples.values():
+            if smp["status"] == "received" and smp["completed_ts"] is None:
+                done = [analyses[x] for x in smp["analyses"]]
+                if all(x["completed_ts"] and x["completed_ts"] <= at(d, 16) for x in done):
+                    smp["completed_ts"] = max(x["completed_ts"] for x in done)
+                    busy, cur = timedelta(0), None  # union of run intervals = time something was on test
+                    for st, en in sorted(runs_by_sample[smp["sample_id"]]):
+                        if cur and st <= cur[1]:
+                            cur = (cur[0], max(cur[1], en))
+                        else:
+                            busy += (cur[1] - cur[0]) if cur else timedelta(0)
+                            cur = (st, en)
+                    busy += (cur[1] - cur[0]) if cur else timedelta(0)
+                    smp["in_test_hours"] = round(busy.total_seconds() / 3600, 2)
+                    smp["queued_hours"] = round((smp["completed_ts"] - smp["received_ts"] - busy).total_seconds() / 3600, 2)
+                    smp["out_of_spec"] = any(x["out_of_spec"] for x in done)
+                    review_queue.append(smp["sample_id"])
+        rclock = {r: at(d, 13) for r in REVIEWERS}  # review block after lunch
+        rbudget = {r: MINUTES_PER_DAY["review"] if present(r, d) else 0 for r in REVIEWERS}
+        for r in REVIEWERS:
+            capacity[r] = rbudget[r]
+        review_queue.sort(key=lambda x: samples[x]["completed_ts"])
+        left = []
+        for sid in review_queue:
+            smp = samples[sid]
+            n = len(smp["analyses"])
+            mins = max(4, round((10 + 4 * n + (30 if smp["out_of_spec"] else 0)) * rnd.gauss(1, 0.15)))
+            r = max(REVIEWERS, key=lambda x: rbudget[x])
+            if rbudget[r] < mins or smp["completed_ts"] > at(d, 12):
+                left.append(sid)
                 continue
-            done = [analyses[x] for x in s["analyses"]]
-            if all(x["completed_ts"] and x["completed_ts"] < at(d, 13) for x in done):
-                s["completed_ts"] = max(x["completed_ts"] for x in done)
-                s["verified_ts"] = max(at(d, 14, rnd.randint(0, 59)), s["completed_ts"] + timedelta(minutes=30))
-                s["status"] = "verified"
-                s["out_of_spec"] = any(x["out_of_spec"] for x in done)
-                for x in done:
-                    x["status"] = "verified"
+            start = max(rclock[r], smp["completed_ts"])
+            smp.update(review_start_ts=start, verified_ts=start + timedelta(minutes=mins), reviewer=r,
+                       review_minutes=mins, status="verified")
+            for x in smp["analyses"]:
+                analyses[x]["status"] = "verified"
+            rclock[r] = start + timedelta(minutes=mins)
+            rbudget[r] -= mins
+        review_queue[:] = left
+        for person, cap in capacity.items():
+            person_days.append([d, person, PEOPLE[person]["role"], cap, cap - (budget.get(person, rbudget.get(person)))])
         # 6. end-of-day snapshot: where every open analysis is sitting
         eod = at(d, 18)
         wip = defaultdict(int)
@@ -336,7 +399,7 @@ while d < END:
                 elif x["completed_ts"] > eod:
                     state = "In test / incubation"
                 elif all_done:
-                    state = "Awaiting QA review"
+                    state = "Awaiting QC review"
                 else:
                     state = "Done, waiting on other tests"
                 wip[state] += 1
@@ -368,25 +431,23 @@ def write(name, header, rows):
 for old in os.listdir(args.out):
     if old.endswith(".csv"):
         os.remove(os.path.join(args.out, old))
-write("erp_suppliers", ["supplier_id", "name", "country", "category", "lead_time_days"], [s[:5] for s in SUPPLIERS])
-write("erp_materials", ["material_id", "name", "material_type", "uom", "standard_price_eur", "reorder_point", "shelf_life_days"],
-      [[k, m[0], m[1], m[2], m[3], m[6], m[7]] for k, m in MAT.items()])
-write("erp_purchase_orders", ["po_number", "po_line", "supplier_id", "material_id", "material_type", "order_date",
-                              "promised_date", "quantity", "uom", "unit_price_eur", "standard_price_eur", "ppv_eur", "buyer"], pos)
-write("erp_goods_receipts", ["receipt_id", "po_number", "supplier_id", "material_id", "received_date", "quantity", "batch_id"], receipts)
-write("erp_stock_batches", ["batch_id", "material_id", "supplier_id", "receipt_id", "supplier_lot", "received_date",
-                            "expiry_date", "quantity_received", "quantity_on_hand", "status"],
-      [[b["batch_id"], b["material_id"], b["supplier_id"], b["receipt_id"], b["supplier_lot"], b["received"], b["expiry"],
-        b["qty"], round(b["on_hand"], 4), b["status"]] for b in batches.values()])
+write("erp_materials", ["material_id", "name", "material_type", "uom", "shelf_life_days"],
+      [[k, m[0], m[1], m[2], m[7]] for k, m in MAT.items()])
+write("erp_stock_batches", ["batch_id", "material_id", "received_date", "expiry_date", "quantity_received", "quantity_on_hand", "status"],
+      [[b["batch_id"], b["material_id"], b["received"], b["expiry"], b["qty"], round(b["on_hand"], 4), b["status"]]
+       for b in batches.values()])
 write("erp_inventory_movements", ["movement_id", "batch_id", "material_id", "movement_type", "quantity", "posted_ts", "reference"], movements)
 write("erp_process_orders", ["order_id", "material_id", "product", "line", "order_date", "quantity", "uom"], orders)
 write("erp_sampling_plans", ["plan_id", "trigger", "material_id", "sample_type", "sample_point", "samples_per_trigger", "analyses"],
       [list(pl[:6]) + [" ".join(pl[6])] for pl in PLANS])
 write("lims_specifications", ["keyword", "test", "unit", "spec_min", "spec_max"], [[k, *v] for k, v in TESTS.items()])
 write("lims_samples", ["sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
-                       "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec"],
+                       "logged_ts", "received_ts", "results_complete_ts", "review_start_ts", "verified_ts", "reviewer",
+                       "review_minutes", "status", "out_of_spec", "queued_hours", "in_test_hours"],
       [[s[k] for k in ("sample_id", "plan_id", "trigger", "trigger_ref", "material_id", "sample_type", "sample_point",
-                       "logged_ts", "received_ts", "completed_ts", "verified_ts", "status", "out_of_spec")] for s in samples.values()])
+                       "logged_ts", "received_ts", "completed_ts", "review_start_ts", "verified_ts", "reviewer",
+                       "review_minutes", "status", "out_of_spec")] + [s.get("queued_hours"), s.get("in_test_hours")]
+      for s in samples.values()])
 write("lims_analyses", ["analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result", "out_of_spec",
                         "status", "completed_ts", "execution_id"],
       [[a.get(k) for k in ("analysis_id", "sample_id", "keyword", "test", "unit", "spec_min", "spec_max", "result",
@@ -396,8 +457,11 @@ write("mes_protocols", ["protocol_id", "keyword", "analyst_minutes", "elapsed_mi
 write("mes_protocol_materials", ["keyword", "material_id", "quantity_per_run"],
       [[k, m, q] for k, v in PROTOCOLS.items() for m, q in v[5]])
 write("mes_executions", ["execution_id", "analysis_id", "sample_id", "keyword", "protocol_id", "work_order_ts", "analyst", "instrument",
-                         "start_ts", "end_ts", "analyst_minutes", "status", "attempt"], executions)
+                         "start_ts", "end_ts", "standard_minutes", "actual_minutes", "status", "attempt"], executions)
 write("mes_consumption", ["execution_id", "batch_id", "material_id", "quantity", "uom"], consumption)
 write("lims_wait_events", ["day", "analysis_id", "sample_id", "keyword", "reason", "material_id"], waits)
 write("lims_daily_wip", ["day", "state", "open_analyses"], daily_wip)
+write("qc_person_days", ["day", "person", "role", "available_minutes", "booked_minutes"], person_days)
+write("qc_people", ["person", "role", "lab_area", "start_date"],
+      [[n, p["role"], p.get("area", "review"), p["start"]] for n, p in PEOPLE.items()])
 print("bad TSA lot:", BAD_TSA)
