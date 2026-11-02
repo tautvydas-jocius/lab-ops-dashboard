@@ -37,6 +37,16 @@ Samples confirmed per reviewer, time to confirm per week, and review minutes for
 Analysis-days lost by cause, analyst capacity vs demand per week, stock-outs, and aborted runs by cause and analyst.
 ![Stall dashboard](docs/renders/5-where-the-lab-stalls.png)
 
+## Device integration (balances → MES)
+
+Weighing steps in the MES test protocols (average weight, loss on drying, fill volume, assay sample weights) do not use typed-in numbers. The weights come from the balances through the companion project **[Lab-ops device integration](https://github.com/tautvydas-jocius/Lab-ops-device-integration)**:
+
+1. An ESP32-S3 reads each balance over RS232 and publishes the raw lines over MQTT.
+2. A Django service parses each line with a versioned parser schema stored in Postgres.
+3. MES pulls the parsed weight through its JSON API.
+
+Device configuration (baud rate, poll command, poll interval) is edited in the database and pushed to each device over a retained MQTT topic.
+
 ## Stories in the data
 
 The simulation (`--seed 42`) plants these events:

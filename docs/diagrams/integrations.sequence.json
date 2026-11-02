@@ -6,7 +6,7 @@
     "subtitle": "QC logs and confirms in SENAITE; MES executes each analysis and consumes stock",
     "output": "integrations.html",
     "viewBox": [
-      760,
+      860,
       900
     ]
   },
@@ -40,6 +40,12 @@
       "type": "backend",
       "label": "ERP inventory",
       "sublabel": "lab stock lots"
+    },
+    {
+      "id": "bal",
+      "type": "external",
+      "label": "Balances",
+      "sublabel": "ESP32 + MQTT"
     }
   ],
   "segments": [
@@ -50,7 +56,7 @@
     },
     {
       "from": 285,
-      "to": 565,
+      "to": 575,
       "label": "02 / Analysis execution"
     },
     {
@@ -89,6 +95,13 @@
       "variant": "return"
     },
     {
+      "from": "bal",
+      "to": "mes",
+      "y": 510,
+      "label": "weights via gateway",
+      "variant": "dashed"
+    },
+    {
       "from": "mes",
       "to": "inv",
       "y": 480,
@@ -98,7 +111,7 @@
     {
       "from": "mes",
       "to": "lims",
-      "y": 535,
+      "y": 555,
       "label": "result + run id",
       "variant": "emphasis"
     },
@@ -135,13 +148,13 @@
     {
       "participant": "mes",
       "from": 335,
-      "to": 545,
+      "to": 565,
       "type": "cloud"
     },
     {
       "participant": "lims",
-      "from": 525,
-      "to": 548,
+      "from": 545,
+      "to": 568,
       "type": "database"
     },
     {
