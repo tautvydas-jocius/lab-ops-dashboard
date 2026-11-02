@@ -1,0 +1,762 @@
+sample_id,kind,source_system,source_ref,product_or_material,sample_type,sample_point,date_sampled,date_received,date_verified,status,out_of_spec
+RM-00001,Incoming,Procurement,S03-2602-338,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-02-25 16:19,2026-02-25 17:40,2026-02-27 08:00,verified,False
+RM-00002,Incoming,Procurement,S04-2603-990,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-03-03 14:02,2026-03-03 17:44,2026-03-05 19:45,verified,False
+RM-00003,Incoming,Procurement,S04-2603-324,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-03-06 16:43,2026-03-06 19:48,2026-03-08 21:48,verified,False
+RM-00004,Incoming,Procurement,S06-2603-611,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-03-05 11:25,2026-03-05 13:43,2026-03-06 22:18,verified,False
+RM-00005,Incoming,Procurement,S06-2603-698,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-03-05 17:09,2026-03-05 18:58,2026-03-07 18:23,verified,False
+RM-00006,Incoming,Procurement,S01-2604-897,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-04-06 06:54,2026-04-06 08:41,2026-04-07 06:52,verified,False
+RM-00007,Incoming,Procurement,S06-2603-316,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-03-12 12:40,2026-03-12 13:47,2026-03-14 10:04,verified,False
+RM-00008,Incoming,Procurement,S02-2604-172,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-04-08 15:06,2026-04-08 18:50,2026-04-10 09:26,verified,False
+RM-00009,Incoming,Procurement,S04-2603-319,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-03-18 15:07,2026-03-18 16:56,2026-03-20 16:36,verified,False
+RM-00010,Incoming,Procurement,S06-2603-243,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-03-19 17:09,2026-03-19 19:39,2026-03-21 00:49,verified,False
+RM-00011,Incoming,Procurement,S01-2604-902,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-04-20 08:31,2026-04-20 10:04,2026-04-22 03:30,verified,False
+RM-00012,Incoming,Procurement,S04-2603-151,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-03-26 12:43,2026-03-26 15:08,2026-03-27 14:29,verified,False
+RM-00013,Incoming,Procurement,S06-2603-833,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-03-30 08:49,2026-03-30 11:06,2026-03-31 11:25,verified,False
+RM-00014,Incoming,Procurement,S06-2603-676,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-03-30 14:13,2026-03-30 16:21,2026-04-01 23:55,verified,False
+RM-00015,Incoming,Procurement,S02-2604-209,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-04-20 07:49,2026-04-20 11:36,2026-04-22 14:37,verified,False
+RM-00016,Incoming,Procurement,S04-2604-966,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-04-06 11:34,2026-04-06 13:05,2026-04-07 18:42,verified,False
+RM-00017,Incoming,Procurement,S06-2604-142,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-04-08 12:58,2026-04-08 13:33,2026-04-10 06:12,verified,False
+RM-00018,Incoming,Procurement,S06-2604-995,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-04-03 12:28,2026-04-03 13:07,2026-04-04 05:51,verified,False
+RM-00019,Incoming,Procurement,S02-2605-775,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-05-01 17:05,2026-05-01 20:32,2026-05-03 03:31,verified,False
+RM-00020,Incoming,Procurement,S03-2604-128,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-04-13 11:35,2026-04-13 14:22,2026-04-15 21:25,verified,False
+RM-00021,Incoming,Procurement,S04-2604-846,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-04-10 13:00,2026-04-10 15:09,2026-04-12 21:39,verified,False
+RM-00022,Incoming,Procurement,S06-2604-837,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-04-10 06:25,2026-04-10 09:25,2026-04-11 21:56,verified,False
+RM-00023,Incoming,Procurement,S06-2604-804,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-04-21 16:28,2026-04-21 16:50,2026-04-23 11:03,verified,False
+RM-00024,Incoming,Procurement,S06-2604-575,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-04-20 11:56,2026-04-20 13:32,2026-04-22 17:59,verified,False
+RM-00025,Incoming,Procurement,S03-2604-383,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-04-27 11:46,2026-04-27 13:00,2026-04-28 15:41,verified,False
+RM-00026,Incoming,Procurement,S06-2604-852,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-04-27 11:50,2026-04-27 12:45,2026-04-29 06:42,verified,False
+RM-00027,Incoming,Procurement,S06-2604-795,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-04-27 14:38,2026-04-27 17:08,2026-04-29 10:07,verified,False
+RM-00028,Incoming,Procurement,S04-2605-832,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-05-08 06:23,2026-05-08 08:04,2026-05-10 15:20,verified,False
+RM-00029,Incoming,Procurement,S05-2605-651,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-05-11 15:04,2026-05-11 15:27,2026-05-13 12:50,verified,False
+RM-00030,Incoming,Procurement,S06-2605-575,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-05-07 10:05,2026-05-07 11:44,2026-05-09 23:49,verified,False
+RM-00031,Incoming,Procurement,S01-2606-117,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-06-11 17:27,2026-06-11 20:53,2026-06-13 07:04,verified,False
+RM-00032,Incoming,Procurement,S03-2605-863,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-05-18 08:31,2026-05-18 10:19,2026-05-19 04:00,verified,False
+RM-00033,Incoming,Procurement,S06-2605-814,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-05-14 12:17,2026-05-14 14:51,2026-05-16 07:35,verified,False
+RM-00034,Incoming,Procurement,S05-2606-370,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-06-01 15:43,2026-06-01 19:08,2026-06-03 23:47,verified,True
+RM-00035,Incoming,Procurement,S02-2606-356,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-06-19 14:51,2026-06-19 18:13,2026-06-20 17:59,verified,False
+RM-00036,Incoming,Procurement,S03-2606-690,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-06-01 08:14,2026-06-01 11:59,2026-06-02 20:48,verified,False
+RM-00037,Incoming,Procurement,S04-2606-193,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-06-01 09:18,2026-06-01 12:02,2026-06-02 08:11,verified,False
+RM-00038,Incoming,Procurement,S06-2605-878,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-05-29 09:34,2026-05-29 11:22,2026-05-30 08:37,verified,True
+RM-00039,Incoming,Procurement,S02-2606-239,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-06-26 14:15,2026-06-26 16:22,2026-06-28 10:50,verified,False
+RM-00040,Incoming,Procurement,S04-2606-957,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-06-08 15:06,2026-06-08 17:35,2026-06-10 23:28,verified,False
+RM-00041,Incoming,Procurement,S05-2606-814,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-06-08 17:53,2026-06-08 21:21,2026-06-10 20:04,verified,False
+RM-00042,Incoming,Procurement,S06-2606-930,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-06-08 14:22,2026-06-08 17:59,2026-06-10 11:33,verified,False
+RM-00043,Incoming,Procurement,S06-2606-567,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-06-08 11:09,2026-06-08 11:52,2026-06-08 21:21,verified,False
+RM-00044,Incoming,Procurement,S01-2607-129,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-07-03 13:06,2026-07-03 16:51,2026-07-05 04:16,verified,False
+RM-00045,Incoming,Procurement,S03-2606-180,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-06-15 15:16,2026-06-15 19:04,2026-06-18 00:28,verified,False
+RM-00046,Incoming,Procurement,S06-2606-567,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-06-16 15:27,2026-06-16 19:17,2026-06-18 00:47,verified,False
+RM-00047,Incoming,Procurement,S01-2607-234,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-07-10 06:39,2026-07-10 09:37,2026-07-11 06:26,verified,False
+RM-00048,Incoming,Procurement,S03-2606-379,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-06-19 09:40,2026-06-19 13:25,2026-06-20 23:17,verified,False
+RM-00049,Incoming,Procurement,S05-2606-368,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-06-23 10:11,2026-06-23 10:37,2026-06-25 10:30,verified,False
+RM-00050,Incoming,Procurement,S01-2607-786,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-07-20 10:34,2026-07-20 14:22,2026-07-22 01:03,verified,True
+RM-00051,Incoming,Procurement,S06-2606-905,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-06-29 09:37,2026-06-29 11:18,2026-06-30 09:36,verified,False
+RM-00052,Incoming,Procurement,S01-2607-729,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-07-27 14:19,2026-07-27 15:23,2026-07-28 23:08,verified,False
+RM-00053,Incoming,Procurement,S03-2607-536,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-07-03 11:45,2026-07-03 12:50,2026-07-04 15:02,verified,False
+RM-00054,Incoming,Procurement,S01-2608-258,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-08-03 15:06,2026-08-03 16:52,2026-08-05 05:11,verified,False
+RM-00055,Incoming,Procurement,S04-2607-926,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-07-13 09:42,2026-07-13 12:32,2026-07-14 15:14,verified,False
+RM-00056,Incoming,Procurement,S06-2607-478,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-07-09 06:11,2026-07-09 09:05,2026-07-10 20:08,verified,False
+RM-00057,Incoming,Procurement,S06-2607-777,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-07-13 11:10,2026-07-13 14:12,2026-07-14 21:53,verified,False
+RM-00058,Incoming,Procurement,S03-2607-432,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-07-20 17:00,2026-07-20 17:32,2026-07-21 21:33,verified,False
+RM-00059,Incoming,Procurement,S04-2607-180,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-07-16 16:48,2026-07-16 20:03,2026-07-18 19:11,verified,False
+RM-00060,Incoming,Procurement,S06-2607-742,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-07-20 14:57,2026-07-20 15:40,2026-07-21 22:18,verified,False
+RM-00061,Incoming,Procurement,S06-2607-417,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-07-17 11:13,2026-07-17 12:21,2026-07-19 11:39,verified,False
+RM-00062,Incoming,Procurement,S04-2607-717,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-07-27 06:23,2026-07-27 06:43,2026-07-28 12:40,verified,False
+RM-00063,Incoming,Procurement,S05-2607-284,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-07-28 07:19,2026-07-28 10:59,2026-07-30 05:00,verified,False
+RM-00064,Incoming,Procurement,S06-2607-955,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-07-23 13:16,2026-07-23 14:33,2026-07-25 04:51,verified,False
+RM-00065,Incoming,Procurement,S04-2608-936,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-08-03 06:53,2026-08-03 08:52,2026-08-04 05:53,verified,False
+RM-00066,Incoming,Procurement,S05-2608-116,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-08-07 15:57,2026-08-07 18:29,2026-08-09 05:40,verified,False
+RM-00067,Incoming,Procurement,S06-2608-446,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-08-06 08:02,2026-08-06 10:10,2026-08-08 07:32,verified,False
+RM-00068,Incoming,Procurement,S03-2608-181,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-08-12 10:33,2026-08-12 12:50,2026-08-14 01:53,verified,False
+RM-00069,Incoming,Procurement,S04-2608-143,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-08-17 07:36,2026-08-17 11:15,2026-08-19 00:32,verified,False
+RM-00070,Incoming,Procurement,S06-2608-722,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-08-17 15:38,2026-08-17 18:52,2026-08-19 04:50,verified,False
+RM-00071,Incoming,Procurement,S01-2609-562,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-09-28 11:52,2026-09-28 15:35,2026-09-30 05:44,verified,False
+RM-00072,Incoming,Procurement,S03-2608-971,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-08-21 09:28,2026-08-21 10:42,2026-08-23 05:20,verified,False
+RM-00073,Incoming,Procurement,S04-2608-605,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-08-20 12:08,2026-08-20 15:47,2026-08-21 13:49,verified,False
+RM-00074,Incoming,Procurement,S05-2608-826,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-08-19 11:52,2026-08-19 14:10,2026-08-20 11:47,verified,False
+RM-00075,Incoming,Procurement,S06-2608-195,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-08-21 14:22,2026-08-21 16:10,2026-08-23 22:16,verified,False
+RM-00076,Incoming,Procurement,S06-2608-677,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-08-24 10:41,2026-08-24 12:45,2026-08-25 04:09,verified,False
+RM-00077,Incoming,Procurement,S02-2609-426,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-09-15 10:38,2026-09-15 14:24,2026-09-16 20:03,verified,False
+RM-00078,Incoming,Procurement,S03-2608-986,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-08-28 15:06,2026-08-28 15:27,2026-08-29 12:19,verified,False
+RM-00079,Incoming,Procurement,S06-2608-192,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-08-31 10:40,2026-08-31 12:23,2026-09-01 16:23,verified,False
+RM-00080,Incoming,Procurement,S01-2609-502,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-09-29 16:20,2026-09-29 19:34,2026-10-01 09:42,verified,True
+RM-00081,Incoming,Procurement,S05-2609-686,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-09-07 09:21,2026-09-07 12:46,2026-09-08 07:00,verified,False
+RM-00082,Incoming,Procurement,S06-2609-993,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-09-07 17:16,2026-09-07 20:41,2026-09-09 09:15,verified,False
+RM-00083,Incoming,Procurement,S01-2610-838,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-10-05 11:23,2026-10-05 12:49,2026-10-06 20:04,verified,False
+RM-00084,Incoming,Procurement,S06-2609-590,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-09-11 14:19,2026-09-11 16:24,2026-09-14 01:31,verified,False
+RM-00085,Incoming,Procurement,S06-2609-348,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-09-14 17:11,2026-09-14 20:50,2026-09-16 16:39,verified,False
+RM-00086,Incoming,Procurement,S03-2609-109,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-09-21 08:39,2026-09-21 10:50,2026-09-22 13:00,verified,False
+RM-00087,Incoming,Procurement,S04-2609-579,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-09-21 14:12,2026-09-21 14:36,2026-09-22 14:04,verified,False
+RM-00088,Incoming,Procurement,S05-2609-243,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-09-18 10:29,2026-09-18 13:55,2026-09-19 13:12,verified,False
+RM-00089,Incoming,Procurement,S06-2609-111,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-09-17 09:14,2026-09-17 12:40,2026-09-19 04:42,verified,False
+RM-00090,Incoming,Procurement,S06-2609-614,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-09-22 16:06,2026-09-22 19:13,2026-09-24 07:45,verified,False
+RM-00091,Incoming,Procurement,S01-2610-875,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-10-19 10:26,2026-10-19 13:35,2026-10-21 04:18,verified,True
+RM-00092,Incoming,Procurement,S03-2609-179,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-09-23 15:12,2026-09-23 18:51,2026-09-25 10:42,verified,False
+RM-00093,Incoming,Procurement,S06-2609-170,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-09-23 09:00,2026-09-23 09:23,2026-09-24 05:13,verified,False
+RM-00094,Incoming,Procurement,S02-2610-657,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-10-19 10:16,2026-10-19 12:34,2026-10-21 20:15,verified,False
+RM-00095,Incoming,Procurement,S03-2610-729,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-10-02 08:42,2026-10-02 11:47,2026-10-04 02:53,verified,False
+RM-00096,Incoming,Procurement,S05-2610-849,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-10-05 10:53,2026-10-05 12:51,2026-10-06 16:24,verified,False
+RM-00097,Incoming,Procurement,S02-2610-584,M100,Ibuprofen API (raw material),RM warehouse - sampling booth,2026-10-29 15:30,2026-10-29 19:15,2026-10-30 21:25,verified,False
+RM-00098,Incoming,Procurement,S03-2610-526,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-10-09 10:41,2026-10-09 12:21,2026-10-11 21:03,verified,False
+RM-00099,Incoming,Procurement,S05-2610-665,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-10-12 14:44,2026-10-12 18:03,2026-10-13 22:10,verified,False
+RM-00100,Incoming,Procurement,S06-2610-609,M201,Disodium phosphate (raw material),RM warehouse - sampling booth,2026-10-12 13:54,2026-10-12 16:20,2026-10-14 05:52,verified,False
+RM-00101,Incoming,Procurement,S06-2610-367,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-10-12 09:05,2026-10-12 11:22,2026-10-14 07:50,verified,False
+RM-00102,Incoming,Procurement,S03-2610-571,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-10-19 06:52,2026-10-19 07:35,2026-10-20 20:45,verified,False
+RM-00103,Incoming,Procurement,S04-2610-959,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-10-19 13:21,2026-10-19 16:04,2026-10-20 13:49,verified,False
+RM-00104,Incoming,Procurement,S06-2610-732,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-10-14 14:33,2026-10-14 16:28,2026-10-16 02:23,verified,False
+RM-00105,Incoming,Procurement,S04-2610-968,M111,Lactose monohydrate (raw material),RM warehouse - sampling booth,2026-10-26 12:13,2026-10-26 14:30,2026-10-27 17:09,verified,False
+RM-00106,Incoming,Procurement,S05-2610-677,M200,Sodium chloride USP (raw material),RM warehouse - sampling booth,2026-10-28 13:00,2026-10-28 15:35,2026-10-29 21:25,verified,False
+RM-00107,Incoming,Procurement,S06-2610-677,M202,Potassium dihydrogen phosphate (raw material),RM warehouse - sampling booth,2026-10-22 17:52,2026-10-22 18:44,2026-10-24 12:49,verified,False
+RM-00108,Incoming,Procurement,S03-2610-424,M110,Microcrystalline cellulose (raw material),RM warehouse - sampling booth,2026-10-28 13:51,2026-10-28 14:45,2026-10-30 15:40,verified,False
+IPC-00109,In-process,MES,B2605-001,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 10:36,2026-05-04 12:04,2026-05-04 20:42,verified,False
+IPC-00110,In-process,MES,B2605-001,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 13:34,2026-05-04 16:50,2026-05-05 05:53,verified,False
+IPC-00111,In-process,MES,B2605-001,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 16:31,2026-05-04 16:59,2026-05-05 06:00,verified,False
+REL-00112,Release,MES,B2605-001,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-04 22:26,2026-05-04 23:43,2026-05-06 13:28,verified,False
+IPC-00113,In-process,MES,B2605-002,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 12:25,2026-05-04 14:58,2026-05-05 06:06,verified,False
+IPC-00114,In-process,MES,B2605-002,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 16:22,2026-05-04 18:11,2026-05-05 06:56,verified,False
+IPC-00115,In-process,MES,B2605-002,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 20:19,2026-05-04 22:03,2026-05-05 10:19,verified,False
+REL-00116,Release,MES,B2605-002,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-05 02:17,2026-05-05 06:07,2026-05-06 16:59,verified,False
+IPC-00117,In-process,MES,B2605-003,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-01 12:53,2026-05-01 14:37,2026-05-02 02:45,verified,False
+IPC-00118,In-process,MES,B2605-003,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-01 16:50,2026-05-01 19:37,2026-05-02 11:49,verified,False
+IPC-00119,In-process,MES,B2605-003,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-01 20:47,2026-05-01 22:46,2026-05-02 09:03,verified,False
+REL-00120,Release,MES,B2605-003,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-02 02:47,2026-05-02 05:23,2026-05-05 04:28,verified,False
+IPC-00121,In-process,MES,B2605-004,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 13:07,2026-05-04 15:38,2026-05-05 05:25,verified,False
+IPC-00122,In-process,MES,B2605-004,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 16:24,2026-05-04 17:30,2026-05-05 01:01,verified,False
+IPC-00123,In-process,MES,B2605-004,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-04 19:42,2026-05-04 23:39,2026-05-05 05:11,verified,False
+REL-00124,Release,MES,B2605-004,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-05 00:29,2026-05-05 02:03,2026-05-06 22:32,verified,False
+IPC-00125,In-process,MES,PB2605-001,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-05 10:58,2026-05-05 13:16,2026-05-05 23:20,verified,False
+IPC-00126,In-process,MES,PB2605-001,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-05 13:05,2026-05-05 17:00,2026-05-06 02:39,verified,False
+REL-00127,Release,MES,PB2605-001,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-05 16:44,2026-05-05 17:54,2026-05-08 03:47,verified,False
+IPC-00128,In-process,MES,PB2605-002,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-04 12:10,2026-05-04 14:54,2026-05-04 17:35,verified,False
+IPC-00129,In-process,MES,PB2605-002,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-04 14:40,2026-05-04 15:10,2026-05-05 00:47,verified,False
+REL-00130,Release,MES,PB2605-002,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-04 20:35,2026-05-04 22:02,2026-05-07 00:05,verified,False
+IPC-00131,In-process,MES,PB2605-003,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-05 10:54,2026-05-05 13:48,2026-05-06 05:16,verified,False
+IPC-00132,In-process,MES,PB2605-003,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-05 14:24,2026-05-05 17:28,2026-05-06 04:34,verified,False
+REL-00133,Release,MES,PB2605-003,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-05 19:00,2026-05-05 20:52,2026-05-06 23:47,verified,False
+IPC-00134,In-process,MES,B2605-005,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 11:27,2026-05-08 15:03,2026-05-09 08:36,verified,False
+IPC-00135,In-process,MES,B2605-005,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 15:18,2026-05-08 17:34,2026-05-09 06:31,verified,False
+IPC-00136,In-process,MES,B2605-005,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 19:09,2026-05-08 21:07,2026-05-09 08:54,verified,False
+REL-00137,Release,MES,B2605-005,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-09 00:03,2026-05-09 03:54,2026-05-11 04:36,verified,False
+IPC-00138,In-process,MES,B2605-006,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 12:30,2026-05-11 13:17,2026-05-12 06:43,verified,False
+IPC-00139,In-process,MES,B2605-006,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 15:38,2026-05-11 18:22,2026-05-12 07:10,verified,False
+IPC-00140,In-process,MES,B2605-006,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 18:47,2026-05-11 22:20,2026-05-12 14:55,verified,False
+REL-00141,Release,MES,B2605-006,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-11 23:40,2026-05-12 02:22,2026-05-13 21:45,verified,False
+IPC-00142,In-process,MES,B2605-007,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 10:33,2026-05-08 11:44,2026-05-08 19:58,verified,False
+IPC-00143,In-process,MES,B2605-007,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 14:15,2026-05-08 16:47,2026-05-09 01:53,verified,False
+IPC-00144,In-process,MES,B2605-007,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-08 17:57,2026-05-08 19:49,2026-05-09 06:55,verified,False
+REL-00145,Release,MES,B2605-007,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-08 22:09,2026-05-08 23:59,2026-05-12 17:41,verified,False
+IPC-00146,In-process,MES,B2605-008,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 11:31,2026-05-11 13:11,2026-05-12 00:33,verified,False
+IPC-00147,In-process,MES,B2605-008,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 15:37,2026-05-11 17:00,2026-05-12 02:22,verified,False
+IPC-00148,In-process,MES,B2605-008,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-11 19:42,2026-05-11 20:21,2026-05-12 05:20,verified,False
+REL-00149,Release,MES,B2605-008,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-12 02:36,2026-05-12 04:04,2026-05-14 19:50,verified,False
+IPC-00150,In-process,MES,PB2605-004,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-12 10:00,2026-05-12 12:34,2026-05-12 19:55,verified,False
+IPC-00151,In-process,MES,PB2605-004,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-12 13:07,2026-05-12 17:07,2026-05-13 02:33,verified,False
+REL-00152,Release,MES,PB2605-004,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-12 16:44,2026-05-12 20:02,2026-05-14 11:31,verified,False
+IPC-00153,In-process,MES,PB2605-005,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-11 10:32,2026-05-11 11:42,2026-05-12 09:49,verified,False
+IPC-00154,In-process,MES,PB2605-005,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-11 13:34,2026-05-11 15:41,2026-05-12 00:07,verified,False
+REL-00155,Release,MES,PB2605-005,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-11 18:32,2026-05-11 21:08,2026-05-13 15:07,verified,False
+IPC-00156,In-process,MES,PB2605-006,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-11 11:01,2026-05-11 14:39,2026-05-11 19:47,verified,False
+IPC-00157,In-process,MES,PB2605-006,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-11 13:39,2026-05-11 14:41,2026-05-11 21:18,verified,False
+REL-00158,Release,MES,PB2605-006,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-11 17:12,2026-05-11 20:13,2026-05-13 10:43,verified,False
+IPC-00159,In-process,MES,B2605-009,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-18 13:11,2026-05-18 14:50,2026-05-19 08:44,verified,False
+IPC-00160,In-process,MES,B2605-009,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-18 16:56,2026-05-18 20:50,2026-05-19 08:42,verified,False
+IPC-00161,In-process,MES,B2605-009,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-18 20:41,2026-05-19 00:41,2026-05-19 11:04,verified,False
+REL-00162,Release,MES,B2605-009,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-19 01:48,2026-05-19 04:28,2026-05-21 08:46,verified,False
+IPC-00163,In-process,MES,B2605-010,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 10:01,2026-05-15 12:57,2026-05-15 19:31,verified,False
+IPC-00164,In-process,MES,B2605-010,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 13:29,2026-05-15 15:34,2026-05-16 06:21,verified,False
+IPC-00165,In-process,MES,B2605-010,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 16:57,2026-05-15 18:31,2026-05-16 10:02,verified,False
+REL-00166,Release,MES,B2605-010,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-15 22:52,2026-05-16 00:00,2026-05-18 09:22,verified,False
+IPC-00167,In-process,MES,B2605-011,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 11:59,2026-05-15 14:32,2026-05-15 22:29,verified,False
+IPC-00168,In-process,MES,B2605-011,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 15:53,2026-05-15 16:53,2026-05-16 06:21,verified,False
+IPC-00169,In-process,MES,B2605-011,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 19:48,2026-05-15 22:21,2026-05-16 14:11,verified,False
+REL-00170,Release,MES,B2605-011,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-16 00:12,2026-05-16 03:22,2026-05-18 20:23,verified,False
+IPC-00171,In-process,MES,B2605-012,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 09:27,2026-05-15 10:34,2026-05-15 18:55,verified,False
+IPC-00172,In-process,MES,B2605-012,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 12:33,2026-05-15 13:34,2026-05-16 03:29,verified,False
+IPC-00173,In-process,MES,B2605-012,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-15 15:39,2026-05-15 19:28,2026-05-16 10:08,verified,False
+REL-00174,Release,MES,B2605-012,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-15 20:12,2026-05-15 23:39,2026-05-18 04:03,verified,False
+IPC-00175,In-process,MES,PB2605-007,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-18 09:32,2026-05-18 09:55,2026-05-18 20:59,verified,False
+IPC-00176,In-process,MES,PB2605-007,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-18 12:52,2026-05-18 15:11,2026-05-19 02:51,verified,False
+REL-00177,Release,MES,PB2605-007,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-18 16:42,2026-05-18 20:12,2026-05-21 12:04,verified,False
+IPC-00178,In-process,MES,PB2605-008,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-15 10:15,2026-05-15 12:44,2026-05-16 01:08,verified,False
+IPC-00179,In-process,MES,PB2605-008,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-15 12:57,2026-05-15 14:37,2026-05-15 20:06,verified,False
+REL-00180,Release,MES,PB2605-008,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-15 19:41,2026-05-15 21:46,2026-05-17 22:52,verified,False
+IPC-00181,In-process,MES,PB2605-009,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-18 10:04,2026-05-18 11:40,2026-05-19 02:34,verified,False
+IPC-00182,In-process,MES,PB2605-009,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-18 13:35,2026-05-18 17:17,2026-05-18 22:05,verified,False
+REL-00183,Release,MES,PB2605-009,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-18 18:30,2026-05-18 22:19,2026-05-21 15:06,verified,False
+IPC-00184,In-process,MES,B2605-013,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 10:14,2026-05-25 12:54,2026-05-26 00:13,verified,False
+IPC-00185,In-process,MES,B2605-013,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 14:09,2026-05-25 17:44,2026-05-26 08:05,verified,False
+IPC-00186,In-process,MES,B2605-013,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 18:05,2026-05-25 20:06,2026-05-26 04:11,verified,False
+REL-00187,Release,MES,B2605-013,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-25 22:30,2026-05-25 23:52,2026-05-27 18:54,verified,False
+IPC-00188,In-process,MES,B2605-014,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 09:35,2026-05-25 11:31,2026-05-25 17:01,verified,False
+IPC-00189,In-process,MES,B2605-014,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 13:03,2026-05-25 14:14,2026-05-26 02:55,verified,False
+IPC-00190,In-process,MES,B2605-014,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 16:32,2026-05-25 18:51,2026-05-26 05:16,verified,False
+REL-00191,Release,MES,B2605-014,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-25 20:30,2026-05-25 21:17,2026-05-28 16:27,verified,False
+IPC-00192,In-process,MES,B2605-015,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 13:21,2026-05-25 16:47,2026-05-26 07:08,verified,False
+IPC-00193,In-process,MES,B2605-015,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 17:17,2026-05-25 19:23,2026-05-26 04:42,verified,False
+IPC-00194,In-process,MES,B2605-015,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 21:13,2026-05-26 00:07,2026-05-26 14:19,verified,False
+REL-00195,Release,MES,B2605-015,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-26 01:40,2026-05-26 04:55,2026-05-28 18:45,verified,False
+IPC-00196,In-process,MES,B2605-016,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 12:00,2026-05-25 12:23,2026-05-25 23:20,verified,False
+IPC-00197,In-process,MES,B2605-016,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 15:32,2026-05-25 19:05,2026-05-26 09:44,verified,False
+IPC-00198,In-process,MES,B2605-016,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-25 19:04,2026-05-25 22:01,2026-05-26 07:29,verified,False
+REL-00199,Release,MES,B2605-016,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-26 01:16,2026-05-26 04:54,2026-05-28 17:59,verified,False
+IPC-00200,In-process,MES,PB2605-010,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-26 08:55,2026-05-26 09:49,2026-05-26 21:38,verified,False
+IPC-00201,In-process,MES,PB2605-010,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-26 11:38,2026-05-26 13:54,2026-05-27 04:14,verified,False
+REL-00202,Release,MES,PB2605-010,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-26 17:54,2026-05-26 21:17,2026-05-28 22:54,verified,False
+IPC-00203,In-process,MES,PB2605-011,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-25 10:57,2026-05-25 13:36,2026-05-25 20:27,verified,False
+IPC-00204,In-process,MES,PB2605-011,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-25 13:59,2026-05-25 16:15,2026-05-26 01:56,verified,False
+REL-00205,Release,MES,PB2605-011,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-25 18:06,2026-05-25 19:28,2026-05-28 05:38,verified,False
+IPC-00206,In-process,MES,PB2605-012,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-22 09:05,2026-05-22 09:48,2026-05-22 17:30,verified,False
+IPC-00207,In-process,MES,PB2605-012,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-22 12:05,2026-05-22 16:00,2026-05-22 21:37,verified,False
+REL-00208,Release,MES,PB2605-012,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-22 15:35,2026-05-22 16:26,2026-05-24 13:36,verified,False
+IPC-00209,In-process,MES,B2606-017,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-02 12:28,2026-06-02 15:56,2026-06-02 23:30,verified,False
+IPC-00210,In-process,MES,B2606-017,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-02 16:29,2026-06-02 18:18,2026-06-02 23:59,verified,False
+IPC-00211,In-process,MES,B2606-017,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-02 20:30,2026-06-02 23:33,2026-06-03 14:09,verified,False
+REL-00212,Release,MES,B2606-017,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-03 01:01,2026-06-03 03:41,2026-06-04 19:52,verified,False
+IPC-00213,In-process,MES,B2606-018,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-01 10:38,2026-06-01 12:16,2026-06-01 19:27,verified,False
+IPC-00214,In-process,MES,B2606-018,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-01 14:23,2026-06-01 15:43,2026-06-01 21:56,verified,False
+IPC-00215,In-process,MES,B2606-018,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-01 18:09,2026-06-01 19:24,2026-06-02 04:47,verified,False
+REL-00216,Release,MES,B2606-018,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-01 22:38,2026-06-01 23:21,2026-06-04 05:16,verified,False
+IPC-00217,In-process,MES,B2605-019,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 12:33,2026-05-29 15:32,2026-05-30 01:00,verified,False
+IPC-00218,In-process,MES,B2605-019,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 16:08,2026-05-29 17:04,2026-05-30 10:10,verified,False
+IPC-00219,In-process,MES,B2605-019,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 19:43,2026-05-29 21:05,2026-05-30 11:57,verified,False
+REL-00220,Release,MES,B2605-019,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-30 00:14,2026-05-30 01:07,2026-06-01 02:40,verified,False
+IPC-00221,In-process,MES,B2605-020,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 12:46,2026-05-29 13:32,2026-05-30 01:26,verified,False
+IPC-00222,In-process,MES,B2605-020,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 16:26,2026-05-29 20:08,2026-05-30 07:17,verified,False
+IPC-00223,In-process,MES,B2605-020,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-05-29 20:06,2026-05-29 21:27,2026-05-30 03:09,verified,False
+REL-00224,Release,MES,B2605-020,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-05-30 02:27,2026-05-30 03:40,2026-06-01 07:30,verified,False
+IPC-00225,In-process,MES,PB2605-013,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-29 10:01,2026-05-29 12:48,2026-05-29 23:24,verified,False
+IPC-00226,In-process,MES,PB2605-013,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-29 13:20,2026-05-29 15:31,2026-05-29 23:33,verified,False
+REL-00227,Release,MES,PB2605-013,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-29 17:48,2026-05-29 20:37,2026-06-02 18:13,verified,False
+IPC-00228,In-process,MES,PB2605-014,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-29 09:35,2026-05-29 09:59,2026-05-30 06:06,verified,False
+IPC-00229,In-process,MES,PB2605-014,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-05-29 11:44,2026-05-29 12:25,2026-05-30 00:38,verified,False
+REL-00230,Release,MES,PB2605-014,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-05-29 15:28,2026-05-29 19:09,2026-05-31 06:47,verified,False
+IPC-00231,In-process,MES,PB2606-015,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-01 11:15,2026-06-01 14:11,2026-06-02 05:30,verified,False
+IPC-00232,In-process,MES,PB2606-015,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-01 14:05,2026-06-01 17:20,2026-06-01 20:04,verified,False
+REL-00233,Release,MES,PB2606-015,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-01 18:04,2026-06-01 21:00,2026-06-04 14:21,verified,False
+IPC-00234,In-process,MES,B2606-021,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-05 12:13,2026-06-05 15:07,2026-06-06 08:06,verified,False
+IPC-00235,In-process,MES,B2606-021,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-05 15:40,2026-06-05 17:06,2026-06-06 06:28,verified,False
+IPC-00236,In-process,MES,B2606-021,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-05 19:07,2026-06-05 22:51,2026-06-06 09:10,verified,True
+REL-00237,Release,MES,B2606-021,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-05 23:05,2026-06-06 02:59,2026-06-07 21:49,verified,False
+IPC-00238,In-process,MES,B2606-022,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 12:43,2026-06-08 14:08,2026-06-08 20:43,verified,False
+IPC-00239,In-process,MES,B2606-022,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 16:10,2026-06-08 18:43,2026-06-08 23:14,verified,False
+IPC-00240,In-process,MES,B2606-022,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 19:38,2026-06-08 21:18,2026-06-09 03:41,verified,False
+REL-00241,Release,MES,B2606-022,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-08 23:35,2026-06-09 02:09,2026-06-11 07:43,verified,False
+IPC-00242,In-process,MES,B2606-023,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 11:45,2026-06-08 13:55,2026-06-09 07:07,verified,False
+IPC-00243,In-process,MES,B2606-023,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 15:13,2026-06-08 15:41,2026-06-09 05:42,verified,False
+IPC-00244,In-process,MES,B2606-023,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 18:41,2026-06-08 22:19,2026-06-09 08:39,verified,False
+REL-00245,Release,MES,B2606-023,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-09 00:32,2026-06-09 03:42,2026-06-11 22:02,verified,False
+IPC-00246,In-process,MES,B2606-024,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 10:00,2026-06-08 12:25,2026-06-09 01:16,verified,False
+IPC-00247,In-process,MES,B2606-024,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 13:20,2026-06-08 13:44,2026-06-09 00:13,verified,False
+IPC-00248,In-process,MES,B2606-024,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-08 16:40,2026-06-08 18:43,2026-06-09 13:18,verified,False
+REL-00249,Release,MES,B2606-024,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-08 21:49,2026-06-08 22:47,2026-06-10 13:09,verified,False
+IPC-00250,In-process,MES,PB2606-016,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-08 10:31,2026-06-08 13:22,2026-06-09 01:59,verified,False
+IPC-00251,In-process,MES,PB2606-016,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-08 13:59,2026-06-08 17:17,2026-06-09 05:58,verified,False
+REL-00252,Release,MES,PB2606-016,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-08 17:56,2026-06-08 20:44,2026-06-11 07:25,verified,False
+IPC-00253,In-process,MES,PB2606-017,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-08 10:03,2026-06-08 11:12,2026-06-09 03:19,verified,False
+IPC-00254,In-process,MES,PB2606-017,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-08 12:53,2026-06-08 15:22,2026-06-09 04:45,verified,False
+REL-00255,Release,MES,PB2606-017,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-08 16:44,2026-06-08 18:14,2026-06-11 05:21,verified,False
+IPC-00256,In-process,MES,PB2606-018,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-09 11:24,2026-06-09 12:09,2026-06-10 03:26,verified,False
+IPC-00257,In-process,MES,PB2606-018,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-09 13:47,2026-06-09 16:07,2026-06-10 05:59,verified,False
+REL-00258,Release,MES,PB2606-018,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-09 21:33,2026-06-09 22:30,2026-06-12 11:55,verified,False
+IPC-00259,In-process,MES,B2606-025,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 10:29,2026-06-15 11:45,2026-06-15 21:28,verified,False
+IPC-00260,In-process,MES,B2606-025,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 14:04,2026-06-15 16:10,2026-06-16 06:24,verified,False
+IPC-00261,In-process,MES,B2606-025,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 17:40,2026-06-15 21:07,2026-06-16 07:08,verified,False
+REL-00262,Release,MES,B2606-025,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-15 22:32,2026-06-16 00:47,2026-06-18 00:00,verified,False
+IPC-00263,In-process,MES,B2606-026,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 11:19,2026-06-15 14:17,2026-06-16 04:06,verified,False
+IPC-00264,In-process,MES,B2606-026,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 14:48,2026-06-15 18:09,2026-06-16 02:58,verified,False
+IPC-00265,In-process,MES,B2606-026,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-15 18:17,2026-06-15 19:38,2026-06-16 02:25,verified,False
+REL-00266,Release,MES,B2606-026,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-15 22:31,2026-06-16 02:03,2026-06-17 06:39,verified,False
+IPC-00267,In-process,MES,B2606-027,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 11:03,2026-06-12 12:37,2026-06-13 00:34,verified,False
+IPC-00268,In-process,MES,B2606-027,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 14:10,2026-06-12 17:15,2026-06-12 22:03,verified,False
+IPC-00269,In-process,MES,B2606-027,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 17:17,2026-06-12 19:41,2026-06-13 00:41,verified,False
+REL-00270,Release,MES,B2606-027,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-12 20:54,2026-06-12 23:39,2026-06-14 19:41,verified,False
+IPC-00271,In-process,MES,B2606-028,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 10:05,2026-06-12 12:34,2026-06-13 03:29,verified,False
+IPC-00272,In-process,MES,B2606-028,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 13:50,2026-06-12 17:00,2026-06-13 07:23,verified,False
+IPC-00273,In-process,MES,B2606-028,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-12 17:35,2026-06-12 19:21,2026-06-12 23:39,verified,False
+REL-00274,Release,MES,B2606-028,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-12 22:00,2026-06-12 22:49,2026-06-14 20:52,verified,False
+IPC-00275,In-process,MES,PB2606-019,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-15 12:47,2026-06-15 16:13,2026-06-16 01:28,verified,False
+IPC-00276,In-process,MES,PB2606-019,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-15 16:15,2026-06-15 20:01,2026-06-16 06:56,verified,False
+REL-00277,Release,MES,PB2606-019,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-15 21:44,2026-06-15 22:39,2026-06-18 07:41,verified,False
+IPC-00278,In-process,MES,PB2606-020,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-15 11:37,2026-06-15 14:39,2026-06-15 23:47,verified,False
+IPC-00279,In-process,MES,PB2606-020,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-15 14:48,2026-06-15 18:04,2026-06-16 03:11,verified,False
+REL-00280,Release,MES,PB2606-020,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-15 19:42,2026-06-15 22:08,2026-06-18 07:17,verified,False
+IPC-00281,In-process,MES,PB2606-021,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-12 11:19,2026-06-12 12:28,2026-06-12 21:04,verified,False
+IPC-00282,In-process,MES,PB2606-021,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-12 14:28,2026-06-12 16:10,2026-06-13 10:15,verified,False
+REL-00283,Release,MES,PB2606-021,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-12 18:57,2026-06-12 20:26,2026-06-14 10:30,verified,False
+IPC-00284,In-process,MES,B2606-029,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 10:34,2026-06-19 14:22,2026-06-20 03:34,verified,False
+IPC-00285,In-process,MES,B2606-029,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 14:00,2026-06-19 14:52,2026-06-20 01:48,verified,True
+IPC-00286,In-process,MES,B2606-029,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 17:25,2026-06-19 20:41,2026-06-20 05:49,verified,False
+REL-00287,Release,MES,B2606-029,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-20 00:07,2026-06-20 00:37,2026-06-22 06:51,verified,False
+IPC-00288,In-process,MES,B2606-030,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 11:19,2026-06-22 13:50,2026-06-23 02:55,verified,False
+IPC-00289,In-process,MES,B2606-030,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 14:29,2026-06-22 17:02,2026-06-23 08:24,verified,False
+IPC-00290,In-process,MES,B2606-030,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 17:39,2026-06-22 20:21,2026-06-23 05:35,verified,False
+REL-00291,Release,MES,B2606-030,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-23 02:24,2026-06-23 05:17,2026-06-25 09:18,verified,True
+IPC-00292,In-process,MES,B2606-031,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 12:46,2026-06-22 14:05,2026-06-22 22:47,verified,False
+IPC-00293,In-process,MES,B2606-031,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 15:48,2026-06-22 18:15,2026-06-23 00:58,verified,False
+IPC-00294,In-process,MES,B2606-031,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-22 18:51,2026-06-22 21:45,2026-06-23 06:10,verified,False
+REL-00295,Release,MES,B2606-031,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-22 23:01,2026-06-23 02:10,2026-06-25 01:52,verified,False
+IPC-00296,In-process,MES,B2606-032,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 09:45,2026-06-19 12:58,2026-06-20 05:27,verified,False
+IPC-00297,In-process,MES,B2606-032,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 13:19,2026-06-19 14:11,2026-06-20 03:32,verified,False
+IPC-00298,In-process,MES,B2606-032,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-19 16:53,2026-06-19 17:19,2026-06-19 23:05,verified,False
+REL-00299,Release,MES,B2606-032,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-19 21:42,2026-06-19 23:47,2026-06-22 10:23,verified,False
+IPC-00300,In-process,MES,PB2606-022,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 12:14,2026-06-22 13:47,2026-06-23 03:58,verified,False
+IPC-00301,In-process,MES,PB2606-022,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 14:53,2026-06-22 18:16,2026-06-23 04:39,verified,False
+REL-00302,Release,MES,PB2606-022,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-22 20:39,2026-06-22 22:08,2026-06-26 04:02,verified,False
+IPC-00303,In-process,MES,PB2606-023,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 11:46,2026-06-22 14:30,2026-06-23 00:00,verified,False
+IPC-00304,In-process,MES,PB2606-023,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 14:16,2026-06-22 15:14,2026-06-23 04:12,verified,False
+REL-00305,Release,MES,PB2606-023,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-22 20:42,2026-06-22 22:47,2026-06-24 22:37,verified,False
+IPC-00306,In-process,MES,PB2606-024,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 10:16,2026-06-22 10:46,2026-06-22 22:58,verified,False
+IPC-00307,In-process,MES,PB2606-024,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-22 13:31,2026-06-22 15:11,2026-06-22 21:11,verified,False
+REL-00308,Release,MES,PB2606-024,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-22 17:58,2026-06-22 19:51,2026-06-24 04:34,verified,False
+IPC-00309,In-process,MES,B2606-033,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 10:29,2026-06-26 12:00,2026-06-26 20:55,verified,False
+IPC-00310,In-process,MES,B2606-033,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 13:20,2026-06-26 13:45,2026-06-26 21:51,verified,False
+IPC-00311,In-process,MES,B2606-033,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 16:11,2026-06-26 20:06,2026-06-27 01:22,verified,False
+REL-00312,Release,MES,B2606-033,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-26 20:05,2026-06-26 21:29,2026-06-29 08:45,verified,False
+IPC-00313,In-process,MES,B2606-034,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 12:51,2026-06-29 14:53,2026-06-30 05:40,verified,False
+IPC-00314,In-process,MES,B2606-034,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 16:03,2026-06-29 18:35,2026-06-30 03:35,verified,False
+IPC-00315,In-process,MES,B2606-034,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 19:15,2026-06-29 23:11,2026-06-30 06:11,verified,False
+REL-00316,Release,MES,B2606-034,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-30 01:25,2026-06-30 02:51,2026-07-02 03:37,verified,False
+IPC-00317,In-process,MES,B2606-035,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 12:57,2026-06-26 16:23,2026-06-26 22:43,verified,False
+IPC-00318,In-process,MES,B2606-035,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 16:15,2026-06-26 17:42,2026-06-27 05:42,verified,False
+IPC-00319,In-process,MES,B2606-035,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-26 19:33,2026-06-26 21:27,2026-06-27 03:04,verified,False
+REL-00320,Release,MES,B2606-035,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-26 23:40,2026-06-27 02:57,2026-06-29 12:49,verified,False
+IPC-00321,In-process,MES,B2606-036,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 09:23,2026-06-29 11:55,2026-06-30 05:05,verified,False
+IPC-00322,In-process,MES,B2606-036,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 12:09,2026-06-29 14:51,2026-06-30 11:18,verified,False
+IPC-00323,In-process,MES,B2606-036,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-06-29 14:55,2026-06-29 15:28,2026-06-30 03:57,verified,False
+REL-00324,Release,MES,B2606-036,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-06-29 19:31,2026-06-29 22:51,2026-07-02 15:19,verified,False
+IPC-00325,In-process,MES,PB2606-025,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-29 09:20,2026-06-29 12:12,2026-06-29 19:14,verified,False
+IPC-00326,In-process,MES,PB2606-025,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-29 12:07,2026-06-29 13:50,2026-06-30 17:19,verified,False
+REL-00327,Release,MES,PB2606-025,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-29 17:54,2026-06-29 18:47,2026-07-02 01:05,verified,False
+IPC-00328,In-process,MES,PB2606-026,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-26 09:53,2026-06-26 12:24,2026-06-27 04:12,verified,False
+IPC-00329,In-process,MES,PB2606-026,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-26 12:36,2026-06-26 13:19,2026-06-27 01:38,verified,False
+REL-00330,Release,MES,PB2606-026,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-26 16:42,2026-06-26 18:53,2026-06-28 17:23,verified,False
+IPC-00331,In-process,MES,PB2606-027,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-29 10:29,2026-06-29 10:53,2026-06-30 03:58,verified,False
+IPC-00332,In-process,MES,PB2606-027,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-06-29 14:00,2026-06-29 14:31,2026-06-30 09:45,verified,False
+REL-00333,Release,MES,PB2606-027,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-06-29 20:00,2026-06-29 21:40,2026-07-01 10:13,verified,False
+IPC-00334,In-process,MES,B2607-037,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 09:26,2026-07-07 10:34,2026-07-07 22:18,verified,False
+IPC-00335,In-process,MES,B2607-037,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 12:52,2026-07-07 15:15,2026-07-07 22:04,verified,False
+IPC-00336,In-process,MES,B2607-037,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 16:18,2026-07-07 20:13,2026-07-07 23:42,verified,False
+REL-00337,Release,MES,B2607-037,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-07 20:14,2026-07-07 21:11,2026-07-10 11:24,verified,False
+IPC-00338,In-process,MES,B2607-038,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 11:55,2026-07-07 13:28,2026-07-07 19:41,verified,False
+IPC-00339,In-process,MES,B2607-038,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 15:48,2026-07-07 18:42,2026-07-08 10:26,verified,False
+IPC-00340,In-process,MES,B2607-038,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-07 19:41,2026-07-07 20:34,2026-07-08 05:40,verified,False
+REL-00341,Release,MES,B2607-038,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-08 01:02,2026-07-08 04:45,2026-07-10 12:29,verified,False
+IPC-00342,In-process,MES,B2607-039,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 10:31,2026-07-06 13:51,2026-07-07 08:27,verified,False
+IPC-00343,In-process,MES,B2607-039,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 13:51,2026-07-06 14:38,2026-07-06 23:13,verified,False
+IPC-00344,In-process,MES,B2607-039,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 17:11,2026-07-06 21:01,2026-07-07 03:59,verified,False
+REL-00345,Release,MES,B2607-039,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-06 21:01,2026-07-06 22:53,2026-07-09 10:48,verified,False
+IPC-00346,In-process,MES,B2607-040,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 09:48,2026-07-06 12:35,2026-07-07 04:14,verified,False
+IPC-00347,In-process,MES,B2607-040,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 13:20,2026-07-06 14:55,2026-07-06 17:34,verified,False
+IPC-00348,In-process,MES,B2607-040,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-06 16:52,2026-07-06 18:29,2026-07-07 01:46,verified,False
+REL-00349,Release,MES,B2607-040,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-06 23:04,2026-07-07 02:00,2026-07-10 09:13,verified,False
+IPC-00350,In-process,MES,PB2607-028,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-06 10:17,2026-07-06 11:08,2026-07-07 02:37,verified,False
+IPC-00351,In-process,MES,PB2607-028,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-06 13:30,2026-07-06 15:46,2026-07-07 02:24,verified,False
+REL-00352,Release,MES,PB2607-028,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-06 17:48,2026-07-06 20:32,2026-07-08 11:47,verified,False
+IPC-00353,In-process,MES,PB2607-029,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-07 10:27,2026-07-07 13:54,2026-07-08 03:19,verified,False
+IPC-00354,In-process,MES,PB2607-029,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-07 13:02,2026-07-07 13:55,2026-07-08 06:26,verified,False
+REL-00355,Release,MES,PB2607-029,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-07 18:27,2026-07-07 19:17,2026-07-09 13:51,verified,False
+IPC-00356,In-process,MES,PB2607-030,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-06 09:14,2026-07-06 11:03,2026-07-06 23:06,verified,False
+IPC-00357,In-process,MES,PB2607-030,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-06 12:06,2026-07-06 13:52,2026-07-07 01:57,verified,False
+REL-00358,Release,MES,PB2607-030,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-06 16:04,2026-07-06 19:39,2026-07-09 16:50,verified,False
+IPC-00359,In-process,MES,B2607-041,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 11:23,2026-07-13 14:31,2026-07-14 01:42,verified,False
+IPC-00360,In-process,MES,B2607-041,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 14:06,2026-07-13 17:58,2026-07-14 03:05,verified,False
+IPC-00361,In-process,MES,B2607-041,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 16:48,2026-07-13 17:29,2026-07-14 00:19,verified,False
+REL-00362,Release,MES,B2607-041,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-13 20:01,2026-07-13 21:48,2026-07-16 00:26,verified,False
+IPC-00363,In-process,MES,B2607-042,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 09:26,2026-07-10 12:38,2026-07-11 06:24,verified,False
+IPC-00364,In-process,MES,B2607-042,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 12:34,2026-07-10 14:38,2026-07-10 19:17,verified,False
+IPC-00365,In-process,MES,B2607-042,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 15:41,2026-07-10 16:53,2026-07-11 01:57,verified,False
+REL-00366,Release,MES,B2607-042,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-10 20:11,2026-07-10 22:48,2026-07-13 10:25,verified,True
+IPC-00367,In-process,MES,B2607-043,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 09:38,2026-07-13 12:55,2026-07-14 09:40,verified,False
+IPC-00368,In-process,MES,B2607-043,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 12:58,2026-07-13 16:10,2026-07-14 05:24,verified,False
+IPC-00369,In-process,MES,B2607-043,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-13 16:17,2026-07-13 19:52,2026-07-14 07:15,verified,False
+REL-00370,Release,MES,B2607-043,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-13 22:24,2026-07-13 22:51,2026-07-15 18:23,verified,False
+IPC-00371,In-process,MES,B2607-044,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 12:18,2026-07-10 15:44,2026-07-11 00:26,verified,False
+IPC-00372,In-process,MES,B2607-044,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 15:46,2026-07-10 18:43,2026-07-11 02:07,verified,False
+IPC-00373,In-process,MES,B2607-044,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-10 19:13,2026-07-10 19:33,2026-07-11 07:02,verified,False
+REL-00374,Release,MES,B2607-044,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-11 01:07,2026-07-11 03:17,2026-07-13 07:58,verified,False
+IPC-00375,In-process,MES,PB2607-031,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-13 12:56,2026-07-13 16:49,2026-07-14 06:44,verified,False
+IPC-00376,In-process,MES,PB2607-031,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-13 16:49,2026-07-13 20:24,2026-07-14 07:29,verified,False
+REL-00377,Release,MES,PB2607-031,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-13 21:47,2026-07-13 22:28,2026-07-17 07:51,verified,False
+IPC-00378,In-process,MES,PB2607-032,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-14 09:48,2026-07-14 12:04,2026-07-14 19:51,verified,False
+IPC-00379,In-process,MES,PB2607-032,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-14 13:18,2026-07-14 16:09,2026-07-15 04:00,verified,False
+REL-00380,Release,MES,PB2607-032,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-14 19:19,2026-07-14 20:11,2026-07-16 14:50,verified,False
+IPC-00381,In-process,MES,PB2607-033,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-14 10:25,2026-07-14 12:33,2026-07-15 05:36,verified,False
+IPC-00382,In-process,MES,PB2607-033,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-14 13:41,2026-07-14 15:28,2026-07-15 03:07,verified,False
+REL-00383,Release,MES,PB2607-033,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-14 17:27,2026-07-14 20:20,2026-07-16 09:09,verified,False
+IPC-00384,In-process,MES,B2607-045,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 11:24,2026-07-17 12:56,2026-07-18 09:14,verified,False
+IPC-00385,In-process,MES,B2607-045,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 15:04,2026-07-17 16:26,2026-07-18 02:00,verified,False
+IPC-00386,In-process,MES,B2607-045,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 18:44,2026-07-17 19:29,2026-07-18 10:16,verified,False
+REL-00387,Release,MES,B2607-045,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-18 01:32,2026-07-18 03:18,2026-07-21 03:26,verified,False
+IPC-00388,In-process,MES,B2607-046,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-21 12:20,2026-07-21 15:23,2026-07-22 02:11,verified,False
+IPC-00389,In-process,MES,B2607-046,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-21 15:50,2026-07-21 18:05,2026-07-22 08:01,verified,False
+IPC-00390,In-process,MES,B2607-046,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-21 19:20,2026-07-21 21:28,2026-07-22 07:06,verified,False
+REL-00391,Release,MES,B2607-046,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-22 01:09,2026-07-22 01:50,2026-07-24 01:36,verified,False
+IPC-00392,In-process,MES,B2607-047,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 12:38,2026-07-17 13:00,2026-07-17 20:58,verified,False
+IPC-00393,In-process,MES,B2607-047,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 16:19,2026-07-17 20:09,2026-07-18 07:36,verified,False
+IPC-00394,In-process,MES,B2607-047,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-17 20:00,2026-07-17 23:07,2026-07-18 06:12,verified,False
+REL-00395,Release,MES,B2607-047,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-18 01:14,2026-07-18 04:39,2026-07-20 20:00,verified,False
+IPC-00396,In-process,MES,B2607-048,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-20 12:32,2026-07-20 14:47,2026-07-20 22:04,verified,False
+IPC-00397,In-process,MES,B2607-048,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-20 16:17,2026-07-20 16:45,2026-07-21 08:54,verified,False
+IPC-00398,In-process,MES,B2607-048,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-20 20:02,2026-07-20 21:09,2026-07-21 17:54,verified,False
+REL-00399,Release,MES,B2607-048,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-21 03:29,2026-07-21 06:37,2026-07-23 12:31,verified,False
+IPC-00400,In-process,MES,PB2607-034,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 10:00,2026-07-20 13:19,2026-07-20 20:46,verified,False
+IPC-00401,In-process,MES,PB2607-034,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 12:28,2026-07-20 14:34,2026-07-21 03:58,verified,False
+REL-00402,Release,MES,PB2607-034,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-20 17:13,2026-07-20 19:30,2026-07-22 12:00,verified,False
+IPC-00403,In-process,MES,PB2607-035,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 12:54,2026-07-20 13:43,2026-07-20 22:21,verified,False
+IPC-00404,In-process,MES,PB2607-035,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 16:01,2026-07-20 16:38,2026-07-21 06:45,verified,False
+REL-00405,Release,MES,PB2607-035,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-20 21:02,2026-07-20 21:57,2026-07-22 15:24,verified,False
+IPC-00406,In-process,MES,PB2607-036,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 11:03,2026-07-20 14:40,2026-07-21 02:34,verified,False
+IPC-00407,In-process,MES,PB2607-036,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-20 13:56,2026-07-20 14:39,2026-07-21 06:58,verified,False
+REL-00408,Release,MES,PB2607-036,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-20 17:30,2026-07-20 19:16,2026-07-23 02:52,verified,False
+IPC-00409,In-process,MES,B2607-049,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 11:43,2026-07-27 15:05,2026-07-27 19:50,verified,False
+IPC-00410,In-process,MES,B2607-049,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 15:27,2026-07-27 18:20,2026-07-28 01:48,verified,False
+IPC-00411,In-process,MES,B2607-049,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 19:12,2026-07-27 22:25,2026-07-28 09:20,verified,False
+REL-00412,Release,MES,B2607-049,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-28 00:03,2026-07-28 04:00,2026-07-30 13:42,verified,False
+IPC-00413,In-process,MES,B2607-050,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 12:01,2026-07-27 15:11,2026-07-28 05:14,verified,False
+IPC-00414,In-process,MES,B2607-050,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 15:31,2026-07-27 18:04,2026-07-28 01:50,verified,False
+IPC-00415,In-process,MES,B2607-050,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-27 19:01,2026-07-27 19:37,2026-07-28 06:01,verified,False
+REL-00416,Release,MES,B2607-050,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-27 23:22,2026-07-28 00:34,2026-07-31 00:53,verified,False
+IPC-00417,In-process,MES,B2607-051,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 11:53,2026-07-24 13:03,2026-07-25 02:56,verified,False
+IPC-00418,In-process,MES,B2607-051,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 15:22,2026-07-24 17:47,2026-07-25 01:33,verified,False
+IPC-00419,In-process,MES,B2607-051,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 18:51,2026-07-24 22:21,2026-07-25 11:03,verified,False
+REL-00420,Release,MES,B2607-051,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-24 23:44,2026-07-25 00:13,2026-07-26 15:50,verified,False
+IPC-00421,In-process,MES,B2607-052,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 12:19,2026-07-24 15:36,2026-07-25 10:50,verified,False
+IPC-00422,In-process,MES,B2607-052,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 15:58,2026-07-24 19:25,2026-07-24 23:16,verified,False
+IPC-00423,In-process,MES,B2607-052,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-07-24 19:37,2026-07-24 20:24,2026-07-24 23:54,verified,False
+REL-00424,Release,MES,B2607-052,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-07-25 00:03,2026-07-25 03:34,2026-07-27 11:15,verified,True
+IPC-00425,In-process,MES,PB2607-037,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-27 10:24,2026-07-27 13:58,2026-07-28 02:23,verified,False
+IPC-00426,In-process,MES,PB2607-037,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-27 13:37,2026-07-27 17:19,2026-07-28 05:52,verified,False
+REL-00427,Release,MES,PB2607-037,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-27 18:01,2026-07-27 21:43,2026-07-30 20:59,verified,False
+IPC-00428,In-process,MES,PB2607-038,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-27 12:50,2026-07-27 15:11,2026-07-27 22:42,verified,False
+IPC-00429,In-process,MES,PB2607-038,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-27 16:16,2026-07-27 16:40,2026-07-27 22:18,verified,False
+REL-00430,Release,MES,PB2607-038,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-27 20:47,2026-07-28 00:00,2026-07-29 11:54,verified,False
+IPC-00431,In-process,MES,PB2607-039,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-28 09:09,2026-07-28 09:56,2026-07-28 20:32,verified,False
+IPC-00432,In-process,MES,PB2607-039,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-07-28 12:10,2026-07-28 15:46,2026-07-29 05:27,verified,False
+REL-00433,Release,MES,PB2607-039,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-07-28 15:41,2026-07-28 18:52,2026-07-31 05:47,verified,False
+IPC-00434,In-process,MES,B2608-053,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 12:38,2026-08-04 13:54,2026-08-05 01:27,verified,False
+IPC-00435,In-process,MES,B2608-053,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 15:25,2026-08-04 19:19,2026-08-05 06:06,verified,False
+IPC-00436,In-process,MES,B2608-053,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 18:13,2026-08-04 21:06,2026-08-05 13:54,verified,False
+REL-00437,Release,MES,B2608-053,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-04 23:58,2026-08-05 02:51,2026-08-06 07:31,verified,False
+IPC-00438,In-process,MES,B2608-054,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 12:39,2026-08-03 13:36,2026-08-04 08:30,verified,False
+IPC-00439,In-process,MES,B2608-054,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 16:00,2026-08-03 19:25,2026-08-04 10:18,verified,False
+IPC-00440,In-process,MES,B2608-054,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 19:20,2026-08-03 21:16,2026-08-04 08:59,verified,False
+REL-00441,Release,MES,B2608-054,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-04 02:25,2026-08-04 04:16,2026-08-05 07:58,verified,False
+IPC-00442,In-process,MES,B2608-055,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 12:43,2026-08-03 16:05,2026-08-04 02:13,verified,False
+IPC-00443,In-process,MES,B2608-055,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 16:04,2026-08-03 18:04,2026-08-04 03:46,verified,False
+IPC-00444,In-process,MES,B2608-055,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-03 19:25,2026-08-03 21:50,2026-08-04 15:19,verified,False
+REL-00445,Release,MES,B2608-055,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-03 23:15,2026-08-04 02:47,2026-08-06 00:43,verified,True
+IPC-00446,In-process,MES,B2608-056,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 11:18,2026-08-04 12:38,2026-08-05 01:13,verified,False
+IPC-00447,In-process,MES,B2608-056,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 14:14,2026-08-04 17:08,2026-08-04 21:58,verified,False
+IPC-00448,In-process,MES,B2608-056,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-04 17:10,2026-08-04 18:02,2026-08-05 00:36,verified,False
+REL-00449,Release,MES,B2608-056,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-04 20:35,2026-08-04 22:37,2026-08-06 17:46,verified,False
+IPC-00450,In-process,MES,PB2608-040,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 10:11,2026-08-04 12:07,2026-08-05 00:09,verified,False
+IPC-00451,In-process,MES,PB2608-040,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 13:18,2026-08-04 14:22,2026-08-04 18:49,verified,False
+REL-00452,Release,MES,PB2608-040,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-04 16:55,2026-08-04 17:39,2026-08-05 23:09,verified,False
+IPC-00453,In-process,MES,PB2608-041,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 13:07,2026-08-04 15:14,2026-08-04 23:26,verified,False
+IPC-00454,In-process,MES,PB2608-041,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 16:44,2026-08-04 18:17,2026-08-05 04:18,verified,False
+REL-00455,Release,MES,PB2608-041,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-04 22:02,2026-08-04 23:40,2026-08-06 22:27,verified,False
+IPC-00456,In-process,MES,PB2608-042,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 13:10,2026-08-04 16:32,2026-08-05 03:34,verified,False
+IPC-00457,In-process,MES,PB2608-042,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-04 16:29,2026-08-04 19:44,2026-08-05 07:49,verified,False
+REL-00458,Release,MES,PB2608-042,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-04 20:19,2026-08-04 23:31,2026-08-07 22:09,verified,False
+IPC-00459,In-process,MES,B2608-057,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 12:32,2026-08-07 15:29,2026-08-08 01:41,verified,False
+IPC-00460,In-process,MES,B2608-057,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 16:06,2026-08-07 18:08,2026-08-08 05:10,verified,False
+IPC-00461,In-process,MES,B2608-057,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 19:41,2026-08-07 20:51,2026-08-08 12:22,verified,False
+REL-00462,Release,MES,B2608-057,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-07 23:45,2026-08-08 00:06,2026-08-10 13:18,verified,False
+IPC-00463,In-process,MES,B2608-058,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 11:26,2026-08-07 11:49,2026-08-07 20:03,verified,False
+IPC-00464,In-process,MES,B2608-058,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 15:34,2026-08-07 17:45,2026-08-07 23:53,verified,False
+IPC-00465,In-process,MES,B2608-058,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-07 19:43,2026-08-07 23:17,2026-08-08 10:10,verified,False
+REL-00466,Release,MES,B2608-058,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-08 00:57,2026-08-08 04:33,2026-08-10 01:58,verified,False
+IPC-00467,In-process,MES,B2608-059,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 13:10,2026-08-10 16:05,2026-08-11 05:37,verified,False
+IPC-00468,In-process,MES,B2608-059,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 16:47,2026-08-10 17:35,2026-08-11 04:31,verified,False
+IPC-00469,In-process,MES,B2608-059,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 20:24,2026-08-11 00:01,2026-08-11 09:26,verified,False
+REL-00470,Release,MES,B2608-059,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-11 01:12,2026-08-11 04:06,2026-08-12 14:51,verified,False
+IPC-00471,In-process,MES,B2608-060,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 13:56,2026-08-10 15:30,2026-08-11 06:26,verified,False
+IPC-00472,In-process,MES,B2608-060,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 18:04,2026-08-10 20:30,2026-08-11 01:19,verified,False
+IPC-00473,In-process,MES,B2608-060,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-10 22:12,2026-08-10 23:14,2026-08-11 09:50,verified,False
+REL-00474,Release,MES,B2608-060,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-11 03:12,2026-08-11 04:24,2026-08-13 04:01,verified,False
+IPC-00475,In-process,MES,PB2608-043,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-07 10:32,2026-08-07 13:12,2026-08-08 02:14,verified,False
+IPC-00476,In-process,MES,PB2608-043,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-07 13:08,2026-08-07 16:08,2026-08-08 05:09,verified,False
+REL-00477,Release,MES,PB2608-043,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-07 16:28,2026-08-07 19:55,2026-08-10 07:54,verified,False
+IPC-00478,In-process,MES,PB2608-044,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-10 10:35,2026-08-10 14:01,2026-08-11 04:40,verified,False
+IPC-00479,In-process,MES,PB2608-044,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-10 13:51,2026-08-10 17:06,2026-08-11 06:47,verified,False
+REL-00480,Release,MES,PB2608-044,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-10 18:06,2026-08-10 20:15,2026-08-13 09:55,verified,False
+IPC-00481,In-process,MES,PB2608-045,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-10 09:49,2026-08-10 12:49,2026-08-10 23:12,verified,False
+IPC-00482,In-process,MES,PB2608-045,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-10 13:21,2026-08-10 15:51,2026-08-11 06:41,verified,False
+REL-00483,Release,MES,PB2608-045,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-10 18:23,2026-08-10 19:40,2026-08-13 14:55,verified,False
+IPC-00484,In-process,MES,B2608-061,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 10:05,2026-08-17 10:44,2026-08-17 17:12,verified,False
+IPC-00485,In-process,MES,B2608-061,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 13:32,2026-08-17 15:13,2026-08-18 04:20,verified,False
+IPC-00486,In-process,MES,B2608-061,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 16:58,2026-08-17 20:46,2026-08-18 12:19,verified,False
+REL-00487,Release,MES,B2608-061,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-17 22:11,2026-08-17 23:53,2026-08-20 03:34,verified,False
+IPC-00488,In-process,MES,B2608-062,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-18 13:30,2026-08-18 16:50,2026-08-19 10:56,verified,False
+IPC-00489,In-process,MES,B2608-062,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-18 17:27,2026-08-18 20:46,2026-08-19 09:56,verified,False
+IPC-00490,In-process,MES,B2608-062,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-18 21:24,2026-08-19 01:18,2026-08-19 10:01,verified,False
+REL-00491,Release,MES,B2608-062,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-19 02:38,2026-08-19 03:17,2026-08-21 20:58,verified,False
+IPC-00492,In-process,MES,B2608-063,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 09:43,2026-08-17 10:22,2026-08-17 18:10,verified,False
+IPC-00493,In-process,MES,B2608-063,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 13:01,2026-08-17 14:03,2026-08-18 07:20,verified,False
+IPC-00494,In-process,MES,B2608-063,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-17 16:20,2026-08-17 17:29,2026-08-18 06:14,verified,False
+REL-00495,Release,MES,B2608-063,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-17 22:47,2026-08-17 23:14,2026-08-20 21:52,verified,False
+IPC-00496,In-process,MES,B2608-064,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-14 11:07,2026-08-14 12:41,2026-08-15 06:26,verified,False
+IPC-00497,In-process,MES,B2608-064,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-14 14:15,2026-08-14 15:30,2026-08-15 05:54,verified,False
+IPC-00498,In-process,MES,B2608-064,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-14 17:23,2026-08-14 19:51,2026-08-15 02:59,verified,False
+REL-00499,Release,MES,B2608-064,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-14 21:01,2026-08-14 23:15,2026-08-16 01:45,verified,False
+IPC-00500,In-process,MES,PB2608-046,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-14 11:57,2026-08-14 13:30,2026-08-15 01:53,verified,False
+IPC-00501,In-process,MES,PB2608-046,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-14 14:34,2026-08-14 17:05,2026-08-15 09:06,verified,False
+REL-00502,Release,MES,PB2608-046,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-14 20:10,2026-08-14 20:51,2026-08-16 13:40,verified,False
+IPC-00503,In-process,MES,PB2608-047,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-18 13:00,2026-08-18 14:14,2026-08-18 20:13,verified,False
+IPC-00504,In-process,MES,PB2608-047,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-18 16:06,2026-08-18 18:26,2026-08-19 07:40,verified,False
+REL-00505,Release,MES,PB2608-047,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-18 20:26,2026-08-18 20:54,2026-08-22 00:27,verified,False
+IPC-00506,In-process,MES,PB2608-048,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-17 10:03,2026-08-17 12:10,2026-08-17 21:16,verified,False
+IPC-00507,In-process,MES,PB2608-048,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-17 13:57,2026-08-17 15:47,2026-08-18 03:43,verified,False
+REL-00508,Release,MES,PB2608-048,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-17 18:38,2026-08-17 21:21,2026-08-19 23:58,verified,False
+IPC-00509,In-process,MES,B2608-065,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 13:43,2026-08-21 15:59,2026-08-22 03:18,verified,False
+IPC-00510,In-process,MES,B2608-065,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 18:10,2026-08-21 18:59,2026-08-22 08:06,verified,False
+IPC-00511,In-process,MES,B2608-065,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 22:38,2026-08-21 23:43,2026-08-22 08:49,verified,False
+REL-00512,Release,MES,B2608-065,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-22 06:41,2026-08-22 09:43,2026-08-24 17:04,verified,False
+IPC-00513,In-process,MES,B2608-066,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 11:31,2026-08-24 15:13,2026-08-25 04:51,verified,False
+IPC-00514,In-process,MES,B2608-066,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 15:14,2026-08-24 16:17,2026-08-25 13:00,verified,False
+IPC-00515,In-process,MES,B2608-066,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 18:57,2026-08-24 21:39,2026-08-25 09:30,verified,False
+REL-00516,Release,MES,B2608-066,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-24 23:42,2026-08-25 01:51,2026-08-26 13:03,verified,False
+IPC-00517,In-process,MES,B2608-067,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 10:16,2026-08-21 13:04,2026-08-21 23:17,verified,False
+IPC-00518,In-process,MES,B2608-067,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 14:05,2026-08-21 15:37,2026-08-22 01:59,verified,False
+IPC-00519,In-process,MES,B2608-067,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-21 17:55,2026-08-21 20:21,2026-08-22 04:19,verified,False
+REL-00520,Release,MES,B2608-067,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-22 00:50,2026-08-22 02:55,2026-08-24 22:12,verified,True
+IPC-00521,In-process,MES,B2608-068,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 12:12,2026-08-24 14:43,2026-08-25 03:00,verified,False
+IPC-00522,In-process,MES,B2608-068,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 15:25,2026-08-24 17:25,2026-08-25 11:25,verified,False
+IPC-00523,In-process,MES,B2608-068,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-24 18:39,2026-08-24 19:41,2026-08-25 02:32,verified,False
+REL-00524,Release,MES,B2608-068,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-24 23:26,2026-08-25 02:18,2026-08-27 08:23,verified,True
+IPC-00525,In-process,MES,PB2608-049,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-21 08:52,2026-08-21 10:11,2026-08-21 17:52,verified,False
+IPC-00526,In-process,MES,PB2608-049,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-21 11:34,2026-08-21 14:17,2026-08-21 22:52,verified,False
+REL-00527,Release,MES,PB2608-049,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-21 15:29,2026-08-21 18:15,2026-08-24 07:05,verified,False
+IPC-00528,In-process,MES,PB2608-050,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-24 10:54,2026-08-24 14:26,2026-08-25 02:19,verified,False
+IPC-00529,In-process,MES,PB2608-050,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-24 14:11,2026-08-24 16:11,2026-08-24 21:26,verified,True
+REL-00530,Release,MES,PB2608-050,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-24 19:44,2026-08-24 23:41,2026-08-26 02:45,verified,False
+IPC-00531,In-process,MES,PB2608-051,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-21 10:57,2026-08-21 12:26,2026-08-21 16:29,verified,False
+IPC-00532,In-process,MES,PB2608-051,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-21 14:08,2026-08-21 18:08,2026-08-22 07:48,verified,False
+REL-00533,Release,MES,PB2608-051,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-21 18:36,2026-08-21 21:39,2026-08-23 19:34,verified,False
+IPC-00534,In-process,MES,B2608-069,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 11:44,2026-08-28 13:59,2026-08-28 23:03,verified,False
+IPC-00535,In-process,MES,B2608-069,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 14:53,2026-08-28 17:01,2026-08-29 04:30,verified,False
+IPC-00536,In-process,MES,B2608-069,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 18:02,2026-08-28 21:07,2026-08-29 12:33,verified,False
+REL-00537,Release,MES,B2608-069,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-28 22:30,2026-08-29 00:47,2026-08-31 09:22,verified,False
+IPC-00538,In-process,MES,B2608-070,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 11:20,2026-08-31 15:01,2026-09-01 08:18,verified,False
+IPC-00539,In-process,MES,B2608-070,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 15:16,2026-08-31 16:00,2026-09-01 04:53,verified,False
+IPC-00540,In-process,MES,B2608-070,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 19:12,2026-08-31 22:41,2026-09-01 16:23,verified,False
+REL-00541,Release,MES,B2608-070,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-01 00:29,2026-09-01 01:31,2026-09-03 20:57,verified,False
+IPC-00542,In-process,MES,B2608-071,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 09:54,2026-08-28 10:50,2026-08-28 22:18,verified,False
+IPC-00543,In-process,MES,B2608-071,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 13:12,2026-08-28 15:04,2026-08-29 01:05,verified,False
+IPC-00544,In-process,MES,B2608-071,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-28 16:30,2026-08-28 19:33,2026-08-29 09:49,verified,False
+REL-00545,Release,MES,B2608-071,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-28 22:50,2026-08-29 01:24,2026-08-30 20:49,verified,False
+IPC-00546,In-process,MES,B2608-072,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 10:58,2026-08-31 14:57,2026-08-31 22:19,verified,False
+IPC-00547,In-process,MES,B2608-072,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 14:28,2026-08-31 15:24,2026-09-01 03:12,verified,False
+IPC-00548,In-process,MES,B2608-072,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-08-31 17:57,2026-08-31 18:37,2026-09-01 06:29,verified,False
+REL-00549,Release,MES,B2608-072,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-08-31 22:47,2026-09-01 00:55,2026-09-02 19:05,verified,False
+IPC-00550,In-process,MES,PB2608-052,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-31 09:09,2026-08-31 10:46,2026-08-31 17:14,verified,False
+IPC-00551,In-process,MES,PB2608-052,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-08-31 10:54,2026-08-31 12:29,2026-09-01 08:46,verified,False
+REL-00552,Release,MES,PB2608-052,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-08-31 15:09,2026-08-31 17:12,2026-09-02 09:47,verified,False
+IPC-00553,In-process,MES,PB2609-053,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-01 12:22,2026-09-01 12:43,2026-09-01 19:25,verified,False
+IPC-00554,In-process,MES,PB2609-053,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-01 15:01,2026-09-01 17:55,2026-09-02 09:09,verified,False
+REL-00555,Release,MES,PB2609-053,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-01 18:59,2026-09-01 20:11,2026-09-04 03:12,verified,False
+IPC-00556,In-process,MES,PB2609-054,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-01 09:02,2026-09-01 11:52,2026-09-01 20:10,verified,False
+IPC-00557,In-process,MES,PB2609-054,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-01 11:37,2026-09-01 13:55,2026-09-01 23:14,verified,False
+REL-00558,Release,MES,PB2609-054,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-01 14:43,2026-09-01 16:15,2026-09-03 04:14,verified,False
+IPC-00559,In-process,MES,B2609-073,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 09:12,2026-09-07 13:06,2026-09-07 19:50,verified,False
+IPC-00560,In-process,MES,B2609-073,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 12:14,2026-09-07 15:35,2026-09-08 09:18,verified,False
+IPC-00561,In-process,MES,B2609-073,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 15:16,2026-09-07 16:42,2026-09-08 07:30,verified,False
+REL-00562,Release,MES,B2609-073,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-07 18:48,2026-09-07 19:25,2026-09-10 03:20,verified,False
+IPC-00563,In-process,MES,B2609-074,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 12:52,2026-09-04 14:04,2026-09-05 02:36,verified,False
+IPC-00564,In-process,MES,B2609-074,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 15:57,2026-09-04 18:36,2026-09-05 08:07,verified,False
+IPC-00565,In-process,MES,B2609-074,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 19:02,2026-09-04 21:29,2026-09-05 11:31,verified,False
+REL-00566,Release,MES,B2609-074,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-05 00:20,2026-09-05 03:18,2026-09-06 23:04,verified,True
+IPC-00567,In-process,MES,B2609-075,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 10:39,2026-09-07 11:34,2026-09-08 06:41,verified,False
+IPC-00568,In-process,MES,B2609-075,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 14:23,2026-09-07 15:43,2026-09-08 00:11,verified,False
+IPC-00569,In-process,MES,B2609-075,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-07 18:08,2026-09-07 21:04,2026-09-08 01:34,verified,True
+REL-00570,Release,MES,B2609-075,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-07 22:22,2026-09-08 01:15,2026-09-10 13:19,verified,True
+IPC-00571,In-process,MES,B2609-076,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 12:38,2026-09-04 14:00,2026-09-05 02:02,verified,False
+IPC-00572,In-process,MES,B2609-076,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 16:13,2026-09-04 16:52,2026-09-05 05:37,verified,False
+IPC-00573,In-process,MES,B2609-076,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-04 19:49,2026-09-04 23:09,2026-09-05 06:14,verified,False
+REL-00574,Release,MES,B2609-076,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-05 03:39,2026-09-05 05:32,2026-09-07 05:08,verified,False
+IPC-00575,In-process,MES,PB2609-055,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-07 09:20,2026-09-07 11:17,2026-09-07 22:38,verified,False
+IPC-00576,In-process,MES,PB2609-055,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-07 12:26,2026-09-07 15:02,2026-09-08 06:30,verified,False
+REL-00577,Release,MES,PB2609-055,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-07 16:31,2026-09-07 20:06,2026-09-09 23:00,verified,False
+IPC-00578,In-process,MES,PB2609-056,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-04 13:00,2026-09-04 14:31,2026-09-04 21:31,verified,False
+IPC-00579,In-process,MES,PB2609-056,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-04 16:14,2026-09-04 17:49,2026-09-05 03:30,verified,False
+REL-00580,Release,MES,PB2609-056,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-04 19:58,2026-09-04 21:50,2026-09-07 03:36,verified,False
+IPC-00581,In-process,MES,PB2609-057,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-07 09:00,2026-09-07 12:01,2026-09-08 08:04,verified,False
+IPC-00582,In-process,MES,PB2609-057,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-07 11:38,2026-09-07 12:45,2026-09-07 19:22,verified,False
+REL-00583,Release,MES,PB2609-057,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-07 16:18,2026-09-07 17:59,2026-09-10 21:07,verified,False
+IPC-00584,In-process,MES,B2609-077,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-15 13:07,2026-09-15 13:33,2026-09-16 03:21,verified,False
+IPC-00585,In-process,MES,B2609-077,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-15 17:08,2026-09-15 20:48,2026-09-16 07:32,verified,False
+IPC-00586,In-process,MES,B2609-077,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-15 21:09,2026-09-15 23:05,2026-09-16 09:26,verified,False
+REL-00587,Release,MES,B2609-077,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-16 06:03,2026-09-16 06:42,2026-09-18 09:12,verified,False
+IPC-00588,In-process,MES,B2609-078,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 11:26,2026-09-14 14:36,2026-09-15 04:58,verified,False
+IPC-00589,In-process,MES,B2609-078,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 15:01,2026-09-14 17:05,2026-09-15 00:17,verified,False
+IPC-00590,In-process,MES,B2609-078,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 18:37,2026-09-14 21:03,2026-09-15 00:38,verified,False
+REL-00591,Release,MES,B2609-078,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-15 02:39,2026-09-15 03:41,2026-09-16 17:06,verified,False
+IPC-00592,In-process,MES,B2609-079,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-11 12:32,2026-09-11 13:51,2026-09-12 03:48,verified,False
+IPC-00593,In-process,MES,B2609-079,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-11 16:07,2026-09-11 18:37,2026-09-12 06:17,verified,False
+IPC-00594,In-process,MES,B2609-079,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-11 19:42,2026-09-11 21:40,2026-09-12 10:25,verified,False
+REL-00595,Release,MES,B2609-079,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-12 00:49,2026-09-12 02:59,2026-09-14 21:53,verified,False
+IPC-00596,In-process,MES,B2609-080,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 09:51,2026-09-14 10:31,2026-09-14 18:38,verified,False
+IPC-00597,In-process,MES,B2609-080,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 13:05,2026-09-14 14:35,2026-09-14 20:37,verified,False
+IPC-00598,In-process,MES,B2609-080,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-14 16:19,2026-09-14 19:39,2026-09-14 23:33,verified,False
+REL-00599,Release,MES,B2609-080,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-14 20:17,2026-09-14 21:58,2026-09-17 05:23,verified,False
+IPC-00600,In-process,MES,PB2609-058,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-11 11:20,2026-09-11 14:31,2026-09-11 22:41,verified,False
+IPC-00601,In-process,MES,PB2609-058,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-11 13:36,2026-09-11 15:11,2026-09-12 04:58,verified,False
+REL-00602,Release,MES,PB2609-058,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-11 17:45,2026-09-11 19:52,2026-09-14 11:23,verified,False
+IPC-00603,In-process,MES,PB2609-059,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-14 08:57,2026-09-14 10:25,2026-09-14 20:16,verified,False
+IPC-00604,In-process,MES,PB2609-059,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-14 11:36,2026-09-14 13:40,2026-09-15 01:40,verified,False
+REL-00605,Release,MES,PB2609-059,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-14 14:45,2026-09-14 15:57,2026-09-16 19:18,verified,False
+IPC-00606,In-process,MES,PB2609-060,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-11 10:01,2026-09-11 10:30,2026-09-11 17:54,verified,False
+IPC-00607,In-process,MES,PB2609-060,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-11 12:40,2026-09-11 13:10,2026-09-12 01:38,verified,False
+REL-00608,Release,MES,PB2609-060,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-11 15:48,2026-09-11 18:49,2026-09-13 21:19,verified,False
+IPC-00609,In-process,MES,B2609-081,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-22 12:16,2026-09-22 14:39,2026-09-23 07:04,verified,False
+IPC-00610,In-process,MES,B2609-081,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-22 15:32,2026-09-22 18:58,2026-09-23 02:51,verified,False
+IPC-00611,In-process,MES,B2609-081,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-22 18:48,2026-09-22 22:10,2026-09-23 12:04,verified,False
+REL-00612,Release,MES,B2609-081,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-23 04:07,2026-09-23 06:21,2026-09-25 04:38,verified,False
+IPC-00613,In-process,MES,B2609-082,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 12:58,2026-09-21 15:06,2026-09-21 21:48,verified,False
+IPC-00614,In-process,MES,B2609-082,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 16:37,2026-09-21 17:39,2026-09-22 06:05,verified,False
+IPC-00615,In-process,MES,B2609-082,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 20:16,2026-09-21 20:45,2026-09-22 06:26,verified,False
+REL-00616,Release,MES,B2609-082,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-22 00:26,2026-09-22 03:57,2026-09-23 22:43,verified,False
+IPC-00617,In-process,MES,B2609-083,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 12:39,2026-09-21 14:11,2026-09-21 21:24,verified,False
+IPC-00618,In-process,MES,B2609-083,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 16:05,2026-09-21 17:30,2026-09-21 22:19,verified,False
+IPC-00619,In-process,MES,B2609-083,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 19:31,2026-09-21 20:10,2026-09-22 05:22,verified,False
+REL-00620,Release,MES,B2609-083,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-22 00:28,2026-09-22 01:14,2026-09-24 17:13,verified,False
+IPC-00621,In-process,MES,B2609-084,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 13:14,2026-09-21 13:40,2026-09-21 21:48,verified,False
+IPC-00622,In-process,MES,B2609-084,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 17:02,2026-09-21 18:16,2026-09-21 21:56,verified,False
+IPC-00623,In-process,MES,B2609-084,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-21 20:50,2026-09-21 22:47,2026-09-22 13:07,verified,False
+REL-00624,Release,MES,B2609-084,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-22 04:14,2026-09-22 06:48,2026-09-24 12:20,verified,False
+IPC-00625,In-process,MES,PB2609-061,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 10:51,2026-09-21 11:25,2026-09-21 21:39,verified,False
+IPC-00626,In-process,MES,PB2609-061,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 14:12,2026-09-21 18:10,2026-09-22 10:42,verified,False
+REL-00627,Release,MES,PB2609-061,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-21 18:03,2026-09-21 19:48,2026-09-24 08:28,verified,False
+IPC-00628,In-process,MES,PB2609-062,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 11:10,2026-09-21 14:36,2026-09-22 04:54,verified,False
+IPC-00629,In-process,MES,PB2609-062,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 14:34,2026-09-21 18:15,2026-09-22 10:39,verified,False
+REL-00630,Release,MES,PB2609-062,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-21 19:10,2026-09-21 19:50,2026-09-24 18:22,verified,False
+IPC-00631,In-process,MES,PB2609-063,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 11:48,2026-09-21 13:01,2026-09-22 01:59,verified,False
+IPC-00632,In-process,MES,PB2609-063,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-21 14:23,2026-09-21 15:36,2026-09-21 18:42,verified,False
+REL-00633,Release,MES,PB2609-063,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-21 18:53,2026-09-21 22:45,2026-09-23 23:07,verified,False
+IPC-00634,In-process,MES,B2609-085,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 11:54,2026-09-29 13:13,2026-09-29 19:05,verified,False
+IPC-00635,In-process,MES,B2609-085,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 15:26,2026-09-29 18:13,2026-09-30 04:21,verified,False
+IPC-00636,In-process,MES,B2609-085,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 18:58,2026-09-29 20:00,2026-09-30 06:46,verified,False
+REL-00637,Release,MES,B2609-085,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-30 02:21,2026-09-30 05:06,2026-10-02 01:52,verified,False
+IPC-00638,In-process,MES,B2609-086,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 11:13,2026-09-28 13:13,2026-09-28 21:38,verified,False
+IPC-00639,In-process,MES,B2609-086,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 14:44,2026-09-28 16:00,2026-09-29 01:24,verified,False
+IPC-00640,In-process,MES,B2609-086,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 18:15,2026-09-28 20:09,2026-09-29 09:13,verified,False
+REL-00641,Release,MES,B2609-086,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-28 23:18,2026-09-28 23:57,2026-10-01 02:49,verified,False
+IPC-00642,In-process,MES,B2609-087,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 09:25,2026-09-29 12:19,2026-09-29 19:22,verified,False
+IPC-00643,In-process,MES,B2609-087,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 12:22,2026-09-29 16:18,2026-09-29 23:33,verified,False
+IPC-00644,In-process,MES,B2609-087,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-29 15:19,2026-09-29 17:27,2026-09-30 01:45,verified,False
+REL-00645,Release,MES,B2609-087,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-29 18:46,2026-09-29 22:07,2026-10-01 16:46,verified,False
+IPC-00646,In-process,MES,B2609-088,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 11:37,2026-09-28 12:22,2026-09-29 03:27,verified,False
+IPC-00647,In-process,MES,B2609-088,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 14:53,2026-09-28 17:01,2026-09-29 04:08,verified,False
+IPC-00648,In-process,MES,B2609-088,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-09-28 18:09,2026-09-28 21:33,2026-09-29 00:41,verified,False
+REL-00649,Release,MES,B2609-088,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-09-29 08:07,2026-09-29 11:50,2026-10-01 04:12,verified,False
+IPC-00650,In-process,MES,PB2609-064,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-25 12:39,2026-09-25 15:35,2026-09-26 07:58,verified,False
+IPC-00651,In-process,MES,PB2609-064,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-25 16:05,2026-09-25 18:43,2026-09-25 21:52,verified,False
+REL-00652,Release,MES,PB2609-064,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-25 20:02,2026-09-25 21:49,2026-09-27 21:58,verified,False
+IPC-00653,In-process,MES,PB2609-065,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-28 11:18,2026-09-28 12:38,2026-09-29 01:23,verified,False
+IPC-00654,In-process,MES,PB2609-065,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-28 14:32,2026-09-28 15:16,2026-09-29 03:28,verified,False
+REL-00655,Release,MES,PB2609-065,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-28 22:47,2026-09-29 01:33,2026-10-01 06:28,verified,False
+IPC-00656,In-process,MES,PB2609-066,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-29 12:38,2026-09-29 15:45,2026-09-30 02:59,verified,False
+IPC-00657,In-process,MES,PB2609-066,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-09-29 16:02,2026-09-29 16:57,2026-09-30 00:45,verified,False
+REL-00658,Release,MES,PB2609-066,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-09-29 21:42,2026-09-30 00:35,2026-10-01 13:51,verified,False
+IPC-00659,In-process,MES,B2610-089,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 10:27,2026-10-05 12:31,2026-10-05 22:26,verified,False
+IPC-00660,In-process,MES,B2610-089,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 13:26,2026-10-05 14:52,2026-10-06 04:58,verified,False
+IPC-00661,In-process,MES,B2610-089,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 16:25,2026-10-05 19:47,2026-10-06 09:43,verified,False
+REL-00662,Release,MES,B2610-089,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-05 23:38,2026-10-06 03:30,2026-10-07 22:59,verified,True
+IPC-00663,In-process,MES,B2610-090,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 09:54,2026-10-05 10:54,2026-10-05 18:57,verified,False
+IPC-00664,In-process,MES,B2610-090,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 13:28,2026-10-05 16:58,2026-10-06 01:46,verified,False
+IPC-00665,In-process,MES,B2610-090,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 17:02,2026-10-05 21:01,2026-10-06 09:41,verified,False
+REL-00666,Release,MES,B2610-090,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-05 21:29,2026-10-05 22:26,2026-10-08 01:27,verified,False
+IPC-00667,In-process,MES,B2610-091,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-02 11:35,2026-10-02 14:11,2026-10-02 22:31,verified,False
+IPC-00668,In-process,MES,B2610-091,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-02 14:57,2026-10-02 17:42,2026-10-03 03:27,verified,False
+IPC-00669,In-process,MES,B2610-091,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-02 18:19,2026-10-02 21:35,2026-10-03 09:08,verified,False
+REL-00670,Release,MES,B2610-091,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-02 22:23,2026-10-02 22:53,2026-10-06 04:03,verified,False
+IPC-00671,In-process,MES,B2610-092,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 10:15,2026-10-05 13:20,2026-10-06 06:45,verified,False
+IPC-00672,In-process,MES,B2610-092,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 14:02,2026-10-05 16:30,2026-10-06 03:33,verified,False
+IPC-00673,In-process,MES,B2610-092,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-05 17:49,2026-10-05 20:13,2026-10-06 11:47,verified,False
+REL-00674,Release,MES,B2610-092,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-05 23:06,2026-10-05 23:42,2026-10-08 03:07,verified,True
+IPC-00675,In-process,MES,PB2610-067,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-05 10:42,2026-10-05 12:32,2026-10-05 21:19,verified,False
+IPC-00676,In-process,MES,PB2610-067,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-05 14:13,2026-10-05 14:34,2026-10-06 04:17,verified,False
+REL-00677,Release,MES,PB2610-067,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-05 18:30,2026-10-05 20:20,2026-10-07 17:55,verified,False
+IPC-00678,In-process,MES,PB2610-068,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-05 11:00,2026-10-05 12:56,2026-10-06 01:03,verified,False
+IPC-00679,In-process,MES,PB2610-068,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-05 14:09,2026-10-05 15:41,2026-10-06 06:24,verified,False
+REL-00680,Release,MES,PB2610-068,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-05 20:47,2026-10-05 22:30,2026-10-09 00:04,verified,False
+IPC-00681,In-process,MES,PB2610-069,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-06 11:43,2026-10-06 12:53,2026-10-06 17:01,verified,False
+IPC-00682,In-process,MES,PB2610-069,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-06 14:43,2026-10-06 15:38,2026-10-07 08:58,verified,False
+REL-00683,Release,MES,PB2610-069,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-06 18:32,2026-10-06 22:18,2026-10-08 22:02,verified,False
+IPC-00684,In-process,MES,B2610-093,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-13 12:20,2026-10-13 15:07,2026-10-14 04:57,verified,False
+IPC-00685,In-process,MES,B2610-093,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-13 16:00,2026-10-13 16:25,2026-10-13 21:14,verified,False
+IPC-00686,In-process,MES,B2610-093,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-13 19:41,2026-10-13 20:05,2026-10-14 09:02,verified,False
+REL-00687,Release,MES,B2610-093,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-14 00:17,2026-10-14 03:29,2026-10-17 06:22,verified,True
+IPC-00688,In-process,MES,B2610-094,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 09:48,2026-10-12 10:39,2026-10-13 00:03,verified,False
+IPC-00689,In-process,MES,B2610-094,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 13:17,2026-10-12 14:18,2026-10-12 23:43,verified,False
+IPC-00690,In-process,MES,B2610-094,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 16:45,2026-10-12 20:14,2026-10-13 00:32,verified,False
+REL-00691,Release,MES,B2610-094,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-12 23:47,2026-10-13 03:31,2026-10-15 11:17,verified,False
+IPC-00692,In-process,MES,B2610-095,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 12:25,2026-10-12 13:26,2026-10-13 02:16,verified,False
+IPC-00693,In-process,MES,B2610-095,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 16:49,2026-10-12 19:48,2026-10-13 04:53,verified,False
+IPC-00694,In-process,MES,B2610-095,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 21:13,2026-10-12 21:40,2026-10-13 08:23,verified,False
+REL-00695,Release,MES,B2610-095,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-13 03:40,2026-10-13 06:18,2026-10-14 08:07,verified,False
+IPC-00696,In-process,MES,B2610-096,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 11:46,2026-10-12 13:30,2026-10-12 19:38,verified,False
+IPC-00697,In-process,MES,B2610-096,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 15:24,2026-10-12 18:58,2026-10-13 07:32,verified,False
+IPC-00698,In-process,MES,B2610-096,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-12 19:02,2026-10-12 22:11,2026-10-13 16:21,verified,False
+REL-00699,Release,MES,B2610-096,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-12 23:28,2026-10-13 02:29,2026-10-14 14:17,verified,False
+IPC-00700,In-process,MES,PB2610-070,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-09 11:42,2026-10-09 12:34,2026-10-10 10:10,verified,False
+IPC-00701,In-process,MES,PB2610-070,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-09 14:44,2026-10-09 15:36,2026-10-10 04:07,verified,False
+REL-00702,Release,MES,PB2610-070,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-09 19:07,2026-10-09 21:48,2026-10-12 07:26,verified,False
+IPC-00703,In-process,MES,PB2610-071,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-13 10:17,2026-10-13 12:19,2026-10-14 06:19,verified,False
+IPC-00704,In-process,MES,PB2610-071,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-13 12:59,2026-10-13 14:41,2026-10-14 07:08,verified,False
+REL-00705,Release,MES,PB2610-071,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-13 22:08,2026-10-13 22:47,2026-10-16 07:44,verified,False
+IPC-00706,In-process,MES,PB2610-072,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-12 12:53,2026-10-12 15:27,2026-10-13 08:05,verified,False
+IPC-00707,In-process,MES,PB2610-072,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-12 16:09,2026-10-12 19:59,2026-10-13 12:11,verified,False
+REL-00708,Release,MES,PB2610-072,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-12 22:40,2026-10-12 23:39,2026-10-16 19:35,verified,False
+IPC-00709,In-process,MES,B2610-097,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 13:17,2026-10-19 15:41,2026-10-20 07:28,verified,False
+IPC-00710,In-process,MES,B2610-097,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 16:47,2026-10-19 20:26,2026-10-20 07:58,verified,False
+IPC-00711,In-process,MES,B2610-097,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 20:17,2026-10-19 22:13,2026-10-20 01:01,verified,False
+REL-00712,Release,MES,B2610-097,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-20 01:48,2026-10-20 04:39,2026-10-22 08:07,verified,False
+IPC-00713,In-process,MES,B2610-098,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 10:48,2026-10-19 13:53,2026-10-20 03:39,verified,False
+IPC-00714,In-process,MES,B2610-098,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 14:36,2026-10-19 18:35,2026-10-20 11:44,verified,False
+IPC-00715,In-process,MES,B2610-098,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 18:23,2026-10-19 21:52,2026-10-20 05:08,verified,False
+REL-00716,Release,MES,B2610-098,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-20 00:08,2026-10-20 03:11,2026-10-22 13:29,verified,False
+IPC-00717,In-process,MES,B2610-099,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-20 11:14,2026-10-20 12:13,2026-10-20 19:39,verified,False
+IPC-00718,In-process,MES,B2610-099,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-20 15:04,2026-10-20 16:26,2026-10-21 06:37,verified,False
+IPC-00719,In-process,MES,B2610-099,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-20 18:53,2026-10-20 19:50,2026-10-21 08:34,verified,False
+REL-00720,Release,MES,B2610-099,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-21 00:32,2026-10-21 02:38,2026-10-23 03:38,verified,False
+IPC-00721,In-process,MES,B2610-100,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 10:20,2026-10-19 12:32,2026-10-19 21:29,verified,False
+IPC-00722,In-process,MES,B2610-100,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 13:57,2026-10-19 16:11,2026-10-20 01:33,verified,False
+IPC-00723,In-process,MES,B2610-100,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-19 17:34,2026-10-19 19:56,2026-10-20 06:02,verified,False
+REL-00724,Release,MES,B2610-100,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-19 23:03,2026-10-20 01:48,2026-10-22 01:01,verified,False
+IPC-00725,In-process,MES,PB2610-073,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-20 09:58,2026-10-20 10:48,2026-10-20 22:55,verified,False
+IPC-00726,In-process,MES,PB2610-073,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-20 13:11,2026-10-20 16:57,2026-10-21 00:34,verified,False
+REL-00727,Release,MES,PB2610-073,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-20 17:46,2026-10-20 21:42,2026-10-22 23:43,verified,False
+IPC-00728,In-process,MES,PB2610-074,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-16 10:55,2026-10-16 11:39,2026-10-16 20:13,verified,False
+IPC-00729,In-process,MES,PB2610-074,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-16 13:50,2026-10-16 17:10,2026-10-17 06:32,verified,False
+REL-00730,Release,MES,PB2610-074,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-16 19:34,2026-10-16 20:32,2026-10-19 02:31,verified,False
+IPC-00731,In-process,MES,PB2610-075,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-16 11:46,2026-10-16 12:54,2026-10-16 22:56,verified,False
+IPC-00732,In-process,MES,PB2610-075,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-16 14:20,2026-10-16 18:07,2026-10-17 10:25,verified,False
+REL-00733,Release,MES,PB2610-075,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-16 18:00,2026-10-16 21:57,2026-10-18 04:43,verified,False
+IPC-00734,In-process,MES,B2610-101,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 10:51,2026-10-26 11:59,2026-10-27 01:29,verified,False
+IPC-00735,In-process,MES,B2610-101,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 14:25,2026-10-26 17:54,2026-10-26 20:41,verified,False
+IPC-00736,In-process,MES,B2610-101,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 17:59,2026-10-26 19:53,2026-10-27 05:31,verified,False
+REL-00737,Release,MES,B2610-101,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-27 00:20,2026-10-27 01:36,2026-10-29 20:20,verified,False
+IPC-00738,In-process,MES,B2610-102,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 11:18,2026-10-26 12:07,2026-10-27 06:59,verified,False
+IPC-00739,In-process,MES,B2610-102,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 14:59,2026-10-26 18:28,2026-10-27 06:13,verified,False
+IPC-00740,In-process,MES,B2610-102,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 18:39,2026-10-26 20:11,2026-10-27 04:51,verified,False
+REL-00741,Release,MES,B2610-102,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-27 01:07,2026-10-27 03:08,2026-10-29 07:56,verified,False
+IPC-00742,In-process,MES,B2610-103,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-27 12:18,2026-10-27 13:27,2026-10-28 04:18,verified,False
+IPC-00743,In-process,MES,B2610-103,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-27 16:09,2026-10-27 19:03,2026-10-28 01:22,verified,False
+IPC-00744,In-process,MES,B2610-103,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-27 19:59,2026-10-27 22:39,2026-10-28 10:01,verified,False
+REL-00745,Release,MES,B2610-103,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-28 00:32,2026-10-28 00:56,2026-10-29 13:57,verified,False
+IPC-00746,In-process,MES,B2610-104,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 12:54,2026-10-26 15:32,2026-10-27 00:34,verified,False
+IPC-00747,In-process,MES,B2610-104,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 16:21,2026-10-26 18:24,2026-10-27 03:44,verified,False
+IPC-00748,In-process,MES,B2610-104,SKU-2002,Ibuprofen 200 mg tablets (in-process),Line 1 - fluid-bed dryer outlet,2026-10-26 19:48,2026-10-26 22:01,2026-10-27 09:50,verified,False
+REL-00749,Release,MES,B2610-104,SKU-2002,Ibuprofen 200 mg tablets,Line 1 - tablet press discharge,2026-10-26 23:59,2026-10-27 03:24,2026-10-29 22:05,verified,False
+IPC-00750,In-process,MES,PB2610-076,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-26 10:09,2026-10-26 12:33,2026-10-27 06:10,verified,False
+IPC-00751,In-process,MES,PB2610-076,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-26 12:57,2026-10-26 16:10,2026-10-27 02:15,verified,False
+REL-00752,Release,MES,PB2610-076,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-26 21:49,2026-10-26 22:11,2026-10-29 23:04,verified,False
+IPC-00753,In-process,MES,PB2610-077,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-27 12:56,2026-10-27 15:09,2026-10-28 03:15,verified,False
+IPC-00754,In-process,MES,PB2610-077,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-27 16:22,2026-10-27 17:25,2026-10-28 03:26,verified,False
+REL-00755,Release,MES,PB2610-077,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-27 22:56,2026-10-28 01:08,2026-10-29 20:12,verified,False
+IPC-00756,In-process,MES,PB2610-078,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-26 10:23,2026-10-26 11:54,2026-10-27 02:13,verified,False
+IPC-00757,In-process,MES,PB2610-078,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-26 13:47,2026-10-26 14:20,2026-10-26 21:55,verified,False
+REL-00758,Release,MES,PB2610-078,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-26 19:07,2026-10-26 21:21,2026-10-29 13:58,verified,False
+IPC-00759,In-process,MES,PB2610-079,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-30 11:42,2026-10-30 14:53,2026-10-31 07:27,verified,False
+IPC-00760,In-process,MES,PB2610-079,SKU-1001,Phosphate buffer pH 7.4 (in-process),Line 2 - filling machine,2026-10-30 14:41,2026-10-30 15:06,2026-10-31 06:58,verified,False
+REL-00761,Release,MES,PB2610-079,SKU-1001,Phosphate buffer pH 7.4,Line 2 - filling machine,2026-10-30 18:22,2026-10-30 19:44,,sample_received,

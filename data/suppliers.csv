@@ -1,0 +1,13 @@
+supplier_id,name,country,category
+S01,Hubei Pharma Chem,CN,API
+S02,IOL Chemicals,IN,API
+S03,JRS Pharma,DE,Excipients
+S04,Meggle Excipients,DE,Excipients
+S05,K+S Minerals,DE,Raw materials
+S06,Merck Life Science,DE,Raw materials
+S07,Gerresheimer,DE,Primary packaging
+S08,Constantia Flexibles,AT,Primary packaging
+S09,Smurfit Westrock,LT,Secondary packaging
+S10,VWR International,BE,Lab consumables
+S11,Agilent Technologies,US,Lab consumables
+S12,Fette Compacting,DE,Maintenance & spares

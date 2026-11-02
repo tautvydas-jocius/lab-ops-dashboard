@@ -1,0 +1,35 @@
+# Postgres (warehouse + Metabase app DB) and Metabase, bound to localhost only.
+# docker compose up -d  ->  http://127.0.0.1:3300
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: labops
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-labops}
+      POSTGRES_DB: labops
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./warehouse:/warehouse:ro
+      - ./warehouse/initdb:/docker-entrypoint-initdb.d:ro
+      - ./data:/data:ro
+    ports:
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+
+  metabase:
+    image: metabase/metabase:${METABASE_TAG:-v0.65.2}
+    restart: unless-stopped
+    depends_on: [db]
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_HOST: db
+      MB_DB_PORT: 5432
+      MB_DB_DBNAME: metabase
+      MB_DB_USER: labops
+      MB_DB_PASS: ${DB_PASSWORD:-labops}
+      JAVA_OPTS: -Xmx1g
+    ports:
+      - "127.0.0.1:${MB_PORT:-3300}:3000"
+
+volumes:
+  db:

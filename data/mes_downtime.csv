@@ -1,0 +1,253 @@
+batch_id,line,start_ts,minutes,reason
+B2605-001,Line 1,2026-05-04 13:13,93,Material shortage
+B2605-001,Line 1,2026-05-04 08:55,39,Changeover
+B2605-001,Line 1,2026-05-04 09:15,15,Tooling (punches)
+B2605-002,Line 1,2026-05-04 21:10,24,Awaiting QA
+B2605-002,Line 1,2026-05-04 21:05,27,Electrical fault
+B2605-002,Line 1,2026-05-04 23:39,39,Material shortage
+B2605-003,Line 1,2026-05-01 11:00,77,Awaiting QA
+B2605-003,Line 1,2026-05-01 16:44,16,Awaiting QA
+B2605-004,Line 1,2026-05-04 18:41,60,Tooling (punches)
+PB2605-001,Line 2,2026-05-05 14:33,62,Awaiting QA
+PB2605-002,Line 2,2026-05-04 16:11,53,Changeover
+PB2605-002,Line 2,2026-05-04 15:36,56,Electrical fault
+PB2605-002,Line 2,2026-05-04 11:50,66,Tooling (punches)
+PB2605-003,Line 2,2026-05-05 12:59,36,Material shortage
+B2605-005,Line 1,2026-05-08 20:33,17,Cleaning
+B2605-005,Line 1,2026-05-08 16:59,16,Electrical fault
+B2605-006,Line 1,2026-05-11 15:05,75,Awaiting QA
+B2605-008,Line 1,2026-05-11 14:19,21,Changeover
+B2605-008,Line 1,2026-05-11 11:58,117,Tooling (punches)
+PB2605-005,Line 2,2026-05-11 15:26,86,Tooling (punches)
+PB2605-006,Line 2,2026-05-11 12:54,25,Material shortage
+B2605-009,Line 1,2026-05-18 22:50,52,Changeover
+B2605-010,Line 1,2026-05-15 12:59,38,Tooling (punches)
+B2605-010,Line 1,2026-05-15 17:51,79,Tooling (punches)
+B2605-012,Line 1,2026-05-15 09:31,57,Electrical fault
+PB2605-008,Line 2,2026-05-15 14:49,53,Awaiting QA
+PB2605-008,Line 2,2026-05-15 12:27,159,Tooling (punches)
+PB2605-009,Line 2,2026-05-18 07:54,16,Electrical fault
+PB2605-009,Line 2,2026-05-18 10:05,16,Material shortage
+PB2605-009,Line 2,2026-05-18 10:00,21,Electrical fault
+B2605-016,Line 1,2026-05-25 14:23,59,Cleaning
+B2605-016,Line 1,2026-05-25 11:16,37,Cleaning
+B2605-016,Line 1,2026-05-25 14:50,34,Tooling (punches)
+PB2605-010,Line 2,2026-05-26 08:00,61,Changeover
+PB2605-010,Line 2,2026-05-26 12:11,121,Electrical fault
+PB2605-011,Line 2,2026-05-25 15:51,34,Changeover
+B2606-018,Line 1,2026-06-01 18:51,14,Electrical fault
+B2605-019,Line 1,2026-05-29 11:30,26,Tooling (punches)
+B2605-020,Line 1,2026-05-29 13:57,84,Cleaning
+B2605-020,Line 1,2026-05-29 11:50,47,Material shortage
+PB2605-013,Line 2,2026-05-29 11:11,40,Cleaning
+PB2605-014,Line 2,2026-05-29 13:12,42,Tooling (punches)
+PB2605-014,Line 2,2026-05-29 08:50,23,Tooling (punches)
+PB2606-015,Line 2,2026-06-01 13:21,39,Cleaning
+B2606-023,Line 1,2026-06-08 11:35,99,Tooling (punches)
+B2606-023,Line 1,2026-06-08 16:14,14,Cleaning
+B2606-024,Line 1,2026-06-08 08:06,18,Awaiting QA
+B2606-024,Line 1,2026-06-08 14:59,60,Changeover
+PB2606-017,Line 2,2026-06-08 12:24,31,Material shortage
+PB2606-018,Line 2,2026-06-09 15:33,140,Tooling (punches)
+PB2606-018,Line 2,2026-06-09 12:02,153,Tooling (punches)
+B2606-025,Line 1,2026-06-15 13:37,10,Material shortage
+B2606-025,Line 1,2026-06-15 13:41,37,Tooling (punches)
+B2606-026,Line 1,2026-06-15 13:34,14,Changeover
+B2606-028,Line 1,2026-06-12 17:40,10,Tooling (punches)
+PB2606-019,Line 2,2026-06-15 11:09,92,Cleaning
+PB2606-020,Line 2,2026-06-15 15:46,37,Material shortage
+PB2606-020,Line 2,2026-06-15 09:27,12,Tooling (punches)
+PB2606-020,Line 2,2026-06-15 14:55,24,Material shortage
+PB2606-021,Line 2,2026-06-12 09:48,50,Electrical fault
+B2606-029,Line 1,2026-06-19 20:28,39,Electrical fault
+B2606-029,Line 1,2026-06-19 08:30,127,Tooling (punches)
+B2606-030,Line 1,2026-06-22 11:16,136,Awaiting QA
+B2606-030,Line 1,2026-06-22 14:06,169,Material shortage
+B2606-031,Line 1,2026-06-22 19:18,23,Electrical fault
+B2606-031,Line 1,2026-06-22 16:11,15,Changeover
+B2606-032,Line 1,2026-06-19 12:12,45,Cleaning
+PB2606-022,Line 2,2026-06-22 16:28,75,Tooling (punches)
+PB2606-022,Line 2,2026-06-22 14:18,83,Changeover
+PB2606-023,Line 2,2026-06-22 13:44,120,Material shortage
+PB2606-023,Line 2,2026-06-22 16:10,86,Electrical fault
+PB2606-024,Line 2,2026-06-22 13:39,42,Awaiting QA
+B2606-033,Line 1,2026-06-26 15:44,32,Electrical fault
+B2606-034,Line 1,2026-06-29 18:51,25,Awaiting QA
+B2606-034,Line 1,2026-06-29 12:49,51,Changeover
+B2606-034,Line 1,2026-06-29 12:16,72,Cleaning
+B2606-035,Line 1,2026-06-26 20:42,19,Electrical fault
+B2606-036,Line 1,2026-06-29 16:56,80,Electrical fault
+PB2606-025,Line 2,2026-06-29 08:40,82,Changeover
+PB2606-025,Line 2,2026-06-29 12:45,34,Changeover
+PB2606-025,Line 2,2026-06-29 14:35,34,Cleaning
+PB2606-026,Line 2,2026-06-26 14:07,53,Material shortage
+PB2606-027,Line 2,2026-06-29 12:24,31,Cleaning
+PB2606-027,Line 2,2026-06-29 10:23,43,Awaiting QA
+PB2606-027,Line 2,2026-06-29 15:19,45,Material shortage
+B2607-038,Line 1,2026-07-07 09:20,57,Cleaning
+B2607-040,Line 1,2026-07-06 11:24,13,Changeover
+B2607-040,Line 1,2026-07-06 12:26,64,Tooling (punches)
+B2607-040,Line 1,2026-07-06 15:42,53,Changeover
+PB2607-028,Line 2,2026-07-06 08:36,14,Electrical fault
+PB2607-028,Line 2,2026-07-06 12:27,22,Material shortage
+PB2607-029,Line 2,2026-07-07 11:31,39,Electrical fault
+PB2607-029,Line 2,2026-07-07 13:09,45,Material shortage
+PB2607-029,Line 2,2026-07-07 15:15,56,Cleaning
+PB2607-030,Line 2,2026-07-06 08:18,36,Awaiting QA
+B2607-042,Line 1,2026-07-10 10:00,30,Changeover
+B2607-042,Line 1,2026-07-10 18:24,22,Changeover
+B2607-043,Line 1,2026-07-13 11:21,137,Cleaning
+B2607-044,Line 1,2026-07-10 17:24,17,Electrical fault
+B2607-044,Line 1,2026-07-10 13:11,12,Awaiting QA
+B2607-044,Line 1,2026-07-10 21:09,87,Electrical fault
+PB2607-031,Line 2,2026-07-13 20:15,35,Changeover
+PB2607-032,Line 2,2026-07-14 14:45,120,Awaiting QA
+B2607-045,Line 1,2026-07-17 11:27,158,Changeover
+B2607-046,Line 1,2026-07-21 19:06,17,Cleaning
+B2607-046,Line 1,2026-07-21 19:08,57,Electrical fault
+B2607-046,Line 1,2026-07-21 17:23,35,Cleaning
+B2607-047,Line 1,2026-07-17 22:29,63,Awaiting QA
+B2607-048,Line 1,2026-07-20 12:38,166,Cleaning
+B2607-048,Line 1,2026-07-20 15:11,12,Cleaning
+B2607-048,Line 1,2026-07-20 17:45,14,Cleaning
+PB2607-034,Line 2,2026-07-20 09:07,11,Electrical fault
+PB2607-034,Line 2,2026-07-20 11:27,95,Awaiting QA
+PB2607-035,Line 2,2026-07-20 14:07,26,Cleaning
+PB2607-035,Line 2,2026-07-20 10:53,58,Tooling (punches)
+PB2607-036,Line 2,2026-07-20 09:13,12,Cleaning
+B2607-049,Line 1,2026-07-27 22:48,37,Electrical fault
+B2607-050,Line 1,2026-07-27 16:31,21,Material shortage
+B2607-051,Line 1,2026-07-24 17:14,28,Material shortage
+B2607-051,Line 1,2026-07-24 18:39,26,Changeover
+B2607-052,Line 1,2026-07-24 15:28,17,Cleaning
+PB2607-037,Line 2,2026-07-27 11:09,22,Changeover
+PB2607-037,Line 2,2026-07-27 12:23,20,Electrical fault
+PB2607-038,Line 2,2026-07-27 16:47,34,Material shortage
+B2608-053,Line 1,2026-08-04 18:57,69,Material shortage
+B2608-053,Line 1,2026-08-04 16:57,79,Tooling (punches)
+B2608-054,Line 1,2026-08-03 19:05,85,Changeover
+B2608-054,Line 1,2026-08-03 17:27,52,Cleaning
+B2608-054,Line 1,2026-08-03 13:55,57,Cleaning
+PB2608-041,Line 2,2026-08-04 17:11,70,Awaiting QA
+B2608-058,Line 1,2026-08-07 09:58,21,Tooling (punches)
+B2608-058,Line 1,2026-08-07 13:39,15,Changeover
+B2608-059,Line 1,2026-08-10 14:19,41,Tooling (punches)
+B2608-060,Line 1,2026-08-11 01:49,22,Electrical fault
+PB2608-043,Line 2,2026-08-07 13:44,13,Material shortage
+PB2608-044,Line 2,2026-08-10 12:38,29,Tooling (punches)
+PB2608-045,Line 2,2026-08-10 11:53,44,Tooling (punches)
+PB2608-045,Line 2,2026-08-10 13:56,15,Tooling (punches)
+B2608-061,Line 1,2026-08-17 16:43,76,Material shortage
+B2608-062,Line 1,2026-08-18 13:52,32,Tooling (punches)
+B2608-062,Line 1,2026-08-19 00:48,15,Awaiting QA
+B2608-063,Line 1,2026-08-17 14:48,159,Awaiting QA
+PB2608-046,Line 2,2026-08-14 16:46,113,Awaiting QA
+PB2608-046,Line 2,2026-08-14 12:49,36,Electrical fault
+PB2608-047,Line 2,2026-08-18 13:37,18,Cleaning
+PB2608-047,Line 2,2026-08-18 15:55,26,Material shortage
+PB2608-048,Line 2,2026-08-17 10:53,17,Material shortage
+B2608-065,Line 1,2026-08-21 16:23,28,Changeover
+B2608-065,Line 1,2026-08-21 18:42,100,Material shortage
+B2608-065,Line 1,2026-08-21 21:11,58,Changeover
+B2608-066,Line 1,2026-08-24 21:17,21,Awaiting QA
+B2608-066,Line 1,2026-08-24 09:10,11,Cleaning
+B2608-067,Line 1,2026-08-21 11:22,53,Material shortage
+B2608-067,Line 1,2026-08-21 16:34,103,Tooling (punches)
+B2608-068,Line 1,2026-08-24 15:52,64,Cleaning
+PB2608-049,Line 2,2026-08-21 09:27,43,Cleaning
+PB2608-050,Line 2,2026-08-24 14:19,11,Electrical fault
+PB2608-050,Line 2,2026-08-24 15:57,35,Changeover
+PB2608-050,Line 2,2026-08-24 11:03,61,Cleaning
+PB2608-051,Line 2,2026-08-21 15:43,47,Awaiting QA
+B2608-069,Line 1,2026-08-28 15:26,16,Awaiting QA
+B2608-069,Line 1,2026-08-28 13:48,33,Tooling (punches)
+B2608-070,Line 1,2026-08-31 11:39,29,Cleaning
+B2608-070,Line 1,2026-08-31 11:26,22,Awaiting QA
+B2608-071,Line 1,2026-08-28 15:58,14,Cleaning
+B2608-071,Line 1,2026-08-28 09:24,50,Awaiting QA
+B2608-071,Line 1,2026-08-28 15:39,87,Cleaning
+B2608-072,Line 1,2026-08-31 12:09,50,Tooling (punches)
+PB2608-052,Line 2,2026-08-31 08:30,107,Changeover
+PB2608-052,Line 2,2026-08-31 08:59,13,Cleaning
+PB2609-053,Line 2,2026-09-01 15:43,49,Material shortage
+B2609-074,Line 1,2026-09-04 18:21,104,Tooling (punches)
+B2609-076,Line 1,2026-09-04 21:42,163,Tooling (punches)
+B2609-076,Line 1,2026-09-04 11:44,17,Tooling (punches)
+B2609-076,Line 1,2026-09-04 18:05,45,Tooling (punches)
+PB2609-055,Line 2,2026-09-07 07:24,29,Electrical fault
+PB2609-057,Line 2,2026-09-07 08:14,91,Material shortage
+B2609-077,Line 1,2026-09-15 23:51,263,Tooling (punches)
+B2609-078,Line 1,2026-09-14 17:51,237,Tooling (punches)
+B2609-079,Line 1,2026-09-11 17:51,10,Tooling (punches)
+B2609-079,Line 1,2026-09-11 15:47,29,Awaiting QA
+B2609-079,Line 1,2026-09-11 20:15,23,Electrical fault
+B2609-080,Line 1,2026-09-14 11:51,14,Material shortage
+PB2609-058,Line 2,2026-09-11 15:09,83,Material shortage
+B2609-081,Line 1,2026-09-22 16:46,333,Tooling (punches)
+B2609-083,Line 1,2026-09-21 17:20,50,Tooling (punches)
+B2609-083,Line 1,2026-09-21 12:40,11,Tooling (punches)
+B2609-084,Line 1,2026-09-21 14:00,122,Tooling (punches)
+B2609-084,Line 1,2026-09-21 15:23,64,Tooling (punches)
+PB2609-062,Line 2,2026-09-21 13:03,15,Material shortage
+PB2609-062,Line 2,2026-09-21 17:19,13,Awaiting QA
+PB2609-062,Line 2,2026-09-21 09:36,14,Changeover
+PB2609-063,Line 2,2026-09-21 11:23,56,Awaiting QA
+PB2609-063,Line 2,2026-09-21 13:51,29,Electrical fault
+B2609-085,Line 1,2026-09-29 18:58,122,Tooling (punches)
+B2609-085,Line 1,2026-09-29 14:16,21,Cleaning
+B2609-085,Line 1,2026-09-29 09:54,58,Tooling (punches)
+B2609-086,Line 1,2026-09-28 14:15,62,Material shortage
+B2609-088,Line 1,2026-09-28 20:36,232,Tooling (punches)
+B2609-088,Line 1,2026-09-28 13:18,13,Tooling (punches)
+B2609-088,Line 1,2026-09-28 17:03,367,Tooling (punches)
+PB2609-065,Line 2,2026-09-28 09:17,229,Cleaning
+PB2609-065,Line 2,2026-09-28 13:21,42,Material shortage
+PB2609-066,Line 2,2026-09-29 13:46,105,Awaiting QA
+B2610-089,Line 1,2026-10-05 18:24,92,Material shortage
+B2610-089,Line 1,2026-10-05 18:59,68,Tooling (punches)
+B2610-089,Line 1,2026-10-05 15:55,65,Changeover
+B2610-090,Line 1,2026-10-05 19:52,23,Awaiting QA
+B2610-091,Line 1,2026-10-02 16:07,12,Electrical fault
+B2610-092,Line 1,2026-10-05 16:23,22,Electrical fault
+B2610-092,Line 1,2026-10-05 14:44,38,Material shortage
+PB2610-067,Line 2,2026-10-05 11:23,16,Material shortage
+PB2610-068,Line 2,2026-10-05 14:49,138,Awaiting QA
+PB2610-068,Line 2,2026-10-05 13:58,41,Tooling (punches)
+PB2610-069,Line 2,2026-10-06 12:37,20,Cleaning
+B2610-093,Line 1,2026-10-13 12:09,26,Awaiting QA
+B2610-094,Line 1,2026-10-12 12:29,33,Changeover
+B2610-094,Line 1,2026-10-12 14:57,150,Tooling (punches)
+B2610-095,Line 1,2026-10-12 10:50,94,Material shortage
+B2610-096,Line 1,2026-10-12 18:03,18,Material shortage
+PB2610-070,Line 2,2026-10-09 17:29,51,Cleaning
+PB2610-071,Line 2,2026-10-13 13:55,186,Tooling (punches)
+PB2610-071,Line 2,2026-10-13 15:22,83,Tooling (punches)
+PB2610-071,Line 2,2026-10-13 10:34,88,Cleaning
+PB2610-072,Line 2,2026-10-12 17:18,115,Tooling (punches)
+PB2610-072,Line 2,2026-10-12 15:12,50,Changeover
+B2610-097,Line 1,2026-10-19 23:33,82,Awaiting QA
+B2610-097,Line 1,2026-10-19 20:03,10,Changeover
+B2610-098,Line 1,2026-10-19 20:15,87,Tooling (punches)
+B2610-099,Line 1,2026-10-20 11:56,79,Cleaning
+B2610-100,Line 1,2026-10-19 13:55,82,Electrical fault
+PB2610-073,Line 2,2026-10-20 12:02,51,Changeover
+PB2610-074,Line 2,2026-10-16 09:33,28,Electrical fault
+PB2610-074,Line 2,2026-10-16 13:49,29,Tooling (punches)
+PB2610-074,Line 2,2026-10-16 16:33,82,Tooling (punches)
+PB2610-075,Line 2,2026-10-16 15:41,36,Tooling (punches)
+B2610-101,Line 1,2026-10-26 15:29,102,Awaiting QA
+B2610-101,Line 1,2026-10-26 08:56,25,Awaiting QA
+B2610-101,Line 1,2026-10-26 12:18,11,Changeover
+B2610-102,Line 1,2026-10-26 14:03,49,Changeover
+B2610-102,Line 1,2026-10-26 10:23,68,Awaiting QA
+B2610-102,Line 1,2026-10-26 17:22,20,Awaiting QA
+B2610-103,Line 1,2026-10-27 12:06,12,Electrical fault
+B2610-104,Line 1,2026-10-26 15:42,14,Tooling (punches)
+PB2610-076,Line 2,2026-10-26 12:36,107,Tooling (punches)
+PB2610-076,Line 2,2026-10-26 10:41,25,Tooling (punches)
+PB2610-076,Line 2,2026-10-26 09:18,202,Tooling (punches)
+PB2610-077,Line 2,2026-10-27 17:00,49,Electrical fault
+PB2610-077,Line 2,2026-10-27 18:54,56,Material shortage
+PB2610-077,Line 2,2026-10-27 11:51,53,Changeover
+PB2610-078,Line 2,2026-10-26 09:45,86,Material shortage
+PB2610-079,Line 2,2026-10-30 13:18,13,Material shortage
